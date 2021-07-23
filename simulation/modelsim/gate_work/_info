@@ -1,0 +1,26 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\altera\13.0sp1\testVGA\simulation\modelsim
+vtestVGA
+!i10b 1
+!s100 7T4aBSNB97VVAT4eYHo2A0
+IlR@4nEU^8Y1RNV_k33PQS1
+VZd`Q``@EZ]Pj@M:M@[BgJ1
+Z1 dC:\altera\13.0sp1\testVGA\simulation\modelsim
+w1626850056
+8testVGA.vo
+FtestVGA.vo
+L0 31
+OV;L;10.1d;51
+r1
+!s85 0
+31
+!s108 1626850124.336000
+!s107 testVGA.vo|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+.|testVGA.vo|
+!s101 -O0
+o-vlog01compat -work work -O0
+!s92 -vlog01compat -work work +incdir+. -O0
+ntest@v@g@a
