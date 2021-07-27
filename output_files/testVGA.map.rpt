@@ -1,5 +1,5 @@
 Analysis & Synthesis report for testVGA
-Thu Jul 22 12:22:54 2021
+Tue Jul 27 18:52:41 2021
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -46,7 +46,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Jul 22 12:22:54 2021           ;
+; Analysis & Synthesis Status        ; Successful - Tue Jul 27 18:52:41 2021           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; testVGA                                         ;
 ; Top-level Entity Name              ; testVGA                                         ;
@@ -286,10 +286,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Thu Jul 22 12:22:51 2021
+    Info: Processing started: Tue Jul 27 18:52:39 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off testVGA -c testVGA
 Warning (20028): Parallel compilation is not licensed and has been disabled
-Warning (10275): Verilog HDL Module Instantiation warning at testVGA.v(60): ignored dangling comma in List of Port Connections
+Warning (10275): Verilog HDL Module Instantiation warning at testVGA.v(62): ignored dangling comma in List of Port Connections
 Info (12021): Found 1 design units, including 1 entities, in source file testvga.v
     Info (12023): Found entity 1: testVGA
 Info (12021): Found 1 design units, including 1 entities, in source file hvsync_generator.v
@@ -298,12 +298,14 @@ Info (12021): Found 1 design units, including 1 entities, in source file debounc
     Info (12023): Found entity 1: Debouncer
 Info (12021): Found 1 design units, including 1 entities, in source file counter.v
     Info (12023): Found entity 1: counter
+Info (12021): Found 1 design units, including 1 entities, in source file lookup_alphabet.v
+    Info (12023): Found entity 1: Lookup_Alphabet
 Info (12127): Elaborating entity "testVGA" for the top level hierarchy
 Warning (10036): Verilog HDL or VHDL warning at testVGA.v(33): object "countPosition" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at testVGA.v(37): object "c_red" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at testVGA.v(38): object "c_blue" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at testVGA.v(39): object "c_green" assigned a value but never read
-Warning (10230): Verilog HDL assignment warning at testVGA.v(135): truncated value with size 32 to match size of target (25)
+Warning (10036): Verilog HDL or VHDL warning at testVGA.v(39): object "c_red" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at testVGA.v(40): object "c_blue" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at testVGA.v(41): object "c_green" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at testVGA.v(137): truncated value with size 32 to match size of target (25)
 Info (12128): Elaborating entity "hvsync_generator" for hierarchy "hvsync_generator:hvsync"
 Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(35): truncated value with size 32 to match size of target (10)
 Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(44): truncated value with size 32 to match size of target (10)
@@ -324,8 +326,8 @@ Info (21057): Implemented 265 device resources after synthesis - the final resou
     Info (21061): Implemented 250 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 16 warnings
     Info: Peak virtual memory: 4597 megabytes
-    Info: Processing ended: Thu Jul 22 12:22:54 2021
-    Info: Elapsed time: 00:00:03
+    Info: Processing ended: Tue Jul 27 18:52:41 2021
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
 

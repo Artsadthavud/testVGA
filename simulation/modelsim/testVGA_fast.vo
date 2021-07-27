@@ -16,7 +16,7 @@
 // PROGRAM "Quartus II 64-Bit"
 // VERSION "Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition"
 
-// DATE "07/22/2021 12:23:05"
+// DATE "07/27/2021 18:52:51"
 
 // 
 // Device: Altera EP2C5T144C8 Package TQFP144
@@ -432,6 +432,7 @@ wire \hvsync|CounterY~1_combout ;
 wire \hvsync|vga_VS~0_combout ;
 wire \hvsync|vga_VS~2_combout ;
 wire \hvsync|vga_VS~regout ;
+wire [15:0] \hvsync|Deboun1|PB_cnt ;
 wire [8:0] memR;
 wire [8:0] memG;
 wire [8:0] memB;
@@ -442,7 +443,6 @@ wire [3:0] \hvsync|countPos ;
 wire [9:0] \hvsync|CounterY ;
 wire [9:0] \hvsync|CounterX ;
 wire [15:0] \hvsync|Deboun|PB_cnt ;
-wire [15:0] \hvsync|Deboun1|PB_cnt ;
 
 
 // Location: LCCOMB_X14_Y8_N6

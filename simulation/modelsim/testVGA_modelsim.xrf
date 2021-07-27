@@ -3,6 +3,7 @@ source_file = 1, C:/altera/13.0sp1/testVGA/testVGA.v
 source_file = 1, C:/altera/13.0sp1/testVGA/hvsync_generator.v
 source_file = 1, C:/altera/13.0sp1/testVGA/Debouncer.v
 source_file = 1, C:/altera/13.0sp1/testVGA/counter.v
+source_file = 1, C:/altera/13.0sp1/testVGA/Lookup_Alphabet.v
 source_file = 1, C:/altera/13.0sp1/testVGA/db/testVGA.cbx.xml
 design_name = testVGA
 instance = comp, \hvsync|Add0~6 , hvsync|Add0~6, testVGA, 1
