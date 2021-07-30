@@ -89,8 +89,8 @@ GND+                         : 22        :        :                   :         
 VCCIO1                       : 23        : power  :                   : 3.3V    : 1         :                
 GND*                         : 24        :        :                   :         : 1         :                
 GND*                         : 25        :        :                   :         : 1         :                
-clk                          : 26        : output : 3.3-V LVTTL       :         : 1         : N              
-GND*                         : 27        :        :                   :         : 1         :                
+GND*                         : 26        :        :                   :         : 1         :                
+clk                          : 27        : output : 3.3-V LVTTL       :         : 1         : N              
 GND*                         : 28        :        :                   :         : 1         :                
 VCCIO1                       : 29        : power  :                   : 3.3V    : 1         :                
 GND*                         : 30        :        :                   :         : 1         :                

@@ -17,6 +17,13 @@ module hvsync_generator(
 	 reg [3:0]countPosition;
 	 reg [2:0]sw_mode;
 
+	 
+	 wire r0;wire r1;wire r2;wire r3;wire r4;wire r5;wire r6;wire r7;wire r8;wire r9;wire r10;		
+	Lookup_Alphabet lookupTB(.s(state_sw ),.a(00110000),.r0(r0),.r1(r1),.r2(r2),.r3(r3),.r4(r4),.r5(r5),.r6(r6),.r7(r7),.r8(r8),.r9(r9),.r10(r10));
+	
+		reg[6:0] curx = 0;
+		reg[4:0] cury = 1;
+	
     wire CounterXmaxed = (CounterX == 800); // 16 + 48 + 96 + 640
     wire CounterYmaxed = (CounterY == 525); // 10 + 2 + 33 + 480
 		
@@ -47,42 +54,26 @@ module hvsync_generator(
 
 	Debouncer Deboun(.clk(clk),.PB(sw_cp), .PB_state(state_sw), .PB_down(sw_down), .PB_up(sw_up) );
 	Debouncer Deboun1(.clk(clk),.PB(sw_cc), .PB_state(state_sw1), .PB_down(sw_down1), .PB_up(sw_up1) );
-	 		
+	 //count position		
 	always @(posedge state_sw1)
 		begin
-			if (sw_mode == 1)
+			if (curx == 80 && cury < 30 )
 				begin
-				sw_mode <= 0;
+					curx <= 0;
+					cury <= cury +1;
+				end
+			else if (curx == 80 && cury == 30 )
+				begin
+					cury <= 1;
+					curx <= 0;
 				end
 			else 
 				begin
-				sw_mode <= sw_mode + 1 ;
+					curx <= curx +1;
+					cury <= cury;
 				end
 		end
 		
-	 always @(posedge state_sw )
-		begin
-			if(sw_mode == 0)
-				countPosition <= 0;
-			else if(sw_mode == 1 && countPosition == 0)
-				begin
-				countPosition <= 1 ;
-				countPos = countPosition; 	
-				end
-			else if (countPosition == 8 && sw_mode == 1)
-				begin
-				countPosition <= 1;
-				countPos = countPosition; 	
-				end
-			else if(sw_mode == 1 && countPosition > 0)
-				begin
-				countPosition <= countPosition + 1 ;
-				countPos = countPosition; 	
-				end
-			
-		end
-
-	 
     always @(posedge clk)
     begin
       vga_HS <= (CounterX > (640 + 16) && (CounterX < (640 + 16 + 96)));   // active for 96 clocks
@@ -94,58 +85,14 @@ module hvsync_generator(
 			begin
 				inDisplaySelect <= (CounterX < 640) && (CounterY < 480);
 			end
-			
-    always @(posedge clk)
-    begin
-	 
-		if(countPosition == 1)			//0
-			begin
-				 inDisplayArea <= (CounterX < 160) && (CounterY < 240);
-			
-			end
-			
-		else if(countPosition == 2) 	//1
-			begin
-				 inDisplayArea <= (CounterX > 159) && (CounterX < 320) && (CounterY < 240);
-			
-			end
-			
-		else if(countPosition == 3)	//2
-			begin
-				 inDisplayArea <= (CounterX > 319) && (CounterX < 480) && (CounterY < 240);
-			 	
-			end
-			
-		else if(countPosition == 4)	//3
-			begin
-				 inDisplayArea <= (CounterX > 479) && (CounterX < 640) && (CounterY < 240);
-				
-			end	
-			
-			if(countPosition == 8)		//7
-			begin
-				 inDisplayArea <= (CounterX < 160) && (CounterY < 480)  && (CounterY > 239);
-				
-			end
-			
-		else if(countPosition == 7)	//6
-			begin
-				 inDisplayArea <= (CounterX > 159) && (CounterX < 320) && (CounterY < 480)  && (CounterY > 239);
-				
-			end
-			
-		else if(countPosition == 6)	//5
-			begin
-				 inDisplayArea <= (CounterX > 319) && (CounterX < 480) && (CounterY < 480)  && (CounterY > 239);
-				 
-			end
-			
-		else if(countPosition == 5)	//4
-			begin
-				 inDisplayArea <= (CounterX > 479) && (CounterX < 640) && (CounterY < 480) && (CounterY > 239) ;
-				 
-			end		
-    end
+	reg curser;
+// cur
+always @(posedge clk)
+	begin
+		inDisplayArea <= inDisplaySelect & (CounterX < (curx * 8) & CounterX > ((curx-1) * 8)) & (CounterY == (cury*15)); 
+	end
+	
+   
 
     assign vga_h_sync = ~vga_HS;
     assign vga_v_sync = ~vga_VS;
