@@ -1,5 +1,5 @@
 Analysis & Synthesis report for testVGA
-Wed Sep 08 20:24:43 2021
+Thu Sep 09 02:59:24 2021
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -13,15 +13,19 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. Removed Registers Triggering Further Register Optimizations
- 10. General Register Statistics
- 11. Port Connectivity Checks: "hvsync_generator:hvsync|Lookup_Alphabet:LUT_A"
- 12. Port Connectivity Checks: "hvsync_generator:hvsync|Debouncer:Deboun1"
- 13. Port Connectivity Checks: "hvsync_generator:hvsync|Debouncer:Deboun"
- 14. Port Connectivity Checks: "hvsync_generator:hvsync"
- 15. Elapsed Time Per Partition
- 16. Analysis & Synthesis Messages
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Port Connectivity Checks: "hvsync_generator:hvsync|Lookup_Alphabet:LUT_A"
+ 15. Port Connectivity Checks: "hvsync_generator:hvsync|Debouncer:Deboun1"
+ 16. Port Connectivity Checks: "hvsync_generator:hvsync|Debouncer:Deboun"
+ 17. Port Connectivity Checks: "hvsync_generator:hvsync"
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Messages
+ 20. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -47,15 +51,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Sep 08 20:24:43 2021           ;
+; Analysis & Synthesis Status        ; Successful - Thu Sep 09 02:59:24 2021           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; testVGA                                         ;
 ; Top-level Entity Name              ; testVGA                                         ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 41                                              ;
-;     Total combinational functions  ; 41                                              ;
-;     Dedicated logic registers      ; 23                                              ;
-; Total registers                    ; 23                                              ;
+; Total logic elements               ; 590                                             ;
+;     Total combinational functions  ; 587                                             ;
+;     Dedicated logic registers      ; 127                                             ;
+; Total registers                    ; 127                                             ;
 ; Total pins                         ; 15                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
@@ -177,238 +181,200 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+----------+
 ; Resource                                    ; Usage    ;
 +---------------------------------------------+----------+
-; Estimated Total logic elements              ; 41       ;
+; Estimated Total logic elements              ; 590      ;
 ;                                             ;          ;
-; Total combinational functions               ; 41       ;
+; Total combinational functions               ; 587      ;
 ; Logic element usage by number of LUT inputs ;          ;
-;     -- 4 input functions                    ; 15       ;
-;     -- 3 input functions                    ; 0        ;
-;     -- <=2 input functions                  ; 26       ;
+;     -- 4 input functions                    ; 317      ;
+;     -- 3 input functions                    ; 115      ;
+;     -- <=2 input functions                  ; 155      ;
 ;                                             ;          ;
 ; Logic elements by mode                      ;          ;
-;     -- normal mode                          ; 23       ;
-;     -- arithmetic mode                      ; 18       ;
+;     -- normal mode                          ; 538      ;
+;     -- arithmetic mode                      ; 49       ;
 ;                                             ;          ;
-; Total registers                             ; 23       ;
-;     -- Dedicated logic registers            ; 23       ;
+; Total registers                             ; 127      ;
+;     -- Dedicated logic registers            ; 127      ;
 ;     -- I/O registers                        ; 0        ;
 ;                                             ;          ;
 ; I/O pins                                    ; 15       ;
 ; Embedded Multiplier 9-bit elements          ; 0        ;
 ; Maximum fan-out node                        ; clk~reg0 ;
-; Maximum fan-out                             ; 24       ;
-; Total fan-out                               ; 168      ;
-; Average fan-out                             ; 2.13     ;
+; Maximum fan-out                             ; 128      ;
+; Total fan-out                               ; 2192     ;
+; Average fan-out                             ; 3.01     ;
 +---------------------------------------------+----------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                        ;
-+------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------+--------------+
-; Compilation Hierarchy Node   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name              ; Library Name ;
-+------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------+--------------+
-; |testVGA                     ; 41 (1)            ; 23 (1)       ; 0           ; 0            ; 0       ; 0         ; 15   ; 0            ; |testVGA                         ; work         ;
-;    |hvsync_generator:hvsync| ; 40 (40)           ; 22 (22)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testVGA|hvsync_generator:hvsync ; work         ;
-+------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                               ;
++-------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------+--------------+
+; Compilation Hierarchy Node    ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                    ; Library Name ;
++-------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------+--------------+
+; |testVGA                      ; 587 (1)           ; 127 (4)      ; 0           ; 0            ; 0       ; 0         ; 15   ; 0            ; |testVGA                                               ; work         ;
+;    |hvsync_generator:hvsync|  ; 586 (168)         ; 123 (123)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testVGA|hvsync_generator:hvsync                       ; work         ;
+;       |Lookup_Alphabet:LUT_A| ; 418 (418)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testVGA|hvsync_generator:hvsync|Lookup_Alphabet:LUT_A ; work         ;
++-------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+----------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                               ;
-+-----------------------------------------+----------------------------------------+
-; Register name                           ; Reason for Removal                     ;
-+-----------------------------------------+----------------------------------------+
-; hvsync_generator:hvsync|mem[0][0]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[15][7]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[15][6]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[15][5]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[15][4]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[15][3]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[15][2]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[15][1]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[15][0]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[14][7]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[14][6]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[14][5]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[14][4]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[14][3]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[14][2]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[14][1]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[14][0]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[13][7]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[13][6]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[13][5]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[13][4]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[13][3]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[13][2]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[13][1]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[13][0]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[12][7]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[12][6]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[12][5]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[12][4]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[12][3]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[12][2]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[12][1]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[12][0]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[11][7]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[11][6]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[11][5]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[11][4]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[11][3]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[11][2]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[11][1]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[11][0]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[10][7]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[10][6]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[10][5]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[10][4]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[10][3]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[10][2]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[10][1]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[10][0]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[9][7]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[9][6]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[9][5]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[9][4]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[9][3]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[9][2]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[9][1]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[9][0]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[8][7]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[8][6]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[8][5]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[8][4]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[8][3]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[8][2]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[8][1]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[8][0]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[7][7]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[7][6]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[7][5]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[7][4]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[7][3]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[7][2]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[7][1]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[7][0]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[6][7]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[6][6]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[6][5]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[6][4]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[6][3]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[6][2]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[6][1]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[6][0]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[5][7]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[5][6]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[5][5]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[5][4]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[5][3]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[5][2]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[5][1]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[5][0]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[4][7]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[4][6]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[4][5]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[4][4]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[4][3]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[4][2]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[4][1]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[4][0]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[3][7]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[3][6]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[3][5]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[3][4]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[3][3]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[3][2]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[3][1]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[3][0]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[2][7]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[2][6]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[2][5]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[2][4]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[2][3]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[2][2]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[2][1]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[2][0]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[1][7]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[1][6]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[1][5]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[1][4]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[1][3]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[1][2]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[1][1]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[1][0]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[0][7]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[0][6]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[0][5]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[0][4]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[0][3]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[0][2]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|mem[0][1]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis0x0[0]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis1x0[0]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis2x0[0]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis3x0[0]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis4x0[0]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis5x0[0]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis6x0[0]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis7x0[0]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis8x0[0]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis9x0[0]       ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis10x0[0]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis11x0[0]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis12x0[0]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis13x0[0]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis14x0[0]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis15x0[0]      ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|disall0         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|inDisplayArea   ; Stuck at GND due to stuck port data_in ;
-; pixel[2]~reg0                           ; Stuck at GND due to stuck port data_in ;
-; pixel[1]~reg0                           ; Stuck at GND due to stuck port data_in ;
-; pixel[0]~reg0                           ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 149 ;                                        ;
-+-----------------------------------------+----------------------------------------+
++-----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                 ;
++------------------------------------------------------+---------------------+------------------------+
+; Latch Name                                           ; Latch Enable Signal ; Free of Timing Hazards ;
++------------------------------------------------------+---------------------+------------------------+
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r2[1]  ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r2[3]  ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r2[4]  ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r2[5]  ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r2[2]  ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r3[1]  ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r3[3]  ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r3[4]  ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r3[5]  ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r3[2]  ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r4[5]  ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r4[3]  ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r4[2]  ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r4[1]  ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r5[1]  ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r5[3]  ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r5[4]  ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r5[5]  ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r5[2]  ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r6[1]  ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r6[3]  ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r6[4]  ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r6[5]  ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r6[2]  ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r7[1]  ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r7[3]  ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r7[4]  ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r7[5]  ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r7[2]  ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r8[1]  ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r8[3]  ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r8[4]  ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r8[5]  ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r8[2]  ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r9[1]  ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r9[3]  ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r9[4]  ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r9[5]  ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r9[2]  ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r10[1] ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r10[3] ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r10[4] ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r10[5] ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r10[2] ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r11[1] ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r11[3] ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r11[4] ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r11[5] ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r11[2] ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r12[1] ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r12[3] ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r12[4] ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r12[5] ; GND                 ; yes                    ;
+; hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r12[2] ; GND                 ; yes                    ;
+; Number of user-specified and inferred latches = 54   ;                     ;                        ;
++------------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                         ;
-+------------------------------------+---------------------------+------------------------------------------------------------------------------------+
-; Register name                      ; Reason for Removal        ; Registers Removed due to This Register                                             ;
-+------------------------------------+---------------------------+------------------------------------------------------------------------------------+
-; hvsync_generator:hvsync|mem[0][0]  ; Stuck at GND              ; hvsync_generator:hvsync|dis0x0[0], hvsync_generator:hvsync|disall0,                ;
-;                                    ; due to stuck port data_in ; hvsync_generator:hvsync|inDisplayArea, pixel[2]~reg0, pixel[1]~reg0, pixel[0]~reg0 ;
-; hvsync_generator:hvsync|mem[15][7] ; Stuck at GND              ; hvsync_generator:hvsync|dis15x0[0]                                                 ;
-;                                    ; due to stuck port data_in ;                                                                                    ;
-; hvsync_generator:hvsync|mem[14][7] ; Stuck at GND              ; hvsync_generator:hvsync|dis14x0[0]                                                 ;
-;                                    ; due to stuck port data_in ;                                                                                    ;
-; hvsync_generator:hvsync|mem[13][7] ; Stuck at GND              ; hvsync_generator:hvsync|dis13x0[0]                                                 ;
-;                                    ; due to stuck port data_in ;                                                                                    ;
-; hvsync_generator:hvsync|mem[12][7] ; Stuck at GND              ; hvsync_generator:hvsync|dis12x0[0]                                                 ;
-;                                    ; due to stuck port data_in ;                                                                                    ;
-; hvsync_generator:hvsync|mem[11][7] ; Stuck at GND              ; hvsync_generator:hvsync|dis11x0[0]                                                 ;
-;                                    ; due to stuck port data_in ;                                                                                    ;
-; hvsync_generator:hvsync|mem[10][7] ; Stuck at GND              ; hvsync_generator:hvsync|dis10x0[0]                                                 ;
-;                                    ; due to stuck port data_in ;                                                                                    ;
-; hvsync_generator:hvsync|mem[9][7]  ; Stuck at GND              ; hvsync_generator:hvsync|dis9x0[0]                                                  ;
-;                                    ; due to stuck port data_in ;                                                                                    ;
-; hvsync_generator:hvsync|mem[8][7]  ; Stuck at GND              ; hvsync_generator:hvsync|dis8x0[0]                                                  ;
-;                                    ; due to stuck port data_in ;                                                                                    ;
-; hvsync_generator:hvsync|mem[7][7]  ; Stuck at GND              ; hvsync_generator:hvsync|dis7x0[0]                                                  ;
-;                                    ; due to stuck port data_in ;                                                                                    ;
-; hvsync_generator:hvsync|mem[6][7]  ; Stuck at GND              ; hvsync_generator:hvsync|dis6x0[0]                                                  ;
-;                                    ; due to stuck port data_in ;                                                                                    ;
-; hvsync_generator:hvsync|mem[5][7]  ; Stuck at GND              ; hvsync_generator:hvsync|dis5x0[0]                                                  ;
-;                                    ; due to stuck port data_in ;                                                                                    ;
-; hvsync_generator:hvsync|mem[4][7]  ; Stuck at GND              ; hvsync_generator:hvsync|dis4x0[0]                                                  ;
-;                                    ; due to stuck port data_in ;                                                                                    ;
-; hvsync_generator:hvsync|mem[3][7]  ; Stuck at GND              ; hvsync_generator:hvsync|dis3x0[0]                                                  ;
-;                                    ; due to stuck port data_in ;                                                                                    ;
-; hvsync_generator:hvsync|mem[2][7]  ; Stuck at GND              ; hvsync_generator:hvsync|dis2x0[0]                                                  ;
-;                                    ; due to stuck port data_in ;                                                                                    ;
-; hvsync_generator:hvsync|mem[1][7]  ; Stuck at GND              ; hvsync_generator:hvsync|dis1x0[0]                                                  ;
-;                                    ; due to stuck port data_in ;                                                                                    ;
-+------------------------------------+---------------------------+------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; hvsync_generator:hvsync|mem[1][0]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[15][7]     ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[15][6]     ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[15][5]     ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[15][4]     ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[15][3]     ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[15][2]     ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[15][1]     ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[15][0]     ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[14][7]     ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[14][6]     ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[14][5]     ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[14][4]     ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[14][3]     ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[14][2]     ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[14][1]     ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[14][0]     ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[13][7]     ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[13][6]     ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[13][5]     ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[13][4]     ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[13][3]     ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[13][2]     ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[13][1]     ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[13][0]     ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[12][7]     ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[12][6]     ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[12][0]     ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[11][7]     ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[11][6]     ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[11][0]     ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[10][7]     ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[10][6]     ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[10][0]     ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[9][7]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[9][6]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[9][0]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[8][7]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[8][6]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[8][0]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[7][7]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[7][6]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[7][0]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[6][7]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[6][6]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[6][0]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[5][7]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[5][6]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[5][0]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[4][7]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[4][6]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[4][4]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[4][0]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[3][7]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[3][6]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[3][0]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[2][7]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[2][6]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[2][0]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[1][7]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[1][6]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[1][5]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[1][4]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[1][3]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[1][2]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[1][1]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|dis1x0[0]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|dis13x0[0]     ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|dis14x0[0]     ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|dis15x0[0]     ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 70 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                             ;
++------------------------------------+---------------------------+----------------------------------------+
+; Register name                      ; Reason for Removal        ; Registers Removed due to This Register ;
++------------------------------------+---------------------------+----------------------------------------+
+; hvsync_generator:hvsync|mem[1][0]  ; Stuck at GND              ; hvsync_generator:hvsync|dis1x0[0]      ;
+;                                    ; due to stuck port data_in ;                                        ;
+; hvsync_generator:hvsync|mem[15][7] ; Stuck at GND              ; hvsync_generator:hvsync|dis15x0[0]     ;
+;                                    ; due to stuck port data_in ;                                        ;
+; hvsync_generator:hvsync|mem[14][7] ; Stuck at GND              ; hvsync_generator:hvsync|dis14x0[0]     ;
+;                                    ; due to stuck port data_in ;                                        ;
+; hvsync_generator:hvsync|mem[13][7] ; Stuck at GND              ; hvsync_generator:hvsync|dis13x0[0]     ;
+;                                    ; due to stuck port data_in ;                                        ;
++------------------------------------+---------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -416,27 +382,55 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 23    ;
+; Total registers                              ; 127   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 10    ;
+; Number of registers using Clock Enable       ; 16    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "hvsync_generator:hvsync|Lookup_Alphabet:LUT_A"                                                                                                                                       ;
-+---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port    ; Type  ; Severity ; Details                                                                                                                                                                            ;
-+---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; a       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (8 bits) it drives.  The 24 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; a[5..1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
-; a[7]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
-; a[6]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
-; a[0]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
-+---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; hvsync_generator:hvsync|X[5]           ; 44      ;
+; hvsync_generator:hvsync|X[4]           ; 83      ;
+; Total number of inverted registers = 2 ;         ;
++----------------------------------------+---------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |testVGA|hvsync_generator:hvsync|X[7]                         ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |testVGA|hvsync_generator:hvsync|X[5]                         ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |testVGA|hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r12[4] ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |testVGA|hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r3[4]  ;
+; 8:1                ; 10 bits   ; 50 LEs        ; 40 LEs               ; 10 LEs                 ; No         ; |testVGA|hvsync_generator:hvsync|Mux11                        ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |testVGA|hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r4[5]  ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |testVGA|hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r3[4]  ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |testVGA|hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r7[2]  ;
+; 129:1              ; 4 bits    ; 344 LEs       ; 68 LEs               ; 276 LEs                ; No         ; |testVGA|hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r7[3]  ;
+; 129:1              ; 2 bits    ; 172 LEs       ; 30 LEs               ; 142 LEs                ; No         ; |testVGA|hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r6[3]  ;
+; 35:1               ; 2 bits    ; 46 LEs        ; 26 LEs               ; 20 LEs                 ; No         ; |testVGA|hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r6[1]  ;
+; 35:1               ; 2 bits    ; 46 LEs        ; 28 LEs               ; 18 LEs                 ; No         ; |testVGA|hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r12[1] ;
+; 35:1               ; 3 bits    ; 69 LEs        ; 42 LEs               ; 27 LEs                 ; No         ; |testVGA|hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|r5[2]  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "hvsync_generator:hvsync|Lookup_Alphabet:LUT_A"                                      ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; r0   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -482,7 +476,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:03     ;
 +----------------+--------------+
 
 
@@ -492,7 +486,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed Sep 08 20:24:42 2021
+    Info: Processing started: Thu Sep 09 02:59:18 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off testVGA -c testVGA
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Warning (10275): Verilog HDL Module Instantiation warning at testVGA.v(62): ignored dangling comma in List of Port Connections
@@ -524,36 +518,202 @@ Warning (10036): Verilog HDL or VHDL warning at testVGA.v(68): object "R" assign
 Warning (10036): Verilog HDL or VHDL warning at testVGA.v(68): object "G" assigned a value but never read
 Warning (10036): Verilog HDL or VHDL warning at testVGA.v(68): object "B" assigned a value but never read
 Info (12128): Elaborating entity "hvsync_generator" for hierarchy "hvsync_generator:hvsync"
+Warning (10858): Verilog HDL warning at hvsync_generator.v(97): object dis0x0 used but never assigned
+Warning (10036): Verilog HDL or VHDL warning at hvsync_generator.v(342): object "posx" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at hvsync_generator.v(343): object "posy" assigned a value but never read
 Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(41): truncated value with size 32 to match size of target (10)
 Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(50): truncated value with size 32 to match size of target (10)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(62): truncated value with size 32 to match size of target (5)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(71): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(503): truncated value with size 8 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(284): truncated value with size 32 to match size of target (25)
+Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(287): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(349): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(574): truncated value with size 8 to match size of target (1)
+Warning (10030): Net "dis0x0[0]" at hvsync_generator.v(97) has no driver or initial value, using a default initial value '0'
 Warning (10034): Output port "countPos" at hvsync_generator.v(12) has no driver
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "framebuffer" into its bus
 Info (12128): Elaborating entity "Debouncer" for hierarchy "hvsync_generator:hvsync|Debouncer:Deboun"
 Info (12128): Elaborating entity "Lookup_Alphabet" for hierarchy "hvsync_generator:hvsync|Lookup_Alphabet:LUT_A"
-Warning (10034): Output port "r0" at Lookup_Alphabet.v(3) has no driver
-Warning (10034): Output port "r1" at Lookup_Alphabet.v(4) has no driver
-Warning (10034): Output port "r2" at Lookup_Alphabet.v(5) has no driver
-Warning (10034): Output port "r3" at Lookup_Alphabet.v(6) has no driver
-Warning (10034): Output port "r4" at Lookup_Alphabet.v(7) has no driver
-Warning (10034): Output port "r5" at Lookup_Alphabet.v(8) has no driver
-Warning (10034): Output port "r6" at Lookup_Alphabet.v(9) has no driver
-Warning (10034): Output port "r7" at Lookup_Alphabet.v(10) has no driver
-Warning (10034): Output port "r8" at Lookup_Alphabet.v(11) has no driver
-Warning (10034): Output port "r9" at Lookup_Alphabet.v(12) has no driver
-Warning (10034): Output port "r10" at Lookup_Alphabet.v(13) has no driver
-Warning (10034): Output port "r11" at Lookup_Alphabet.v(14) has no driver
-Warning (10034): Output port "r12" at Lookup_Alphabet.v(15) has no driver
-Warning (10034): Output port "r13" at Lookup_Alphabet.v(16) has no driver
-Warning (10034): Output port "r14" at Lookup_Alphabet.v(17) has no driver
-Warning (10034): Output port "r15" at Lookup_Alphabet.v(18) has no driver
-Warning (12158): Entity "Lookup_Alphabet" contains only dangling pins
-Warning (12241): 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "pixel[0]" is stuck at GND
-    Warning (13410): Pin "pixel[1]" is stuck at GND
-    Warning (13410): Pin "pixel[2]" is stuck at GND
+Warning (10235): Verilog HDL Always Construct warning at Lookup_Alphabet.v(23): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Lookup_Alphabet.v(43): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Lookup_Alphabet.v(65): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Lookup_Alphabet.v(86): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Lookup_Alphabet.v(107): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Lookup_Alphabet.v(128): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Lookup_Alphabet.v(149): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Lookup_Alphabet.v(170): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Lookup_Alphabet.v(191): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Lookup_Alphabet.v(212): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Lookup_Alphabet.v(232): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Lookup_Alphabet.v(252): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Lookup_Alphabet.v(272): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Lookup_Alphabet.v(292): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Lookup_Alphabet.v(312): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Lookup_Alphabet.v(332): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Lookup_Alphabet.v(352): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Lookup_Alphabet.v(372): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Lookup_Alphabet.v(392): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Lookup_Alphabet.v(412): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Lookup_Alphabet.v(432): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Lookup_Alphabet.v(452): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Lookup_Alphabet.v(472): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Lookup_Alphabet.v(492): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Lookup_Alphabet.v(512): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Lookup_Alphabet.v(532): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Lookup_Alphabet.v(553): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Lookup_Alphabet.v(573): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Lookup_Alphabet.v(593): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Lookup_Alphabet.v(613): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Lookup_Alphabet.v(633): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Lookup_Alphabet.v(653): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Lookup_Alphabet.v(673): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Lookup_Alphabet.v(693): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Lookup_Alphabet.v(713): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at Lookup_Alphabet.v(733): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at Lookup_Alphabet.v(21): inferring latch(es) for variable "r0", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Lookup_Alphabet.v(21): inferring latch(es) for variable "r1", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Lookup_Alphabet.v(21): inferring latch(es) for variable "r2", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Lookup_Alphabet.v(21): inferring latch(es) for variable "r3", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Lookup_Alphabet.v(21): inferring latch(es) for variable "r4", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Lookup_Alphabet.v(21): inferring latch(es) for variable "r5", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Lookup_Alphabet.v(21): inferring latch(es) for variable "r6", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Lookup_Alphabet.v(21): inferring latch(es) for variable "r7", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Lookup_Alphabet.v(21): inferring latch(es) for variable "r8", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Lookup_Alphabet.v(21): inferring latch(es) for variable "r9", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Lookup_Alphabet.v(21): inferring latch(es) for variable "r10", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Lookup_Alphabet.v(21): inferring latch(es) for variable "r11", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Lookup_Alphabet.v(21): inferring latch(es) for variable "r12", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Lookup_Alphabet.v(21): inferring latch(es) for variable "r13", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Lookup_Alphabet.v(21): inferring latch(es) for variable "r14", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at Lookup_Alphabet.v(21): inferring latch(es) for variable "r15", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "r15[0]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r15[1]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r15[2]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r15[3]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r15[4]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r15[5]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r15[6]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r15[7]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r14[0]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r14[1]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r14[2]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r14[3]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r14[4]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r14[5]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r14[6]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r14[7]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r13[0]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r13[1]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r13[2]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r13[3]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r13[4]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r13[5]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r13[6]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r13[7]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r12[0]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r12[1]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r12[2]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r12[3]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r12[4]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r12[5]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r12[6]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r12[7]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r11[0]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r11[1]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r11[2]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r11[3]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r11[4]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r11[5]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r11[6]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r11[7]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r10[0]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r10[1]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r10[2]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r10[3]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r10[4]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r10[5]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r10[6]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r10[7]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r9[0]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r9[1]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r9[2]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r9[3]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r9[4]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r9[5]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r9[6]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r9[7]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r8[0]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r8[1]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r8[2]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r8[3]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r8[4]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r8[5]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r8[6]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r8[7]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r7[0]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r7[1]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r7[2]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r7[3]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r7[4]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r7[5]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r7[6]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r7[7]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r6[0]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r6[1]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r6[2]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r6[3]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r6[4]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r6[5]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r6[6]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r6[7]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r5[0]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r5[1]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r5[2]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r5[3]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r5[4]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r5[5]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r5[6]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r5[7]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r4[0]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r4[1]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r4[2]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r4[3]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r4[4]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r4[5]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r4[6]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r4[7]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r3[0]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r3[1]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r3[2]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r3[3]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r3[4]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r3[5]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r3[6]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r3[7]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r2[0]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r2[1]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r2[2]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r2[3]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r2[4]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r2[5]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r2[6]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r2[7]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r1[0]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r1[1]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r1[2]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r1[3]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r1[4]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r1[5]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r1[6]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r1[7]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r0[0]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r0[1]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r0[2]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r0[3]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r0[4]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r0[5]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r0[6]" at Lookup_Alphabet.v(43)
+Info (10041): Inferred latch for "r0[7]" at Lookup_Alphabet.v(43)
+Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (144001): Generated suppressed messages file C:/altera/13.0sp1/testVGA/output_files/testVGA.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 8 input pin(s) that do not drive logic
@@ -565,14 +725,20 @@ Warning (21074): Design contains 8 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "sw_p3"
     Warning (15610): No output dependent on input pin "sw_cc"
     Warning (15610): No output dependent on input pin "sw_cp"
-Info (21057): Implemented 56 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 659 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 9 input pins
     Info (21059): Implemented 6 output pins
-    Info (21061): Implemented 41 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 51 warnings
-    Info: Peak virtual memory: 4590 megabytes
-    Info: Processing ended: Wed Sep 08 20:24:43 2021
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+    Info (21061): Implemented 644 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 87 warnings
+    Info: Peak virtual memory: 4649 megabytes
+    Info: Processing ended: Thu Sep 09 02:59:24 2021
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:06
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/altera/13.0sp1/testVGA/output_files/testVGA.map.smsg.
 
 

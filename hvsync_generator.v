@@ -54,7 +54,23 @@ module hvsync_generator(
 	Debouncer Deboun(.clk(clk),.PB(sw_cp), .PB_state(state_sw), .PB_down(sw_down), .PB_up(sw_up) );
 	Debouncer Deboun1(.clk(clk),.PB(sw_cc), .PB_state(state_sw1), .PB_down(sw_down1), .PB_up(sw_up1) );
 	 //count position		
-	always @(posedge state_sw1)
+
+		
+    always @(posedge clk)
+    begin
+      vga_HS <= (CounterX > (640 + 16) && (CounterX < (640 + 16 + 96)));   // active for 96 clocks
+      vga_VS <= (CounterY > (480 + 10) && (CounterY < (480 + 10 + 2)));   // active for 2 clocks
+    end
+	  
+		// display 640*480
+	  always @(posedge clk)
+			begin
+				inDisplaySelect <= (CounterX < 640) && (CounterY < 480);
+			end
+	reg curser;
+	
+////////////////////////////////////////////////////////////////////count buffer		
+	/*	always @(posedge state_sw1)
 		begin
 			if (curx == 80 && cury < 30 )
 				begin
@@ -71,27 +87,8 @@ module hvsync_generator(
 					curx <= curx +1;
 					cury <= cury;
 				end
-		end
+		end*/
 		
-    always @(posedge clk)
-    begin
-      vga_HS <= (CounterX > (640 + 16) && (CounterX < (640 + 16 + 96)));   // active for 96 clocks
-      vga_VS <= (CounterY > (480 + 10) && (CounterY < (480 + 10 + 2)));   // active for 2 clocks
-    end
-	  
-		// display 640*480
-	  always @(posedge clk)
-			begin
-				inDisplaySelect <= (CounterX < 640) && (CounterY < 480);
-			end
-	reg curser;
-	
-// cur
-	/*	always @(posedge clk)
-			begin
-				inDisplayArea <= inDisplaySelect ;// & (CounterX < (curx * 8) & CounterX > ((curx-1) * 8)) & (CounterY == (cury*15)); 
-			end
-			*/
 			
 // alpha set
 	reg [9:0] x;
@@ -270,8 +267,40 @@ module hvsync_generator(
 	reg mem[15:0][7:0];
 	wire [7:0] LTA [15:0];
 	
-	
-	Lookup_Alphabet LUT_A(.a(01000001), .r0(LTA[0]), .r1(LTA[1]), .r2(LTA[2]), .r3(LTA[3]), .r4(LTA[4]), .r5(LTA[5]), .r6(LTA[6]), .r7(LTA[7]), .r8(LTA[8]), .r9(LTA[9]), .r10(LTA[10]), .r11(LTA[11]), .r12(LTA[12]), .r13(LTA[13]), .r14(LTA[14]), .r15(LTA[15]));
+//alpha	reg [7:0]X = 8'b01000000;
+	reg [7:0]X = 8'b00110000;
+		reg [24:0] cnt;    
+		reg [24:0] Blank = 4000000;
+		reg [24:0] reset = 8000000;
+
+		always @ (posedge clk) 
+			begin  
+				if (cnt == reset)  
+					begin
+						cnt <= 0;  
+					end
+				else
+					begin
+						cnt <= cnt + 1; 
+						if (cnt == Blank)  
+							begin
+								X <= X + 1;
+							end
+				////////////////////////// apha
+					/*	if (X == 8'b01011010)
+							begin
+								X <= 8'b01000000;
+							end*/
+				///////////////////////// num
+						if (X == 8'b00111001)
+							begin
+								X <= 8'b00110000;
+							end
+					
+					end
+			end  
+		
+	Lookup_Alphabet LUT_A(.clk(clk), .a(X), .r0(LTA[0]), .r1(LTA[1]), .r2(LTA[2]), .r3(LTA[3]), .r4(LTA[4]), .r5(LTA[5]), .r6(LTA[6]), .r7(LTA[7]), .r8(LTA[8]), .r9(LTA[9]), .r10(LTA[10]), .r11(LTA[11]), .r12(LTA[12]), .r13(LTA[13]), .r14(LTA[14]), .r15(LTA[15]));
 	/*
 	always @(posedge clk)
 		begin
@@ -293,6 +322,7 @@ module hvsync_generator(
 			mem[15][0] = 1; mem[15][1] = 1; mem[15][2] = 1; mem[15][3] = 1; mem[15][4] = 1; mem[15][5] = 1; mem[15][6] = 1; mem[15][7] = 1;
 		end
 		*/
+		reg [8:0] framebuffer [80][480];
 		always @(posedge clk)
 			begin
 				integer i, j;
@@ -302,31 +332,72 @@ module hvsync_generator(
 								for(j = 0 ; j < 8; j = j+1)
 									begin
 										mem[i][j] = LTA[i][j];
+										
 									end
 							end
 						
 					end
 			end
+			
+	reg [9:0] posx = 0;
+	reg [8:0] posy = 0;
+	
+    always @(posedge clk)
+    if (curx == 640)
+      curx <= 0;
+    else
+      curx <= curx + 1;
+
+    always @(posedge clk)
+    begin
+      if (curx == 640)
+      begin
+        if(cury == 480)
+          cury <= 0;
+        else
+          cury <= cury + 1;
+      end
+    end
+		
+		
+		
+		// cur
+	/*	always @(posedge clk)
+			begin
+				inDisplayArea <= inDisplaySelect ;// & (CounterX < (curx * 8) & CounterX > ((curx-1) * 8)) & (CounterY < (cury*16)); 
+			end
+			*/
 		
 		always @(posedge clk)
+				begin
+				//	framebuffer[curx][cury]
+				end
+				
+				
+		always @(posedge clk)
 			begin
-				dis0x0 <= (((CounterX < 8) & mem[0][CounterX]) & (CounterY == (0))); 
-				dis1x0 <= ((CounterX < 8) & mem[1][CounterX]) & (CounterY == (1)); 
-				dis2x0 <= ((CounterX < 8) & mem[2][CounterX]) & (CounterY == (2)); 
-				dis3x0 <= ((CounterX < 8) & mem[3][CounterX]) & (CounterY == (3)); 
-				dis4x0 <= ((CounterX < 8) & mem[4][CounterX]) & (CounterY == (4)); 
-				dis5x0 <= ((CounterX < 8) & mem[5][CounterX]) & (CounterY == (5)); 
-				dis6x0 <= ((CounterX < 8) & mem[6][CounterX]) & (CounterY == (6)); 
-				dis7x0 <= (((CounterX < 8) & mem[7][CounterX]) & (CounterY == (7))); 
-				dis8x0 <= (((CounterX < 8) & mem[8][CounterX]) & (CounterY == (8))); 
-				dis9x0 <= (((CounterX < 8) & mem[9][CounterX]) & (CounterY == (9))); 
-				dis10x0 <= (((CounterX < 8) & mem[10][CounterX]) & (CounterY == (10))); 
-				dis11x0 <= (((CounterX < 8) & mem[11][CounterX]) & (CounterY == (11))); 
-				dis12x0 <= (((CounterX < 8) & mem[12][CounterX]) & (CounterY == (12))); 
-				dis13x0 <= (((CounterX < 8) & mem[13][CounterX]) & (CounterY == (13))); 
-				dis14x0 <= (((CounterX < 8) & mem[14][CounterX]) & (CounterY == (14))); 
-				dis15x0 <= (((CounterX < 8) & mem[15][CounterX]) & (CounterY == (15))); 
+				dis1x0 <= (((CounterX < 8) & mem[0][7-CounterX]) & (CounterY == (0))); 
+				dis1x0 <= ((CounterX < 8) & mem[1][7-CounterX]) & (CounterY == (1)); 
+				dis2x0 <= ((CounterX < 8) & mem[2][7-CounterX]) & (CounterY == (2)); 
+				dis3x0 <= ((CounterX < 8) & mem[3][7-CounterX]) & (CounterY == (3)); 
+				dis4x0 <= ((CounterX < 8) & mem[4][7-CounterX]) & (CounterY == (4)); 
+				dis5x0 <= ((CounterX < 8) & mem[5][7-CounterX]) & (CounterY == (5)); 
+				dis6x0 <= ((CounterX < 8) & mem[6][7-CounterX]) & (CounterY == (6)); 
+				dis7x0 <= (((CounterX < 8) & mem[7][7-CounterX]) & (CounterY == (7))); 
+				dis8x0 <= (((CounterX < 8) & mem[8][7-CounterX]) & (CounterY == (8))); 
+				dis9x0 <= (((CounterX < 8) & mem[9][7-CounterX]) & (CounterY == (9))); 
+				dis10x0 <= (((CounterX < 8) & mem[10][7-CounterX]) & (CounterY == (10))); 
+				dis11x0 <= (((CounterX < 8) & mem[11][7-CounterX]) & (CounterY == (11))); 
+				dis12x0 <= (((CounterX < 8) & mem[12][7-CounterX]) & (CounterY == (12))); 
+				dis13x0 <= (((CounterX < 8) & mem[13][7-CounterX]) & (CounterY == (13))); 
+				dis14x0 <= (((CounterX < 8) & mem[14][7-CounterX]) & (CounterY == (14))); 
+				dis15x0 <= (((CounterX < 8) & mem[15][7-CounterX]) & (CounterY == (15))); 
 	 		end	
+			
+			
+			
+			
+			
 	/*		always @(posedge clk)
 			begin
 				dis0x1 <= ((CounterX == 0) & 1) & (CounterY == (1)); 
