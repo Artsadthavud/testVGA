@@ -19,7 +19,6 @@ module hvsync_generator(
 
 	 
 	 wire r0;wire r1;wire r2;wire r3;wire r4;wire r5;wire r6;wire r7;wire r8;wire r9;wire r10;		
-	Lookup_Alphabet lookupTB(.s(state_sw ),.a(00110000),.r0(r0),.r1(r1),.r2(r2),.r3(r3),.r4(r4),.r5(r5),.r6(r6),.r7(r7),.r8(r8),.r9(r9),.r10(r10));
 	
 		reg[6:0] curx = 0;
 		reg[4:0] cury = 1;
@@ -98,14 +97,23 @@ module hvsync_generator(
 	reg [9:0] x;
 	reg [8:0] y;
 	
-	reg dis0x0;
-	reg dis1x0;
-	reg dis2x0;
-	reg dis3x0;
-	reg dis4x0;
-	reg dis5x0;
-	reg dis6x0;
-	reg dis7x0;
+	reg [7:0]dis0x0;
+	reg [7:0]dis1x0;
+	reg [7:0]dis2x0;
+	reg [7:0]dis3x0;
+	reg [7:0]dis4x0;
+	reg [7:0]dis5x0;
+	reg [7:0]dis6x0;
+	reg [7:0]dis7x0;
+	reg [7:0]dis8x0;
+	reg [7:0]dis9x0;
+	reg [7:0]dis10x0;
+	reg [7:0]dis11x0;
+	reg [7:0]dis12x0;
+	reg [7:0]dis13x0;
+	reg [7:0]dis14x0;
+	reg [7:0]dis15x0;
+
 	
 	reg dis0x1;
 	reg dis1x1;
@@ -259,19 +267,67 @@ module hvsync_generator(
 	reg disall14;
 	reg disall15;
 	
+	reg mem[15:0][7:0];
+	wire [7:0] LTA [15:0];
 	
+	
+	Lookup_Alphabet LUT_A(.a(01000001), .r0(LTA[0]), .r1(LTA[1]), .r2(LTA[2]), .r3(LTA[3]), .r4(LTA[4]), .r5(LTA[5]), .r6(LTA[6]), .r7(LTA[7]), .r8(LTA[8]), .r9(LTA[9]), .r10(LTA[10]), .r11(LTA[11]), .r12(LTA[12]), .r13(LTA[13]), .r14(LTA[14]), .r15(LTA[15]));
+	/*
+	always @(posedge clk)
+		begin
+			mem[0][0] = LTA[0][0]; mem[0][1] = LTA[0][1]; mem[0][2] = LTA[0][2]; mem[0][3] = LTA[0][3]; mem[0][4] = LTA[0][4]; mem[0][5] = LTA[0][5]; mem[0][6] = LTA[0][6]; mem[0][7] = LTA[0][7];
+			mem[1][0] = LTA[1][0]; mem[1][1] = LTA[1][1]; mem[1][2] = LTA[1][2]; mem[1][3] = LTA[1][3]; mem[1][4] = LTA[1][4]; mem[1][5] = LTA[1][5]; mem[1][6] = LTA[1][6]; mem[1][7] = LTA[1][7];
+			mem[2][0] = 0; mem[2][1] = 0; mem[2][2] = 0; mem[2][3] = 0; mem[2][4] = 1; mem[2][5] = 0; mem[2][6] = 0; mem[2][7] = 0;
+			mem[3][0] = 1; mem[3][1] = 1; mem[3][2] = 1; mem[3][3] = 1; mem[3][4] = 1; mem[3][5] = 1; mem[3][6] = 1; mem[3][7] = 1;
+			mem[4][0] = 1; mem[4][1] = 1; mem[4][2] = 1; mem[4][3] = 1; mem[4][4] = 1; mem[4][5] = 1; mem[4][6] = 1; mem[4][7] = 1;
+			mem[5][0] = 1; mem[5][1] = 1; mem[5][2] = 1; mem[5][3] = 1; mem[5][4] = 1; mem[5][5] = 1; mem[5][6] = 1; mem[5][7] = 1;
+			mem[6][0] = 1; mem[6][1] = 1; mem[6][2] = 1; mem[6][3] = 1; mem[6][4] = 1; mem[6][5] = 1; mem[6][6] = 1; mem[6][7] = 1;
+			mem[7][0] = 1; mem[7][1] = 1; mem[7][2] = 1; mem[7][3] = 1; mem[7][4] = 1; mem[7][5] = 1; mem[7][6] = 1; mem[7][7] = 1;
+			mem[8][0] = 1; mem[8][1] = 1; mem[8][2] = 1; mem[8][3] = 1; mem[8][4] = 1; mem[8][5] = 1; mem[8][6] = 1; mem[8][7] = 1;
+			mem[9][0] = 1; mem[9][1] = 1; mem[9][2] = 1; mem[9][3] = 1; mem[9][4] = 1; mem[9][5] = 1; mem[9][6] = 1; mem[9][7] = 1;
+			mem[10][0] = 1; mem[10][1] = 1; mem[10][2] = 1; mem[10][3] = 1; mem[10][4] = 1; mem[10][5] = 1; mem[10][6] = 1; mem[10][7] = 1;
+			mem[11][0] = 1; mem[11][1] = 1; mem[11][2] = 1; mem[11][3] = 1; mem[11][4] = 1; mem[11][5] = 1; mem[11][6] = 1; mem[11][7] = 1;
+			mem[12][0] = 1; mem[12][1] = 1; mem[12][2] = 1; mem[12][3] = 1; mem[12][4] = 1; mem[12][5] = 1; mem[12][6] = 1; mem[12][7] = 1;
+			mem[13][0] = 1; mem[13][1] = 1; mem[13][2] = 1; mem[13][3] = 1; mem[13][4] = 1; mem[13][5] = 1; mem[13][6] = 1; mem[13][7] = 1;
+			mem[14][0] = 1; mem[14][1] = 1; mem[14][2] = 1; mem[14][3] = 1; mem[14][4] = 1; mem[14][5] = 1; mem[14][6] = 1; mem[14][7] = 1;
+			mem[15][0] = 1; mem[15][1] = 1; mem[15][2] = 1; mem[15][3] = 1; mem[15][4] = 1; mem[15][5] = 1; mem[15][6] = 1; mem[15][7] = 1;
+		end
+		*/
 		always @(posedge clk)
 			begin
-				dis0x0 <= (((CounterX == 0) & 1) & (CounterY == (0))); 
-				dis1x0 <= ((CounterX == 1) & 1) & (CounterY == (0)); 
-				dis2x0 <= ((CounterX == 2) & 0) & (CounterY == (0)); 
-				dis3x0 <= ((CounterX == 3) & 0) & (CounterY == (0)); 
-				dis4x0 <= ((CounterX == 4) & 0) & (CounterY == (0)); 
-				dis5x0 <= ((CounterX == 6) & 0) & (CounterY == (0)); 
-				dis6x0 <= ((CounterX == 5) & 0) & (CounterY == (0)); 
-				dis7x0 <= (((CounterX == 7) & 1) & (CounterY == (0))); 
+				integer i, j;
+					begin
+						for (i = 0 ; i < 16;i = i+1)
+							begin
+								for(j = 0 ; j < 8; j = j+1)
+									begin
+										mem[i][j] = LTA[i][j];
+									end
+							end
+						
+					end
+			end
+		
+		always @(posedge clk)
+			begin
+				dis0x0 <= (((CounterX < 8) & mem[0][CounterX]) & (CounterY == (0))); 
+				dis1x0 <= ((CounterX < 8) & mem[1][CounterX]) & (CounterY == (1)); 
+				dis2x0 <= ((CounterX < 8) & mem[2][CounterX]) & (CounterY == (2)); 
+				dis3x0 <= ((CounterX < 8) & mem[3][CounterX]) & (CounterY == (3)); 
+				dis4x0 <= ((CounterX < 8) & mem[4][CounterX]) & (CounterY == (4)); 
+				dis5x0 <= ((CounterX < 8) & mem[5][CounterX]) & (CounterY == (5)); 
+				dis6x0 <= ((CounterX < 8) & mem[6][CounterX]) & (CounterY == (6)); 
+				dis7x0 <= (((CounterX < 8) & mem[7][CounterX]) & (CounterY == (7))); 
+				dis8x0 <= (((CounterX < 8) & mem[8][CounterX]) & (CounterY == (8))); 
+				dis9x0 <= (((CounterX < 8) & mem[9][CounterX]) & (CounterY == (9))); 
+				dis10x0 <= (((CounterX < 8) & mem[10][CounterX]) & (CounterY == (10))); 
+				dis11x0 <= (((CounterX < 8) & mem[11][CounterX]) & (CounterY == (11))); 
+				dis12x0 <= (((CounterX < 8) & mem[12][CounterX]) & (CounterY == (12))); 
+				dis13x0 <= (((CounterX < 8) & mem[13][CounterX]) & (CounterY == (13))); 
+				dis14x0 <= (((CounterX < 8) & mem[14][CounterX]) & (CounterY == (14))); 
+				dis15x0 <= (((CounterX < 8) & mem[15][CounterX]) & (CounterY == (15))); 
 	 		end	
-			always @(posedge clk)
+	/*		always @(posedge clk)
 			begin
 				dis0x1 <= ((CounterX == 0) & 1) & (CounterY == (1)); 
 				dis1x1 <= ((CounterX == 1) & 1) & (CounterY == (1)); 
@@ -441,11 +497,11 @@ module hvsync_generator(
 			end
 			
 			
-			
+			*/
 		always @(posedge clk)
 			begin
-				disall0 <=(dis0x0 | dis1x0 | dis2x0 | dis3x0 | dis4x0 | dis5x0 | dis6x0 | dis7x0 );
-				disall1 <=(dis0x1 | dis1x1 | dis2x1 | dis3x1 | dis4x1 | dis5x1 | dis6x1 | dis7x1 );
+				disall0 <=(dis0x0 | dis1x0 | dis2x0 | dis3x0 | dis4x0 | dis5x0 | dis6x0 | dis7x0 | dis8x0 | dis9x0 | dis10x0 | dis11x0 | dis12x0 | dis13x0 | dis14x0 | dis15x0);
+			/*	disall1 <=(dis0x1 | dis1x1 | dis2x1 | dis3x1 | dis4x1 | dis5x1 | dis6x1 | dis7x1 );
 				disall2 <=(dis0x2 | dis1x2 | dis2x2 | dis3x2 | dis4x2 | dis5x2 | dis6x2 | dis7x2 );
 				disall3 <=(dis0x3 | dis1x3 | dis2x3 | dis3x3 | dis4x3 | dis5x3 | dis6x3 | dis7x3 );
 				disall4 <=(dis0x4 | dis1x4 | dis2x4 | dis3x4 | dis4x4 | dis5x4 | dis6x4 | dis7x4 );
@@ -459,9 +515,9 @@ module hvsync_generator(
 				disall12 <=(dis0x12 | dis1x12 | dis2x12 | dis3x12 | dis4x12 | dis5x12 | dis6x12 | dis7x12 );
 				disall13 <=(dis0x13 | dis1x13 | dis2x13 | dis3x13 | dis4x13 | dis5x13 | dis6x13 | dis7x13 );
 				disall14 <=(dis0x14 | dis1x14 | dis2x14 | dis3x14 | dis4x14 | dis5x14 | dis6x14 | dis7x14 );
-				disall15 <=(dis0x15 | dis1x15 | dis2x15 | dis3x15 | dis4x15 | dis5x15 | dis6x15 | dis7x15 );
+				disall15 <=(dis0x15 | dis1x15 | dis2x15 | dis3x15 | dis4x15 | dis5x15 | dis6x15 | dis7x15 );*/
 				
-				inDisplayArea <= inDisplaySelect & disall0 & disall1 & disall2 & disall3 & disall4 & disall5 & disall6 & disall7 & disall8 & disall9 & disall10 & disall11 & disall12 & disall13 & disall14 & disall15;
+				inDisplayArea <= inDisplaySelect & disall0 ;/*& disall1 & disall2 & disall3 & disall4 & disall5 & disall6 & disall7 & disall8 & disall9 & disall10 & disall11 & disall12 & disall13 & disall14 & disall15;*/
 			end
 		
 	

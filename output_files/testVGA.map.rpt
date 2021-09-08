@@ -1,5 +1,5 @@
 Analysis & Synthesis report for testVGA
-Wed Sep 08 14:43:59 2021
+Wed Sep 08 20:24:43 2021
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -14,13 +14,14 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Registers Removed During Synthesis
-  9. General Register Statistics
- 10. Port Connectivity Checks: "hvsync_generator:hvsync|Debouncer:Deboun1"
- 11. Port Connectivity Checks: "hvsync_generator:hvsync|Debouncer:Deboun"
- 12. Port Connectivity Checks: "hvsync_generator:hvsync|Lookup_Alphabet:lookupTB"
- 13. Port Connectivity Checks: "hvsync_generator:hvsync"
- 14. Elapsed Time Per Partition
- 15. Analysis & Synthesis Messages
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Port Connectivity Checks: "hvsync_generator:hvsync|Lookup_Alphabet:LUT_A"
+ 12. Port Connectivity Checks: "hvsync_generator:hvsync|Debouncer:Deboun1"
+ 13. Port Connectivity Checks: "hvsync_generator:hvsync|Debouncer:Deboun"
+ 14. Port Connectivity Checks: "hvsync_generator:hvsync"
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
 
 
 
@@ -46,15 +47,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Sep 08 14:43:59 2021           ;
+; Analysis & Synthesis Status        ; Successful - Wed Sep 08 20:24:43 2021           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; testVGA                                         ;
 ; Top-level Entity Name              ; testVGA                                         ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 144                                             ;
-;     Total combinational functions  ; 141                                             ;
-;     Dedicated logic registers      ; 89                                              ;
-; Total registers                    ; 89                                              ;
+; Total logic elements               ; 41                                              ;
+;     Total combinational functions  ; 41                                              ;
+;     Dedicated logic registers      ; 23                                              ;
+; Total registers                    ; 23                                              ;
 ; Total pins                         ; 15                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
@@ -176,28 +177,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+----------+
 ; Resource                                    ; Usage    ;
 +---------------------------------------------+----------+
-; Estimated Total logic elements              ; 144      ;
+; Estimated Total logic elements              ; 41       ;
 ;                                             ;          ;
-; Total combinational functions               ; 141      ;
+; Total combinational functions               ; 41       ;
 ; Logic element usage by number of LUT inputs ;          ;
-;     -- 4 input functions                    ; 70       ;
-;     -- 3 input functions                    ; 6        ;
-;     -- <=2 input functions                  ; 65       ;
+;     -- 4 input functions                    ; 15       ;
+;     -- 3 input functions                    ; 0        ;
+;     -- <=2 input functions                  ; 26       ;
 ;                                             ;          ;
 ; Logic elements by mode                      ;          ;
-;     -- normal mode                          ; 123      ;
+;     -- normal mode                          ; 23       ;
 ;     -- arithmetic mode                      ; 18       ;
 ;                                             ;          ;
-; Total registers                             ; 89       ;
-;     -- Dedicated logic registers            ; 89       ;
+; Total registers                             ; 23       ;
+;     -- Dedicated logic registers            ; 23       ;
 ;     -- I/O registers                        ; 0        ;
 ;                                             ;          ;
 ; I/O pins                                    ; 15       ;
 ; Embedded Multiplier 9-bit elements          ; 0        ;
 ; Maximum fan-out node                        ; clk~reg0 ;
-; Maximum fan-out                             ; 90       ;
-; Total fan-out                               ; 619      ;
-; Average fan-out                             ; 2.53     ;
+; Maximum fan-out                             ; 24       ;
+; Total fan-out                               ; 168      ;
+; Average fan-out                             ; 2.13     ;
 +---------------------------------------------+----------+
 
 
@@ -206,102 +207,208 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------+--------------+
 ; Compilation Hierarchy Node   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name              ; Library Name ;
 +------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------+--------------+
-; |testVGA                     ; 141 (1)           ; 89 (4)       ; 0           ; 0            ; 0       ; 0         ; 15   ; 0            ; |testVGA                         ; work         ;
-;    |hvsync_generator:hvsync| ; 140 (140)         ; 85 (85)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testVGA|hvsync_generator:hvsync ; work         ;
+; |testVGA                     ; 41 (1)            ; 23 (1)       ; 0           ; 0            ; 0       ; 0         ; 15   ; 0            ; |testVGA                         ; work         ;
+;    |hvsync_generator:hvsync| ; 40 (40)           ; 22 (22)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testVGA|hvsync_generator:hvsync ; work         ;
 +------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+---------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                              ;
-+----------------------------------------+----------------------------------------+
-; Register name                          ; Reason for Removal                     ;
-+----------------------------------------+----------------------------------------+
-; hvsync_generator:hvsync|dis7x1         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis7x2         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis7x3         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis7x4         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis7x5         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis7x6         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis7x7         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis7x8         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis7x9         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis7x10        ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis2x0         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis7x11        ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis3x0         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis4x0         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis5x0         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis6x0         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis2x1         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis3x1         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis4x1         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis5x1         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis6x1         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis2x2         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis3x2         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis4x2         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis5x2         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis6x2         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis2x3         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis3x3         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis4x3         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis5x3         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis6x3         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis2x4         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis3x4         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis4x4         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis5x4         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis6x4         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis2x5         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis3x5         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis4x5         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis5x5         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis6x5         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis2x6         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis3x6         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis4x6         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis5x6         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis6x6         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis7x12        ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis2x7         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis3x7         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis4x7         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis5x7         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis6x7         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis2x8         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis3x8         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis4x8         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis5x8         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis6x8         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis2x9         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis3x9         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis4x9         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis5x9         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis6x9         ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis2x10        ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis3x10        ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis4x10        ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis5x10        ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis6x10        ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis2x11        ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis3x11        ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis4x11        ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis5x11        ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis6x11        ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis2x12        ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis7x13        ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis3x12        ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis4x12        ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis5x12        ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis6x12        ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis2x13        ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis3x13        ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis4x13        ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis5x13        ; Stuck at GND due to stuck port data_in ;
-; hvsync_generator:hvsync|dis6x13        ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 83 ;                                        ;
-+----------------------------------------+----------------------------------------+
++----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                               ;
++-----------------------------------------+----------------------------------------+
+; Register name                           ; Reason for Removal                     ;
++-----------------------------------------+----------------------------------------+
+; hvsync_generator:hvsync|mem[0][0]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[15][7]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[15][6]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[15][5]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[15][4]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[15][3]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[15][2]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[15][1]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[15][0]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[14][7]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[14][6]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[14][5]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[14][4]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[14][3]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[14][2]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[14][1]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[14][0]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[13][7]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[13][6]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[13][5]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[13][4]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[13][3]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[13][2]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[13][1]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[13][0]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[12][7]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[12][6]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[12][5]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[12][4]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[12][3]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[12][2]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[12][1]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[12][0]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[11][7]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[11][6]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[11][5]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[11][4]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[11][3]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[11][2]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[11][1]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[11][0]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[10][7]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[10][6]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[10][5]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[10][4]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[10][3]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[10][2]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[10][1]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[10][0]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[9][7]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[9][6]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[9][5]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[9][4]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[9][3]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[9][2]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[9][1]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[9][0]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[8][7]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[8][6]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[8][5]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[8][4]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[8][3]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[8][2]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[8][1]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[8][0]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[7][7]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[7][6]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[7][5]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[7][4]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[7][3]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[7][2]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[7][1]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[7][0]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[6][7]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[6][6]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[6][5]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[6][4]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[6][3]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[6][2]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[6][1]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[6][0]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[5][7]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[5][6]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[5][5]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[5][4]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[5][3]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[5][2]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[5][1]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[5][0]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[4][7]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[4][6]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[4][5]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[4][4]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[4][3]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[4][2]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[4][1]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[4][0]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[3][7]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[3][6]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[3][5]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[3][4]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[3][3]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[3][2]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[3][1]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[3][0]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[2][7]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[2][6]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[2][5]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[2][4]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[2][3]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[2][2]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[2][1]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[2][0]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[1][7]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[1][6]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[1][5]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[1][4]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[1][3]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[1][2]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[1][1]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[1][0]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[0][7]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[0][6]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[0][5]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[0][4]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[0][3]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[0][2]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|mem[0][1]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|dis0x0[0]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|dis1x0[0]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|dis2x0[0]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|dis3x0[0]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|dis4x0[0]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|dis5x0[0]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|dis6x0[0]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|dis7x0[0]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|dis8x0[0]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|dis9x0[0]       ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|dis10x0[0]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|dis11x0[0]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|dis12x0[0]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|dis13x0[0]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|dis14x0[0]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|dis15x0[0]      ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|disall0         ; Stuck at GND due to stuck port data_in ;
+; hvsync_generator:hvsync|inDisplayArea   ; Stuck at GND due to stuck port data_in ;
+; pixel[2]~reg0                           ; Stuck at GND due to stuck port data_in ;
+; pixel[1]~reg0                           ; Stuck at GND due to stuck port data_in ;
+; pixel[0]~reg0                           ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 149 ;                                        ;
++-----------------------------------------+----------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                         ;
++------------------------------------+---------------------------+------------------------------------------------------------------------------------+
+; Register name                      ; Reason for Removal        ; Registers Removed due to This Register                                             ;
++------------------------------------+---------------------------+------------------------------------------------------------------------------------+
+; hvsync_generator:hvsync|mem[0][0]  ; Stuck at GND              ; hvsync_generator:hvsync|dis0x0[0], hvsync_generator:hvsync|disall0,                ;
+;                                    ; due to stuck port data_in ; hvsync_generator:hvsync|inDisplayArea, pixel[2]~reg0, pixel[1]~reg0, pixel[0]~reg0 ;
+; hvsync_generator:hvsync|mem[15][7] ; Stuck at GND              ; hvsync_generator:hvsync|dis15x0[0]                                                 ;
+;                                    ; due to stuck port data_in ;                                                                                    ;
+; hvsync_generator:hvsync|mem[14][7] ; Stuck at GND              ; hvsync_generator:hvsync|dis14x0[0]                                                 ;
+;                                    ; due to stuck port data_in ;                                                                                    ;
+; hvsync_generator:hvsync|mem[13][7] ; Stuck at GND              ; hvsync_generator:hvsync|dis13x0[0]                                                 ;
+;                                    ; due to stuck port data_in ;                                                                                    ;
+; hvsync_generator:hvsync|mem[12][7] ; Stuck at GND              ; hvsync_generator:hvsync|dis12x0[0]                                                 ;
+;                                    ; due to stuck port data_in ;                                                                                    ;
+; hvsync_generator:hvsync|mem[11][7] ; Stuck at GND              ; hvsync_generator:hvsync|dis11x0[0]                                                 ;
+;                                    ; due to stuck port data_in ;                                                                                    ;
+; hvsync_generator:hvsync|mem[10][7] ; Stuck at GND              ; hvsync_generator:hvsync|dis10x0[0]                                                 ;
+;                                    ; due to stuck port data_in ;                                                                                    ;
+; hvsync_generator:hvsync|mem[9][7]  ; Stuck at GND              ; hvsync_generator:hvsync|dis9x0[0]                                                  ;
+;                                    ; due to stuck port data_in ;                                                                                    ;
+; hvsync_generator:hvsync|mem[8][7]  ; Stuck at GND              ; hvsync_generator:hvsync|dis8x0[0]                                                  ;
+;                                    ; due to stuck port data_in ;                                                                                    ;
+; hvsync_generator:hvsync|mem[7][7]  ; Stuck at GND              ; hvsync_generator:hvsync|dis7x0[0]                                                  ;
+;                                    ; due to stuck port data_in ;                                                                                    ;
+; hvsync_generator:hvsync|mem[6][7]  ; Stuck at GND              ; hvsync_generator:hvsync|dis6x0[0]                                                  ;
+;                                    ; due to stuck port data_in ;                                                                                    ;
+; hvsync_generator:hvsync|mem[5][7]  ; Stuck at GND              ; hvsync_generator:hvsync|dis5x0[0]                                                  ;
+;                                    ; due to stuck port data_in ;                                                                                    ;
+; hvsync_generator:hvsync|mem[4][7]  ; Stuck at GND              ; hvsync_generator:hvsync|dis4x0[0]                                                  ;
+;                                    ; due to stuck port data_in ;                                                                                    ;
+; hvsync_generator:hvsync|mem[3][7]  ; Stuck at GND              ; hvsync_generator:hvsync|dis3x0[0]                                                  ;
+;                                    ; due to stuck port data_in ;                                                                                    ;
+; hvsync_generator:hvsync|mem[2][7]  ; Stuck at GND              ; hvsync_generator:hvsync|dis2x0[0]                                                  ;
+;                                    ; due to stuck port data_in ;                                                                                    ;
+; hvsync_generator:hvsync|mem[1][7]  ; Stuck at GND              ; hvsync_generator:hvsync|dis1x0[0]                                                  ;
+;                                    ; due to stuck port data_in ;                                                                                    ;
++------------------------------------+---------------------------+------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -309,7 +416,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 89    ;
+; Total registers                              ; 23    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -317,6 +424,19 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Number of registers using Clock Enable       ; 10    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "hvsync_generator:hvsync|Lookup_Alphabet:LUT_A"                                                                                                                                       ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                                                                                                            ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; a       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (8 bits) it drives.  The 24 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; a[5..1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; a[7]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; a[6]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
+; a[0]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -331,50 +451,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "hvsync_generator:hvsync|Debouncer:Deboun"                                                                                                                                           ;
-+---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port    ; Type   ; Severity ; Details                                                                                                                                                                          ;
-+---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; PB      ; Input  ; Warning  ; Input port expression (3 bits) is wider than the input port (1 bits) it drives.  The 2 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; PB_down ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
-; PB_up   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
-+---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "hvsync_generator:hvsync|Lookup_Alphabet:lookupTB"                                                                                                                                     ;
-+---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port    ; Type   ; Severity ; Details                                                                                                                                                                            ;
-+---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; a       ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (8 bits) it drives.  The 24 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; a[5..4] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
-; a[3..0] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
-; a[7]    ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
-; a[6]    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
-; r0      ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (1 bits) it drives; bit(s) "r0[7..1]" have no fanouts                                                              ;
-; r0      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
-; r1      ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (1 bits) it drives; bit(s) "r1[7..1]" have no fanouts                                                              ;
-; r1      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
-; r2      ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (1 bits) it drives; bit(s) "r2[7..1]" have no fanouts                                                              ;
-; r2      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
-; r3      ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (1 bits) it drives; bit(s) "r3[7..1]" have no fanouts                                                              ;
-; r3      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
-; r4      ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (1 bits) it drives; bit(s) "r4[7..1]" have no fanouts                                                              ;
-; r4      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
-; r5      ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (1 bits) it drives; bit(s) "r5[7..1]" have no fanouts                                                              ;
-; r5      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
-; r6      ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (1 bits) it drives; bit(s) "r6[7..1]" have no fanouts                                                              ;
-; r6      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
-; r7      ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (1 bits) it drives; bit(s) "r7[7..1]" have no fanouts                                                              ;
-; r7      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
-; r8      ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (1 bits) it drives; bit(s) "r8[7..1]" have no fanouts                                                              ;
-; r8      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
-; r9      ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (1 bits) it drives; bit(s) "r9[7..1]" have no fanouts                                                              ;
-; r9      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
-; r10     ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (1 bits) it drives; bit(s) "r10[7..1]" have no fanouts                                                             ;
-; r10     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
-+---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "hvsync_generator:hvsync|Debouncer:Deboun"                                                                                                                                            ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                                                          ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; PB       ; Input  ; Warning  ; Input port expression (3 bits) is wider than the input port (1 bits) it drives.  The 2 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; PB_state ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
+; PB_down  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
+; PB_up    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -406,7 +492,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed Sep 08 14:43:57 2021
+    Info: Processing started: Wed Sep 08 20:24:42 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off testVGA -c testVGA
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Warning (10275): Verilog HDL Module Instantiation warning at testVGA.v(62): ignored dangling comma in List of Port Connections
@@ -423,7 +509,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file lookup_
 Info (12021): Found 1 design units, including 1 entities, in source file frame_buffer.v
     Info (12023): Found entity 1: Frame_Buffer
 Info (12021): Found 1 design units, including 1 entities, in source file lookup_alphabet_array.v
-    Info (12023): Found entity 1: Lookup_Alphabet_array0
+    Info (12023): Found entity 1: Lookup_Alphabet_array
 Info (12127): Elaborating entity "testVGA" for the top level hierarchy
 Warning (10036): Verilog HDL or VHDL warning at testVGA.v(29): object "red" assigned a value but never read
 Warning (10036): Verilog HDL or VHDL warning at testVGA.v(30): object "green" assigned a value but never read
@@ -438,142 +524,36 @@ Warning (10036): Verilog HDL or VHDL warning at testVGA.v(68): object "R" assign
 Warning (10036): Verilog HDL or VHDL warning at testVGA.v(68): object "G" assigned a value but never read
 Warning (10036): Verilog HDL or VHDL warning at testVGA.v(68): object "B" assigned a value but never read
 Info (12128): Elaborating entity "hvsync_generator" for hierarchy "hvsync_generator:hvsync"
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(42): truncated value with size 32 to match size of target (10)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(51): truncated value with size 32 to match size of target (10)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(63): truncated value with size 32 to match size of target (5)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(72): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(265): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(266): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(267): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(268): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(269): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(270): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(271): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(272): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(276): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(277): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(278): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(279): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(280): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(281): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(282): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(283): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(288): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(289): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(290): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(291): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(292): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(293): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(294): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(295): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(300): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(301): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(302): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(303): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(304): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(305): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(306): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(307): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(311): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(312): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(313): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(314): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(315): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(316): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(317): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(318): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(322): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(323): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(324): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(325): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(326): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(327): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(328): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(329): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(333): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(334): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(335): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(336): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(337): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(338): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(339): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(340): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(344): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(345): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(346): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(347): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(348): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(349): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(350): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(351): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(355): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(356): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(357): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(358): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(359): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(360): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(361): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(362): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(366): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(367): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(368): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(369): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(370): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(371): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(372): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(373): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(377): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(378): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(379): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(380): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(381): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(382): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(383): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(384): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(388): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(389): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(390): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(391): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(392): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(393): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(394): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(395): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(400): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(401): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(402): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(403): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(404): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(405): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(406): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(407): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(411): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(412): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(413): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(414): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(415): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(416): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(417): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(418): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(422): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(423): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(424): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(425): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(426): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(427): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(428): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(429): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(433): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(434): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(435): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(436): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(437): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(438): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(439): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(440): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(41): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(50): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(62): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(71): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(503): truncated value with size 8 to match size of target (1)
 Warning (10034): Output port "countPos" at hvsync_generator.v(12) has no driver
-Info (12128): Elaborating entity "Lookup_Alphabet" for hierarchy "hvsync_generator:hvsync|Lookup_Alphabet:lookupTB"
 Info (12128): Elaborating entity "Debouncer" for hierarchy "hvsync_generator:hvsync|Debouncer:Deboun"
+Info (12128): Elaborating entity "Lookup_Alphabet" for hierarchy "hvsync_generator:hvsync|Lookup_Alphabet:LUT_A"
+Warning (10034): Output port "r0" at Lookup_Alphabet.v(3) has no driver
+Warning (10034): Output port "r1" at Lookup_Alphabet.v(4) has no driver
+Warning (10034): Output port "r2" at Lookup_Alphabet.v(5) has no driver
+Warning (10034): Output port "r3" at Lookup_Alphabet.v(6) has no driver
+Warning (10034): Output port "r4" at Lookup_Alphabet.v(7) has no driver
+Warning (10034): Output port "r5" at Lookup_Alphabet.v(8) has no driver
+Warning (10034): Output port "r6" at Lookup_Alphabet.v(9) has no driver
+Warning (10034): Output port "r7" at Lookup_Alphabet.v(10) has no driver
+Warning (10034): Output port "r8" at Lookup_Alphabet.v(11) has no driver
+Warning (10034): Output port "r9" at Lookup_Alphabet.v(12) has no driver
+Warning (10034): Output port "r10" at Lookup_Alphabet.v(13) has no driver
+Warning (10034): Output port "r11" at Lookup_Alphabet.v(14) has no driver
+Warning (10034): Output port "r12" at Lookup_Alphabet.v(15) has no driver
+Warning (10034): Output port "r13" at Lookup_Alphabet.v(16) has no driver
+Warning (10034): Output port "r14" at Lookup_Alphabet.v(17) has no driver
+Warning (10034): Output port "r15" at Lookup_Alphabet.v(18) has no driver
+Warning (12158): Entity "Lookup_Alphabet" contains only dangling pins
 Warning (12241): 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "pixel[0]" is stuck at GND
+    Warning (13410): Pin "pixel[1]" is stuck at GND
+    Warning (13410): Pin "pixel[2]" is stuck at GND
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 8 input pin(s) that do not drive logic
@@ -585,14 +565,14 @@ Warning (21074): Design contains 8 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "sw_p3"
     Warning (15610): No output dependent on input pin "sw_cc"
     Warning (15610): No output dependent on input pin "sw_cp"
-Info (21057): Implemented 159 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 56 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 9 input pins
     Info (21059): Implemented 6 output pins
-    Info (21061): Implemented 144 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 157 warnings
-    Info: Peak virtual memory: 4593 megabytes
-    Info: Processing ended: Wed Sep 08 14:43:59 2021
-    Info: Elapsed time: 00:00:02
+    Info (21061): Implemented 41 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 51 warnings
+    Info: Peak virtual memory: 4590 megabytes
+    Info: Processing ended: Wed Sep 08 20:24:43 2021
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 

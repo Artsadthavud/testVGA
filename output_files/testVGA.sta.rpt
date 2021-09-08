@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for testVGA
-Wed Sep 08 14:44:05 2021
+Wed Sep 08 20:24:50 2021
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -107,7 +107,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +------------+-----------------+------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
 +------------+-----------------+------------+------+
-; 236.07 MHz ; 236.07 MHz      ; clk~reg0   ;      ;
+; 283.85 MHz ; 283.85 MHz      ; clk~reg0   ;      ;
 +------------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -117,7 +117,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------+--------+---------------+
 ; Clock    ; Slack  ; End Point TNS ;
 +----------+--------+---------------+
-; clk~reg0 ; -3.236 ; -215.201      ;
+; clk~reg0 ; -2.523 ; -44.927       ;
 ; clk_50   ; 2.327  ; 0.000         ;
 +----------+--------+---------------+
 
@@ -128,7 +128,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; Clock    ; Slack  ; End Point TNS ;
 +----------+--------+---------------+
 ; clk_50   ; -2.093 ; -2.093        ;
-; clk~reg0 ; 0.741  ; 0.000         ;
+; clk~reg0 ; 1.176  ; 0.000         ;
 +----------+--------+---------------+
 
 
@@ -150,7 +150,7 @@ No paths to report.
 ; Clock    ; Slack  ; End Point TNS      ;
 +----------+--------+--------------------+
 ; clk_50   ; -1.941 ; -3.425             ;
-; clk~reg0 ; -0.742 ; -130.592           ;
+; clk~reg0 ; -0.742 ; -32.648            ;
 +----------+--------+--------------------+
 
 
@@ -159,106 +159,106 @@ No paths to report.
 +--------+-------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node                           ; To Node                             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+-------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
-; -3.236 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|dis0x11     ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.019      ; 4.295      ;
-; -3.232 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|dis0x10     ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.019      ; 4.291      ;
-; -3.231 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|dis0x6      ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.019      ; 4.290      ;
-; -3.229 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|dis0x2      ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.019      ; 4.288      ;
-; -3.192 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|dis0x11     ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.019      ; 4.251      ;
-; -3.188 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|dis0x10     ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.019      ; 4.247      ;
-; -3.187 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|dis0x6      ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.019      ; 4.246      ;
-; -3.185 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|dis0x2      ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.019      ; 4.244      ;
-; -3.184 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterY[3] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.019      ; 4.243      ;
-; -3.184 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterY[1] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.019      ; 4.243      ;
-; -3.182 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|dis0x9      ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.014      ; 4.236      ;
-; -3.182 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|dis0x8      ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.014      ; 4.236      ;
-; -3.179 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|dis0x13     ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.014      ; 4.233      ;
-; -3.172 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|CounterY[3] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.019      ; 4.231      ;
-; -3.172 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|CounterY[1] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.019      ; 4.231      ;
-; -3.147 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterY[0] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 4.207      ;
-; -3.147 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterY[2] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 4.207      ;
-; -3.147 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterY[4] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 4.207      ;
-; -3.147 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterY[5] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 4.207      ;
-; -3.147 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterY[6] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 4.207      ;
-; -3.147 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterY[7] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 4.207      ;
-; -3.147 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterY[8] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 4.207      ;
-; -3.147 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterY[9] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 4.207      ;
-; -3.138 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|dis0x9      ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.014      ; 4.192      ;
-; -3.138 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|dis0x8      ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.014      ; 4.192      ;
-; -3.135 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|dis0x13     ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.014      ; 4.189      ;
-; -3.135 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|CounterY[0] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 4.195      ;
-; -3.135 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|CounterY[2] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 4.195      ;
-; -3.135 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|CounterY[4] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 4.195      ;
-; -3.135 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|CounterY[5] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 4.195      ;
-; -3.135 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|CounterY[6] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 4.195      ;
-; -3.135 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|CounterY[7] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 4.195      ;
-; -3.135 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|CounterY[8] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 4.195      ;
-; -3.135 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|CounterY[9] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 4.195      ;
-; -3.128 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|CounterY[3] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.019      ; 4.187      ;
-; -3.128 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|CounterY[1] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.019      ; 4.187      ;
-; -3.116 ; hvsync_generator:hvsync|CounterX[9] ; hvsync_generator:hvsync|CounterY[3] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 4.176      ;
-; -3.116 ; hvsync_generator:hvsync|CounterX[9] ; hvsync_generator:hvsync|CounterY[1] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 4.176      ;
-; -3.111 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|dis1x3      ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.018      ; 4.169      ;
-; -3.111 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|dis1x10     ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.018      ; 4.169      ;
-; -3.110 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|dis1x5      ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.018      ; 4.168      ;
-; -3.107 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|dis1x2      ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.018      ; 4.165      ;
-; -3.106 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|dis1x12     ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.018      ; 4.164      ;
-; -3.104 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|dis1x7      ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.018      ; 4.162      ;
-; -3.102 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|dis1x4      ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.018      ; 4.160      ;
-; -3.100 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|dis1x0      ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.018      ; 4.158      ;
-; -3.093 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|dis0x4      ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.018      ; 4.151      ;
-; -3.093 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|dis0x7      ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.018      ; 4.151      ;
-; -3.091 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|dis0x3      ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.018      ; 4.149      ;
-; -3.091 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|CounterY[0] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 4.151      ;
-; -3.091 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|CounterY[2] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 4.151      ;
-; -3.091 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|CounterY[4] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 4.151      ;
-; -3.091 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|CounterY[5] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 4.151      ;
-; -3.091 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|CounterY[6] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 4.151      ;
-; -3.091 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|CounterY[7] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 4.151      ;
-; -3.091 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|CounterY[8] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 4.151      ;
-; -3.091 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|CounterY[9] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 4.151      ;
-; -3.090 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|dis0x12     ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.018      ; 4.148      ;
-; -3.089 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|dis0x1      ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.018      ; 4.147      ;
-; -3.088 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|dis0x5      ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.018      ; 4.146      ;
-; -3.086 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterY[3] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.019      ; 4.145      ;
-; -3.086 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterY[1] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.019      ; 4.145      ;
-; -3.079 ; hvsync_generator:hvsync|CounterX[9] ; hvsync_generator:hvsync|CounterY[0] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 4.140      ;
-; -3.079 ; hvsync_generator:hvsync|CounterX[9] ; hvsync_generator:hvsync|CounterY[2] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 4.140      ;
-; -3.079 ; hvsync_generator:hvsync|CounterX[9] ; hvsync_generator:hvsync|CounterY[4] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 4.140      ;
-; -3.079 ; hvsync_generator:hvsync|CounterX[9] ; hvsync_generator:hvsync|CounterY[5] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 4.140      ;
-; -3.079 ; hvsync_generator:hvsync|CounterX[9] ; hvsync_generator:hvsync|CounterY[6] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 4.140      ;
-; -3.079 ; hvsync_generator:hvsync|CounterX[9] ; hvsync_generator:hvsync|CounterY[7] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 4.140      ;
-; -3.079 ; hvsync_generator:hvsync|CounterX[9] ; hvsync_generator:hvsync|CounterY[8] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 4.140      ;
-; -3.079 ; hvsync_generator:hvsync|CounterX[9] ; hvsync_generator:hvsync|CounterY[9] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 4.140      ;
-; -3.075 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|dis1x14     ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 4.113      ;
-; -3.067 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|dis1x3      ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.018      ; 4.125      ;
-; -3.067 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|dis1x10     ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.018      ; 4.125      ;
-; -3.066 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|dis1x5      ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.018      ; 4.124      ;
-; -3.063 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|dis1x2      ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.018      ; 4.121      ;
-; -3.062 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|dis1x12     ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.018      ; 4.120      ;
-; -3.060 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|dis1x7      ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.018      ; 4.118      ;
-; -3.058 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|dis1x4      ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.018      ; 4.116      ;
-; -3.056 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|dis1x0      ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.018      ; 4.114      ;
-; -3.049 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterY[0] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 4.109      ;
-; -3.049 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterY[2] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 4.109      ;
-; -3.049 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterY[4] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 4.109      ;
-; -3.049 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterY[5] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 4.109      ;
-; -3.049 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterY[6] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 4.109      ;
-; -3.049 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterY[7] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 4.109      ;
-; -3.049 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterY[8] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 4.109      ;
-; -3.049 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterY[9] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 4.109      ;
-; -3.049 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|dis0x4      ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.018      ; 4.107      ;
-; -3.049 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|dis0x7      ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.018      ; 4.107      ;
-; -3.047 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|dis0x3      ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.018      ; 4.105      ;
-; -3.046 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|dis0x12     ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.018      ; 4.104      ;
-; -3.045 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|dis0x1      ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.018      ; 4.103      ;
-; -3.044 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|dis0x5      ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.018      ; 4.102      ;
-; -3.043 ; hvsync_generator:hvsync|CounterY[3] ; hvsync_generator:hvsync|dis6x14     ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.021     ; 4.062      ;
-; -3.043 ; hvsync_generator:hvsync|CounterY[7] ; hvsync_generator:hvsync|dis0x8      ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.006     ; 4.077      ;
-; -3.043 ; hvsync_generator:hvsync|CounterY[3] ; hvsync_generator:hvsync|dis1x14     ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.021     ; 4.062      ;
-; -3.038 ; hvsync_generator:hvsync|CounterY[3] ; hvsync_generator:hvsync|dis2x14     ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.021     ; 4.057      ;
-; -3.037 ; hvsync_generator:hvsync|CounterY[3] ; hvsync_generator:hvsync|dis0x14     ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.021     ; 4.056      ;
-; -3.036 ; hvsync_generator:hvsync|CounterY[1] ; hvsync_generator:hvsync|dis6x14     ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.021     ; 4.055      ;
-; -3.036 ; hvsync_generator:hvsync|CounterY[1] ; hvsync_generator:hvsync|dis1x14     ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.021     ; 4.055      ;
+; -2.523 ; hvsync_generator:hvsync|CounterX[3] ; hvsync_generator:hvsync|CounterY[0] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.562      ;
+; -2.523 ; hvsync_generator:hvsync|CounterX[3] ; hvsync_generator:hvsync|CounterY[2] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.562      ;
+; -2.523 ; hvsync_generator:hvsync|CounterX[3] ; hvsync_generator:hvsync|CounterY[3] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.562      ;
+; -2.523 ; hvsync_generator:hvsync|CounterX[3] ; hvsync_generator:hvsync|CounterY[4] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.562      ;
+; -2.523 ; hvsync_generator:hvsync|CounterX[3] ; hvsync_generator:hvsync|CounterY[5] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.562      ;
+; -2.523 ; hvsync_generator:hvsync|CounterX[3] ; hvsync_generator:hvsync|CounterY[6] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.562      ;
+; -2.523 ; hvsync_generator:hvsync|CounterX[3] ; hvsync_generator:hvsync|CounterY[7] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.562      ;
+; -2.523 ; hvsync_generator:hvsync|CounterX[3] ; hvsync_generator:hvsync|CounterY[8] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.562      ;
+; -2.523 ; hvsync_generator:hvsync|CounterX[3] ; hvsync_generator:hvsync|CounterY[9] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.562      ;
+; -2.523 ; hvsync_generator:hvsync|CounterX[3] ; hvsync_generator:hvsync|CounterY[1] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.562      ;
+; -2.496 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterY[0] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.535      ;
+; -2.496 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterY[2] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.535      ;
+; -2.496 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterY[3] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.535      ;
+; -2.496 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterY[4] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.535      ;
+; -2.496 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterY[5] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.535      ;
+; -2.496 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterY[6] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.535      ;
+; -2.496 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterY[7] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.535      ;
+; -2.496 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterY[8] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.535      ;
+; -2.496 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterY[9] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.535      ;
+; -2.496 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterY[1] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.535      ;
+; -2.454 ; hvsync_generator:hvsync|CounterY[0] ; hvsync_generator:hvsync|CounterY[9] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 3.494      ;
+; -2.398 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterX[8] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 3.438      ;
+; -2.372 ; hvsync_generator:hvsync|CounterY[1] ; hvsync_generator:hvsync|CounterY[9] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 3.412      ;
+; -2.368 ; hvsync_generator:hvsync|CounterX[9] ; hvsync_generator:hvsync|CounterY[0] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.407      ;
+; -2.368 ; hvsync_generator:hvsync|CounterX[9] ; hvsync_generator:hvsync|CounterY[2] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.407      ;
+; -2.368 ; hvsync_generator:hvsync|CounterX[9] ; hvsync_generator:hvsync|CounterY[3] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.407      ;
+; -2.368 ; hvsync_generator:hvsync|CounterX[9] ; hvsync_generator:hvsync|CounterY[4] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.407      ;
+; -2.368 ; hvsync_generator:hvsync|CounterX[9] ; hvsync_generator:hvsync|CounterY[5] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.407      ;
+; -2.368 ; hvsync_generator:hvsync|CounterX[9] ; hvsync_generator:hvsync|CounterY[6] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.407      ;
+; -2.368 ; hvsync_generator:hvsync|CounterX[9] ; hvsync_generator:hvsync|CounterY[7] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.407      ;
+; -2.368 ; hvsync_generator:hvsync|CounterX[9] ; hvsync_generator:hvsync|CounterY[8] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.407      ;
+; -2.368 ; hvsync_generator:hvsync|CounterX[9] ; hvsync_generator:hvsync|CounterY[9] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.407      ;
+; -2.368 ; hvsync_generator:hvsync|CounterX[9] ; hvsync_generator:hvsync|CounterY[1] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.407      ;
+; -2.353 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterX[8] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 3.393      ;
+; -2.342 ; hvsync_generator:hvsync|CounterX[3] ; hvsync_generator:hvsync|vga_HS      ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 3.380      ;
+; -2.333 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterY[0] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.372      ;
+; -2.333 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterY[2] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.372      ;
+; -2.333 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterY[3] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.372      ;
+; -2.333 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterY[4] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.372      ;
+; -2.333 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterY[5] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.372      ;
+; -2.333 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterY[6] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.372      ;
+; -2.333 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterY[7] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.372      ;
+; -2.333 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterY[8] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.372      ;
+; -2.333 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterY[9] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.372      ;
+; -2.333 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterY[1] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.372      ;
+; -2.324 ; hvsync_generator:hvsync|CounterY[7] ; hvsync_generator:hvsync|CounterY[3] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 3.364      ;
+; -2.323 ; hvsync_generator:hvsync|CounterX[8] ; hvsync_generator:hvsync|CounterY[0] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.362      ;
+; -2.323 ; hvsync_generator:hvsync|CounterX[8] ; hvsync_generator:hvsync|CounterY[2] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.362      ;
+; -2.323 ; hvsync_generator:hvsync|CounterX[8] ; hvsync_generator:hvsync|CounterY[3] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.362      ;
+; -2.323 ; hvsync_generator:hvsync|CounterX[8] ; hvsync_generator:hvsync|CounterY[4] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.362      ;
+; -2.323 ; hvsync_generator:hvsync|CounterX[8] ; hvsync_generator:hvsync|CounterY[5] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.362      ;
+; -2.323 ; hvsync_generator:hvsync|CounterX[8] ; hvsync_generator:hvsync|CounterY[6] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.362      ;
+; -2.323 ; hvsync_generator:hvsync|CounterX[8] ; hvsync_generator:hvsync|CounterY[7] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.362      ;
+; -2.323 ; hvsync_generator:hvsync|CounterX[8] ; hvsync_generator:hvsync|CounterY[8] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.362      ;
+; -2.323 ; hvsync_generator:hvsync|CounterX[8] ; hvsync_generator:hvsync|CounterY[9] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.362      ;
+; -2.323 ; hvsync_generator:hvsync|CounterX[8] ; hvsync_generator:hvsync|CounterY[1] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.362      ;
+; -2.322 ; hvsync_generator:hvsync|CounterY[7] ; hvsync_generator:hvsync|CounterY[2] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 3.362      ;
+; -2.322 ; hvsync_generator:hvsync|CounterY[7] ; hvsync_generator:hvsync|CounterY[9] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 3.362      ;
+; -2.321 ; hvsync_generator:hvsync|CounterY[7] ; hvsync_generator:hvsync|CounterY[1] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 3.361      ;
+; -2.315 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|vga_HS      ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 3.353      ;
+; -2.306 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterX[9] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 3.346      ;
+; -2.286 ; hvsync_generator:hvsync|CounterY[2] ; hvsync_generator:hvsync|CounterY[9] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 3.326      ;
+; -2.261 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterX[9] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 3.301      ;
+; -2.226 ; hvsync_generator:hvsync|CounterY[6] ; hvsync_generator:hvsync|CounterY[3] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 3.266      ;
+; -2.224 ; hvsync_generator:hvsync|CounterY[6] ; hvsync_generator:hvsync|CounterY[2] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 3.264      ;
+; -2.224 ; hvsync_generator:hvsync|CounterY[6] ; hvsync_generator:hvsync|CounterY[9] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 3.264      ;
+; -2.223 ; hvsync_generator:hvsync|CounterY[6] ; hvsync_generator:hvsync|CounterY[1] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 3.263      ;
+; -2.221 ; hvsync_generator:hvsync|CounterY[0] ; hvsync_generator:hvsync|CounterY[3] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 3.261      ;
+; -2.219 ; hvsync_generator:hvsync|CounterY[0] ; hvsync_generator:hvsync|CounterY[2] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 3.259      ;
+; -2.218 ; hvsync_generator:hvsync|CounterY[0] ; hvsync_generator:hvsync|CounterY[1] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 3.258      ;
+; -2.213 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterX[8] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 3.253      ;
+; -2.208 ; hvsync_generator:hvsync|CounterY[3] ; hvsync_generator:hvsync|CounterY[9] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 3.248      ;
+; -2.183 ; hvsync_generator:hvsync|CounterY[3] ; hvsync_generator:hvsync|CounterY[3] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 3.223      ;
+; -2.181 ; hvsync_generator:hvsync|CounterX[3] ; hvsync_generator:hvsync|CounterX[8] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 3.221      ;
+; -2.181 ; hvsync_generator:hvsync|CounterY[3] ; hvsync_generator:hvsync|CounterY[2] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 3.221      ;
+; -2.180 ; hvsync_generator:hvsync|CounterY[3] ; hvsync_generator:hvsync|CounterY[1] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 3.220      ;
+; -2.160 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterY[0] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.199      ;
+; -2.160 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterY[2] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.199      ;
+; -2.160 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterY[3] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.199      ;
+; -2.160 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterY[4] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.199      ;
+; -2.160 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterY[5] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.199      ;
+; -2.160 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterY[6] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.199      ;
+; -2.160 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterY[7] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.199      ;
+; -2.160 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterY[8] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.199      ;
+; -2.160 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterY[9] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.199      ;
+; -2.160 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterY[1] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.199      ;
+; -2.160 ; hvsync_generator:hvsync|CounterY[4] ; hvsync_generator:hvsync|CounterY[9] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 3.200      ;
+; -2.152 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|vga_HS      ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 3.190      ;
+; -2.151 ; hvsync_generator:hvsync|CounterY[5] ; hvsync_generator:hvsync|CounterY[3] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 3.191      ;
+; -2.149 ; hvsync_generator:hvsync|CounterY[5] ; hvsync_generator:hvsync|CounterY[2] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 3.189      ;
+; -2.149 ; hvsync_generator:hvsync|CounterY[5] ; hvsync_generator:hvsync|CounterY[9] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 3.189      ;
+; -2.148 ; hvsync_generator:hvsync|CounterY[5] ; hvsync_generator:hvsync|CounterY[1] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 3.188      ;
+; -2.121 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterX[9] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 3.161      ;
+; -2.100 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|CounterX[8] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 3.140      ;
+; -2.089 ; hvsync_generator:hvsync|CounterX[3] ; hvsync_generator:hvsync|CounterX[9] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 3.129      ;
+; -2.088 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|CounterY[0] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.127      ;
+; -2.088 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|CounterY[2] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.127      ;
+; -2.088 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|CounterY[3] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.127      ;
+; -2.088 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|CounterY[4] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.127      ;
+; -2.088 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|CounterY[5] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.001     ; 3.127      ;
 +--------+-------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -282,112 +282,112 @@ No paths to report.
 +--------+-----------+----------+--------------+-------------+--------------+------------+------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Slow Model Hold: 'clk~reg0'                                                                                                                               ;
-+-------+-------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node                           ; To Node                               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+-------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
-; 0.741 ; hvsync_generator:hvsync|dis0x8      ; hvsync_generator:hvsync|disall8       ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 1.047      ;
-; 0.743 ; hvsync_generator:hvsync|dis0x13     ; hvsync_generator:hvsync|disall13      ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 1.049      ;
-; 0.743 ; hvsync_generator:hvsync|dis0x9      ; hvsync_generator:hvsync|disall9       ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 1.049      ;
-; 0.770 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|vga_HS        ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 1.076      ;
-; 0.892 ; hvsync_generator:hvsync|dis1x13     ; hvsync_generator:hvsync|disall13      ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 1.198      ;
-; 1.011 ; hvsync_generator:hvsync|CounterY[1] ; hvsync_generator:hvsync|dis0x6        ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 1.317      ;
-; 1.166 ; hvsync_generator:hvsync|dis1x8      ; hvsync_generator:hvsync|disall8       ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 1.472      ;
-; 1.174 ; hvsync_generator:hvsync|dis7x0      ; hvsync_generator:hvsync|disall0       ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.001     ; 1.479      ;
-; 1.176 ; hvsync_generator:hvsync|CounterY[6] ; hvsync_generator:hvsync|CounterY[6]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 1.482      ;
-; 1.180 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterX[2]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 1.486      ;
-; 1.188 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|CounterX[7]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 1.494      ;
-; 1.194 ; hvsync_generator:hvsync|CounterY[0] ; hvsync_generator:hvsync|CounterY[0]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 1.500      ;
-; 1.194 ; hvsync_generator:hvsync|CounterY[8] ; hvsync_generator:hvsync|CounterY[8]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 1.500      ;
-; 1.218 ; hvsync_generator:hvsync|dis1x9      ; hvsync_generator:hvsync|disall9       ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 1.524      ;
-; 1.223 ; hvsync_generator:hvsync|CounterX[6] ; hvsync_generator:hvsync|CounterX[6]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 1.529      ;
-; 1.232 ; hvsync_generator:hvsync|CounterY[7] ; hvsync_generator:hvsync|CounterY[7]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 1.538      ;
-; 1.233 ; hvsync_generator:hvsync|CounterX[9] ; hvsync_generator:hvsync|vga_HS        ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.001      ; 1.540      ;
-; 1.244 ; hvsync_generator:hvsync|CounterY[5] ; hvsync_generator:hvsync|CounterY[5]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 1.550      ;
-; 1.247 ; hvsync_generator:hvsync|CounterY[4] ; hvsync_generator:hvsync|CounterY[4]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 1.553      ;
-; 1.249 ; hvsync_generator:hvsync|CounterX[3] ; hvsync_generator:hvsync|CounterX[3]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 1.555      ;
-; 1.249 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|CounterX[4]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 1.555      ;
-; 1.260 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterX[1]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 1.566      ;
-; 1.344 ; hvsync_generator:hvsync|dis1x12     ; hvsync_generator:hvsync|disall12      ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.002     ; 1.648      ;
-; 1.386 ; hvsync_generator:hvsync|dis0x11     ; hvsync_generator:hvsync|disall11      ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.007     ; 1.685      ;
-; 1.421 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|dis6x14       ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.002     ; 1.725      ;
-; 1.424 ; hvsync_generator:hvsync|disall15    ; hvsync_generator:hvsync|inDisplayArea ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.001     ; 1.729      ;
-; 1.426 ; hvsync_generator:hvsync|CounterY[2] ; hvsync_generator:hvsync|dis0x10       ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.001     ; 1.731      ;
-; 1.452 ; hvsync_generator:hvsync|dis1x7      ; hvsync_generator:hvsync|disall7       ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.005     ; 1.753      ;
-; 1.453 ; hvsync_generator:hvsync|dis1x4      ; hvsync_generator:hvsync|disall4       ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.007     ; 1.752      ;
-; 1.458 ; hvsync_generator:hvsync|dis1x3      ; hvsync_generator:hvsync|disall3       ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.007     ; 1.757      ;
-; 1.462 ; hvsync_generator:hvsync|dis0x10     ; hvsync_generator:hvsync|disall10      ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.005     ; 1.763      ;
-; 1.465 ; hvsync_generator:hvsync|dis1x0      ; hvsync_generator:hvsync|disall0       ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.007     ; 1.764      ;
-; 1.479 ; hvsync_generator:hvsync|dis0x12     ; hvsync_generator:hvsync|disall12      ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.002     ; 1.783      ;
-; 1.520 ; hvsync_generator:hvsync|CounterY[9] ; hvsync_generator:hvsync|CounterY[9]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 1.826      ;
-; 1.526 ; hvsync_generator:hvsync|dis0x0      ; hvsync_generator:hvsync|disall0       ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.001     ; 1.831      ;
-; 1.556 ; hvsync_generator:hvsync|dis1x6      ; hvsync_generator:hvsync|disall6       ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.013      ; 1.875      ;
-; 1.583 ; hvsync_generator:hvsync|dis1x11     ; hvsync_generator:hvsync|disall11      ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.007     ; 1.882      ;
-; 1.583 ; hvsync_generator:hvsync|dis0x7      ; hvsync_generator:hvsync|disall7       ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.005     ; 1.884      ;
-; 1.600 ; hvsync_generator:hvsync|dis1x5      ; hvsync_generator:hvsync|disall5       ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.006     ; 1.900      ;
-; 1.629 ; hvsync_generator:hvsync|dis0x15     ; hvsync_generator:hvsync|disall15      ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.001     ; 1.934      ;
-; 1.638 ; hvsync_generator:hvsync|CounterY[3] ; hvsync_generator:hvsync|dis1x4        ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.001     ; 1.943      ;
-; 1.639 ; hvsync_generator:hvsync|CounterY[3] ; hvsync_generator:hvsync|dis1x12       ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.001     ; 1.944      ;
-; 1.659 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterX[3]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 1.965      ;
-; 1.665 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterX[1]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 1.971      ;
-; 1.703 ; hvsync_generator:hvsync|CounterX[6] ; hvsync_generator:hvsync|CounterX[7]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.009      ;
-; 1.712 ; hvsync_generator:hvsync|CounterY[7] ; hvsync_generator:hvsync|CounterY[8]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.018      ;
-; 1.724 ; hvsync_generator:hvsync|CounterY[5] ; hvsync_generator:hvsync|CounterY[6]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.030      ;
-; 1.726 ; hvsync_generator:hvsync|CounterY[1] ; hvsync_generator:hvsync|dis1x1        ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.032      ;
-; 1.727 ; hvsync_generator:hvsync|CounterY[4] ; hvsync_generator:hvsync|CounterY[5]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.033      ;
-; 1.729 ; hvsync_generator:hvsync|CounterX[3] ; hvsync_generator:hvsync|CounterX[4]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.035      ;
-; 1.731 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|vga_HS        ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.037      ;
-; 1.731 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|dis6x14       ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.002     ; 2.035      ;
-; 1.740 ; hvsync_generator:hvsync|CounterY[4] ; hvsync_generator:hvsync|vga_VS        ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.004     ; 2.042      ;
-; 1.740 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterX[2]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.046      ;
-; 1.741 ; hvsync_generator:hvsync|dis7x14     ; hvsync_generator:hvsync|disall14      ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.047      ;
-; 1.744 ; hvsync_generator:hvsync|CounterY[2] ; hvsync_generator:hvsync|CounterY[4]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.050      ;
-; 1.745 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterX[4]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.051      ;
-; 1.746 ; hvsync_generator:hvsync|CounterX[8] ; hvsync_generator:hvsync|vga_HS        ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.001      ; 2.053      ;
-; 1.746 ; hvsync_generator:hvsync|dis3x15     ; hvsync_generator:hvsync|disall15      ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.001     ; 2.051      ;
-; 1.751 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterX[2]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.057      ;
-; 1.759 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|dis3x14       ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.001     ; 2.064      ;
-; 1.760 ; hvsync_generator:hvsync|CounterY[3] ; hvsync_generator:hvsync|dis0x4        ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.001     ; 2.065      ;
-; 1.762 ; hvsync_generator:hvsync|dis0x1      ; hvsync_generator:hvsync|disall1       ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.007     ; 2.061      ;
-; 1.765 ; hvsync_generator:hvsync|CounterY[6] ; hvsync_generator:hvsync|CounterY[7]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.071      ;
-; 1.784 ; hvsync_generator:hvsync|dis5x14     ; hvsync_generator:hvsync|disall14      ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.090      ;
-; 1.785 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|dis6x15       ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.013      ; 2.104      ;
-; 1.790 ; hvsync_generator:hvsync|CounterY[9] ; hvsync_generator:hvsync|vga_VS        ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.004     ; 2.092      ;
-; 1.800 ; hvsync_generator:hvsync|dis0x6      ; hvsync_generator:hvsync|disall6       ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.008     ; 2.098      ;
-; 1.803 ; hvsync_generator:hvsync|disall2     ; hvsync_generator:hvsync|inDisplayArea ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.109      ;
-; 1.813 ; hvsync_generator:hvsync|CounterY[4] ; hvsync_generator:hvsync|CounterY[6]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.119      ;
-; 1.826 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterX[3]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.132      ;
-; 1.830 ; hvsync_generator:hvsync|CounterY[2] ; hvsync_generator:hvsync|CounterY[5]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.136      ;
-; 1.837 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterX[3]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.143      ;
-; 1.842 ; hvsync_generator:hvsync|CounterY[1] ; hvsync_generator:hvsync|dis0x2        ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.148      ;
-; 1.843 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|dis3x14       ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.001     ; 2.148      ;
-; 1.848 ; hvsync_generator:hvsync|CounterY[3] ; hvsync_generator:hvsync|dis0x12       ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.001     ; 2.153      ;
-; 1.849 ; hvsync_generator:hvsync|CounterX[8] ; hvsync_generator:hvsync|dis3x14       ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.155      ;
-; 1.850 ; hvsync_generator:hvsync|CounterX[5] ; hvsync_generator:hvsync|CounterX[5]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.156      ;
-; 1.851 ; hvsync_generator:hvsync|CounterY[6] ; hvsync_generator:hvsync|CounterY[8]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.157      ;
-; 1.861 ; hvsync_generator:hvsync|CounterY[2] ; hvsync_generator:hvsync|dis1x9        ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.006     ; 2.161      ;
-; 1.862 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|dis3x15       ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.013      ; 2.181      ;
-; 1.865 ; hvsync_generator:hvsync|CounterY[2] ; hvsync_generator:hvsync|dis1x8        ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.006     ; 2.165      ;
-; 1.866 ; hvsync_generator:hvsync|CounterY[2] ; hvsync_generator:hvsync|dis0x9        ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.006     ; 2.166      ;
-; 1.866 ; hvsync_generator:hvsync|CounterY[2] ; hvsync_generator:hvsync|dis0x8        ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.006     ; 2.166      ;
-; 1.874 ; hvsync_generator:hvsync|dis0x4      ; hvsync_generator:hvsync|disall4       ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.007     ; 2.173      ;
-; 1.876 ; hvsync_generator:hvsync|dis0x5      ; hvsync_generator:hvsync|disall5       ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.006     ; 2.176      ;
-; 1.881 ; hvsync_generator:hvsync|CounterY[4] ; hvsync_generator:hvsync|CounterY[3]   ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.001     ; 2.186      ;
-; 1.883 ; hvsync_generator:hvsync|CounterY[4] ; hvsync_generator:hvsync|CounterY[1]   ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.001     ; 2.188      ;
-; 1.891 ; hvsync_generator:hvsync|CounterY[3] ; hvsync_generator:hvsync|dis1x3        ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.001     ; 2.196      ;
-; 1.893 ; hvsync_generator:hvsync|CounterY[3] ; hvsync_generator:hvsync|dis0x1        ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.001     ; 2.198      ;
-; 1.894 ; hvsync_generator:hvsync|CounterY[3] ; hvsync_generator:hvsync|dis0x3        ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.001     ; 2.199      ;
-; 1.901 ; hvsync_generator:hvsync|dis0x3      ; hvsync_generator:hvsync|disall3       ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.007     ; 2.200      ;
-; 1.908 ; hvsync_generator:hvsync|dis1x1      ; hvsync_generator:hvsync|disall1       ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.008     ; 2.206      ;
-; 1.912 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterX[4]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.218      ;
-; 1.914 ; hvsync_generator:hvsync|CounterY[5] ; hvsync_generator:hvsync|CounterY[7]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.220      ;
-; 1.916 ; hvsync_generator:hvsync|CounterY[2] ; hvsync_generator:hvsync|CounterY[6]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.222      ;
-; 1.919 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|CounterX[6]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.225      ;
-; 1.921 ; hvsync_generator:hvsync|disall6     ; hvsync_generator:hvsync|inDisplayArea ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.227      ;
-; 1.923 ; hvsync_generator:hvsync|CounterY[1] ; hvsync_generator:hvsync|dis0x4        ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.001     ; 2.228      ;
-; 1.923 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterX[4]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.229      ;
-+-------+-------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clk~reg0'                                                                                                                             ;
++-------+-------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                           ; To Node                             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
+; 1.176 ; hvsync_generator:hvsync|CounterY[8] ; hvsync_generator:hvsync|CounterY[8] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 1.482      ;
+; 1.177 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterX[2] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 1.483      ;
+; 1.177 ; hvsync_generator:hvsync|CounterY[0] ; hvsync_generator:hvsync|CounterY[0] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 1.483      ;
+; 1.177 ; hvsync_generator:hvsync|CounterY[6] ; hvsync_generator:hvsync|CounterY[6] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 1.483      ;
+; 1.191 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|CounterX[7] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 1.497      ;
+; 1.220 ; hvsync_generator:hvsync|CounterY[7] ; hvsync_generator:hvsync|CounterY[7] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 1.526      ;
+; 1.225 ; hvsync_generator:hvsync|CounterY[4] ; hvsync_generator:hvsync|CounterY[4] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 1.531      ;
+; 1.226 ; hvsync_generator:hvsync|CounterY[5] ; hvsync_generator:hvsync|CounterY[5] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 1.532      ;
+; 1.230 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterX[1] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 1.536      ;
+; 1.230 ; hvsync_generator:hvsync|CounterX[3] ; hvsync_generator:hvsync|CounterX[3] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 1.536      ;
+; 1.235 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|CounterX[4] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 1.541      ;
+; 1.237 ; hvsync_generator:hvsync|CounterX[6] ; hvsync_generator:hvsync|CounterX[6] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 1.543      ;
+; 1.419 ; hvsync_generator:hvsync|CounterY[2] ; hvsync_generator:hvsync|vga_VS      ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.001     ; 1.724      ;
+; 1.496 ; hvsync_generator:hvsync|CounterY[9] ; hvsync_generator:hvsync|CounterY[9] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 1.802      ;
+; 1.560 ; hvsync_generator:hvsync|CounterX[8] ; hvsync_generator:hvsync|vga_HS      ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.002     ; 1.864      ;
+; 1.636 ; hvsync_generator:hvsync|CounterY[8] ; hvsync_generator:hvsync|vga_VS      ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.001     ; 1.941      ;
+; 1.656 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterX[3] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 1.962      ;
+; 1.667 ; hvsync_generator:hvsync|CounterY[3] ; hvsync_generator:hvsync|CounterY[4] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 1.973      ;
+; 1.669 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterX[1] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 1.975      ;
+; 1.700 ; hvsync_generator:hvsync|CounterY[7] ; hvsync_generator:hvsync|CounterY[8] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.006      ;
+; 1.705 ; hvsync_generator:hvsync|CounterY[4] ; hvsync_generator:hvsync|CounterY[5] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.011      ;
+; 1.706 ; hvsync_generator:hvsync|CounterY[5] ; hvsync_generator:hvsync|CounterY[6] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.012      ;
+; 1.710 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterX[2] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.016      ;
+; 1.710 ; hvsync_generator:hvsync|CounterX[3] ; hvsync_generator:hvsync|CounterX[4] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.016      ;
+; 1.717 ; hvsync_generator:hvsync|CounterX[6] ; hvsync_generator:hvsync|CounterX[7] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.023      ;
+; 1.719 ; hvsync_generator:hvsync|CounterY[9] ; hvsync_generator:hvsync|vga_VS      ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.001     ; 2.024      ;
+; 1.740 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterX[9] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.046      ;
+; 1.742 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterX[4] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.048      ;
+; 1.745 ; hvsync_generator:hvsync|CounterY[2] ; hvsync_generator:hvsync|CounterY[4] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.051      ;
+; 1.753 ; hvsync_generator:hvsync|CounterY[3] ; hvsync_generator:hvsync|CounterY[5] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.059      ;
+; 1.755 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterX[2] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.061      ;
+; 1.761 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|CounterX[9] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.067      ;
+; 1.764 ; hvsync_generator:hvsync|CounterX[9] ; hvsync_generator:hvsync|vga_HS      ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.002     ; 2.068      ;
+; 1.766 ; hvsync_generator:hvsync|CounterY[6] ; hvsync_generator:hvsync|CounterY[7] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.072      ;
+; 1.767 ; hvsync_generator:hvsync|CounterX[5] ; hvsync_generator:hvsync|CounterX[6] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.073      ;
+; 1.783 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterX[0] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.089      ;
+; 1.788 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterX[8] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.094      ;
+; 1.788 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterX[5] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.094      ;
+; 1.791 ; hvsync_generator:hvsync|CounterY[4] ; hvsync_generator:hvsync|CounterY[6] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.097      ;
+; 1.796 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterX[3] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.102      ;
+; 1.799 ; hvsync_generator:hvsync|CounterY[5] ; hvsync_generator:hvsync|vga_VS      ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.001     ; 2.104      ;
+; 1.812 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|vga_HS      ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.002     ; 2.116      ;
+; 1.817 ; hvsync_generator:hvsync|CounterX[9] ; hvsync_generator:hvsync|CounterX[9] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.123      ;
+; 1.831 ; hvsync_generator:hvsync|CounterY[1] ; hvsync_generator:hvsync|CounterY[4] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.137      ;
+; 1.831 ; hvsync_generator:hvsync|CounterY[2] ; hvsync_generator:hvsync|CounterY[5] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.137      ;
+; 1.839 ; hvsync_generator:hvsync|CounterY[3] ; hvsync_generator:hvsync|CounterY[6] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.145      ;
+; 1.841 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterX[3] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.147      ;
+; 1.852 ; hvsync_generator:hvsync|CounterY[6] ; hvsync_generator:hvsync|CounterY[8] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.158      ;
+; 1.853 ; hvsync_generator:hvsync|CounterX[5] ; hvsync_generator:hvsync|CounterX[7] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.159      ;
+; 1.859 ; hvsync_generator:hvsync|CounterY[1] ; hvsync_generator:hvsync|vga_VS      ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.001     ; 2.164      ;
+; 1.882 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterX[4] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.188      ;
+; 1.896 ; hvsync_generator:hvsync|CounterY[5] ; hvsync_generator:hvsync|CounterY[7] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.202      ;
+; 1.905 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|CounterX[6] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.211      ;
+; 1.913 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterX[9] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.219      ;
+; 1.913 ; hvsync_generator:hvsync|CounterY[0] ; hvsync_generator:hvsync|CounterY[4] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.219      ;
+; 1.917 ; hvsync_generator:hvsync|CounterY[1] ; hvsync_generator:hvsync|CounterY[5] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.223      ;
+; 1.917 ; hvsync_generator:hvsync|CounterY[2] ; hvsync_generator:hvsync|CounterY[6] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.223      ;
+; 1.927 ; hvsync_generator:hvsync|CounterY[1] ; hvsync_generator:hvsync|CounterY[1] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.233      ;
+; 1.927 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterX[4] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.233      ;
+; 1.928 ; hvsync_generator:hvsync|CounterX[5] ; hvsync_generator:hvsync|CounterX[5] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.234      ;
+; 1.932 ; hvsync_generator:hvsync|CounterY[3] ; hvsync_generator:hvsync|CounterY[3] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.238      ;
+; 1.933 ; hvsync_generator:hvsync|CounterY[4] ; hvsync_generator:hvsync|vga_VS      ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.001     ; 2.238      ;
+; 1.939 ; hvsync_generator:hvsync|CounterX[6] ; hvsync_generator:hvsync|CounterX[9] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.245      ;
+; 1.943 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterX[0] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.249      ;
+; 1.953 ; hvsync_generator:hvsync|CounterX[8] ; hvsync_generator:hvsync|CounterX[8] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.259      ;
+; 1.956 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterX[0] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.262      ;
+; 1.961 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterX[8] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.267      ;
+; 1.961 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterX[5] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.267      ;
+; 1.970 ; hvsync_generator:hvsync|CounterY[6] ; hvsync_generator:hvsync|vga_VS      ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.001     ; 2.275      ;
+; 1.981 ; hvsync_generator:hvsync|CounterY[4] ; hvsync_generator:hvsync|CounterY[7] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.287      ;
+; 1.982 ; hvsync_generator:hvsync|CounterY[5] ; hvsync_generator:hvsync|CounterY[8] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.288      ;
+; 1.986 ; hvsync_generator:hvsync|CounterX[3] ; hvsync_generator:hvsync|CounterX[6] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.292      ;
+; 1.991 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|CounterX[7] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.297      ;
+; 1.999 ; hvsync_generator:hvsync|CounterY[0] ; hvsync_generator:hvsync|CounterY[5] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.305      ;
+; 2.003 ; hvsync_generator:hvsync|CounterY[1] ; hvsync_generator:hvsync|CounterY[6] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.309      ;
+; 2.018 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterX[6] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.324      ;
+; 2.029 ; hvsync_generator:hvsync|CounterY[3] ; hvsync_generator:hvsync|CounterY[7] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.335      ;
+; 2.064 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|CounterX[0] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.370      ;
+; 2.066 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|CounterX[8] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.372      ;
+; 2.066 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|CounterX[5] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.372      ;
+; 2.067 ; hvsync_generator:hvsync|CounterY[4] ; hvsync_generator:hvsync|CounterY[8] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.373      ;
+; 2.072 ; hvsync_generator:hvsync|CounterX[3] ; hvsync_generator:hvsync|CounterX[7] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.378      ;
+; 2.076 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterX[9] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.382      ;
+; 2.085 ; hvsync_generator:hvsync|CounterY[0] ; hvsync_generator:hvsync|CounterY[6] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.391      ;
+; 2.088 ; hvsync_generator:hvsync|CounterY[7] ; hvsync_generator:hvsync|vga_VS      ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.001     ; 2.393      ;
+; 2.103 ; hvsync_generator:hvsync|CounterX[3] ; hvsync_generator:hvsync|CounterX[9] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.409      ;
+; 2.104 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterX[7] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.410      ;
+; 2.107 ; hvsync_generator:hvsync|CounterY[2] ; hvsync_generator:hvsync|CounterY[7] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.413      ;
+; 2.115 ; hvsync_generator:hvsync|CounterY[3] ; hvsync_generator:hvsync|CounterY[8] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.421      ;
+; 2.121 ; hvsync_generator:hvsync|CounterX[5] ; hvsync_generator:hvsync|CounterX[8] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.427      ;
+; 2.124 ; hvsync_generator:hvsync|CounterX[5] ; hvsync_generator:hvsync|CounterX[0] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.430      ;
+; 2.124 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterX[8] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.430      ;
+; 2.124 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterX[5] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.430      ;
+; 2.146 ; hvsync_generator:hvsync|CounterX[3] ; hvsync_generator:hvsync|CounterX[0] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.452      ;
+; 2.151 ; hvsync_generator:hvsync|CounterX[3] ; hvsync_generator:hvsync|CounterX[8] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.457      ;
+; 2.151 ; hvsync_generator:hvsync|CounterX[3] ; hvsync_generator:hvsync|CounterX[5] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.457      ;
+; 2.158 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterX[6] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.464      ;
+; 2.190 ; hvsync_generator:hvsync|CounterX[8] ; hvsync_generator:hvsync|CounterX[9] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.496      ;
+; 2.193 ; hvsync_generator:hvsync|CounterY[1] ; hvsync_generator:hvsync|CounterY[7] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.499      ;
+; 2.193 ; hvsync_generator:hvsync|CounterY[2] ; hvsync_generator:hvsync|CounterY[8] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 2.499      ;
++-------+-------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
 +--------------------------------------------------------------------------------------------------+
@@ -450,66 +450,60 @@ No paths to report.
 ; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|CounterY[8] ;
 ; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|CounterY[9] ;
 ; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|CounterY[9] ;
-; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x0      ;
-; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x0      ;
-; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x1      ;
-; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x1      ;
-; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x10     ;
-; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x10     ;
-; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x11     ;
-; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x11     ;
-; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x12     ;
-; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x12     ;
-; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x13     ;
-; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x13     ;
-; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x14     ;
-; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x14     ;
-; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x15     ;
-; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x15     ;
-; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x2      ;
-; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x2      ;
-; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x3      ;
-; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x3      ;
-; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x4      ;
-; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x4      ;
-; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x5      ;
-; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x5      ;
-; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x6      ;
-; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x6      ;
-; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x7      ;
-; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x7      ;
-; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x8      ;
-; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x8      ;
-; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x9      ;
-; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x9      ;
-; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x0      ;
-; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x0      ;
-; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x1      ;
-; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x1      ;
-; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x10     ;
-; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x10     ;
-; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x11     ;
-; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x11     ;
-; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x12     ;
-; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x12     ;
-; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x13     ;
-; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x13     ;
-; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x14     ;
-; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x14     ;
-; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x15     ;
-; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x15     ;
-; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x2      ;
-; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x2      ;
-; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x3      ;
-; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x3      ;
-; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x4      ;
-; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x4      ;
-; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x5      ;
-; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x5      ;
-; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x6      ;
-; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x6      ;
-; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x7      ;
-; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x7      ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|vga_HS      ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|vga_HS      ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|vga_VS      ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|vga_VS      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; clk~reg0clkctrl|inclk[0]            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; clk~reg0clkctrl|inclk[0]            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; clk~reg0clkctrl|outclk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; clk~reg0clkctrl|outclk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; clk~reg0|regout                     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; clk~reg0|regout                     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync|CounterX[0]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync|CounterX[0]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync|CounterX[1]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync|CounterX[1]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync|CounterX[2]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync|CounterX[2]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync|CounterX[3]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync|CounterX[3]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync|CounterX[4]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync|CounterX[4]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync|CounterX[5]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync|CounterX[5]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync|CounterX[6]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync|CounterX[6]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync|CounterX[7]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync|CounterX[7]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync|CounterX[8]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync|CounterX[8]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync|CounterX[9]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync|CounterX[9]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync|CounterY[0]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync|CounterY[0]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync|CounterY[1]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync|CounterY[1]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync|CounterY[2]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync|CounterY[2]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync|CounterY[3]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync|CounterY[3]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync|CounterY[4]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync|CounterY[4]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync|CounterY[5]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync|CounterY[5]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync|CounterY[6]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync|CounterY[6]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync|CounterY[7]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync|CounterY[7]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync|CounterY[8]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync|CounterY[8]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync|CounterY[9]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync|CounterY[9]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync|vga_HS|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync|vga_HS|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync|vga_VS|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync|vga_VS|clk                   ;
 +--------+--------------+----------------+------------------+----------+------------+-------------------------------------+
 
 
@@ -519,12 +513,8 @@ No paths to report.
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
 ; clk       ; clk~reg0   ; 4.065 ;       ; Rise       ; clk~reg0        ;
-; hsync_out ; clk~reg0   ; 7.972 ; 7.972 ; Rise       ; clk~reg0        ;
-; pixel[*]  ; clk~reg0   ; 6.781 ; 6.781 ; Rise       ; clk~reg0        ;
-;  pixel[0] ; clk~reg0   ; 6.781 ; 6.781 ; Rise       ; clk~reg0        ;
-;  pixel[1] ; clk~reg0   ; 6.776 ; 6.776 ; Rise       ; clk~reg0        ;
-;  pixel[2] ; clk~reg0   ; 6.776 ; 6.776 ; Rise       ; clk~reg0        ;
-; vsync_out ; clk~reg0   ; 8.006 ; 8.006 ; Rise       ; clk~reg0        ;
+; hsync_out ; clk~reg0   ; 6.861 ; 6.861 ; Rise       ; clk~reg0        ;
+; vsync_out ; clk~reg0   ; 6.861 ; 6.861 ; Rise       ; clk~reg0        ;
 ; clk       ; clk~reg0   ;       ; 4.065 ; Fall       ; clk~reg0        ;
 +-----------+------------+-------+-------+------------+-----------------+
 
@@ -535,12 +525,8 @@ No paths to report.
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
 ; clk       ; clk~reg0   ; 4.065 ;       ; Rise       ; clk~reg0        ;
-; hsync_out ; clk~reg0   ; 7.972 ; 7.972 ; Rise       ; clk~reg0        ;
-; pixel[*]  ; clk~reg0   ; 6.776 ; 6.776 ; Rise       ; clk~reg0        ;
-;  pixel[0] ; clk~reg0   ; 6.781 ; 6.781 ; Rise       ; clk~reg0        ;
-;  pixel[1] ; clk~reg0   ; 6.776 ; 6.776 ; Rise       ; clk~reg0        ;
-;  pixel[2] ; clk~reg0   ; 6.776 ; 6.776 ; Rise       ; clk~reg0        ;
-; vsync_out ; clk~reg0   ; 8.006 ; 8.006 ; Rise       ; clk~reg0        ;
+; hsync_out ; clk~reg0   ; 6.861 ; 6.861 ; Rise       ; clk~reg0        ;
+; vsync_out ; clk~reg0   ; 6.861 ; 6.861 ; Rise       ; clk~reg0        ;
 ; clk       ; clk~reg0   ;       ; 4.065 ; Fall       ; clk~reg0        ;
 +-----------+------------+-------+-------+------------+-----------------+
 
@@ -550,7 +536,7 @@ No paths to report.
 +----------+--------+---------------+
 ; Clock    ; Slack  ; End Point TNS ;
 +----------+--------+---------------+
-; clk~reg0 ; -0.477 ; -19.939       ;
+; clk~reg0 ; -0.275 ; -3.153        ;
 ; clk_50   ; 1.343  ; 0.000         ;
 +----------+--------+---------------+
 
@@ -561,7 +547,7 @@ No paths to report.
 ; Clock    ; Slack  ; End Point TNS ;
 +----------+--------+---------------+
 ; clk_50   ; -0.963 ; -0.963        ;
-; clk~reg0 ; 0.239  ; 0.000         ;
+; clk~reg0 ; 0.360  ; 0.000         ;
 +----------+--------+---------------+
 
 
@@ -583,7 +569,7 @@ No paths to report.
 ; Clock    ; Slack  ; End Point TNS      ;
 +----------+--------+--------------------+
 ; clk_50   ; -1.380 ; -2.380             ;
-; clk~reg0 ; -0.500 ; -88.000            ;
+; clk~reg0 ; -0.500 ; -22.000            ;
 +----------+--------+--------------------+
 
 
@@ -592,106 +578,106 @@ No paths to report.
 +--------+-------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node                           ; To Node                             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+-------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
-; -0.477 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterY[3] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 1.529      ;
-; -0.477 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterY[1] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 1.529      ;
-; -0.458 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterY[0] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.511      ;
-; -0.458 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterY[2] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.511      ;
-; -0.458 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterY[4] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.511      ;
-; -0.458 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterY[5] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.511      ;
-; -0.458 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterY[6] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.511      ;
-; -0.458 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterY[7] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.511      ;
-; -0.458 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterY[8] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.511      ;
-; -0.458 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterY[9] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.511      ;
-; -0.456 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|CounterY[3] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 1.508      ;
-; -0.456 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|CounterY[1] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 1.508      ;
-; -0.437 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|CounterY[0] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.490      ;
-; -0.437 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|CounterY[2] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.490      ;
-; -0.437 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|CounterY[4] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.490      ;
-; -0.437 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|CounterY[5] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.490      ;
-; -0.437 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|CounterY[6] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.490      ;
-; -0.437 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|CounterY[7] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.490      ;
-; -0.437 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|CounterY[8] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.490      ;
-; -0.437 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|CounterY[9] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.490      ;
-; -0.433 ; hvsync_generator:hvsync|CounterX[9] ; hvsync_generator:hvsync|CounterY[3] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 1.485      ;
-; -0.433 ; hvsync_generator:hvsync|CounterX[9] ; hvsync_generator:hvsync|CounterY[1] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 1.485      ;
-; -0.433 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|CounterY[3] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 1.485      ;
-; -0.433 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|CounterY[1] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 1.485      ;
-; -0.414 ; hvsync_generator:hvsync|CounterX[9] ; hvsync_generator:hvsync|CounterY[0] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.467      ;
-; -0.414 ; hvsync_generator:hvsync|CounterX[9] ; hvsync_generator:hvsync|CounterY[2] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.467      ;
-; -0.414 ; hvsync_generator:hvsync|CounterX[9] ; hvsync_generator:hvsync|CounterY[4] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.467      ;
-; -0.414 ; hvsync_generator:hvsync|CounterX[9] ; hvsync_generator:hvsync|CounterY[5] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.467      ;
-; -0.414 ; hvsync_generator:hvsync|CounterX[9] ; hvsync_generator:hvsync|CounterY[6] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.467      ;
-; -0.414 ; hvsync_generator:hvsync|CounterX[9] ; hvsync_generator:hvsync|CounterY[7] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.467      ;
-; -0.414 ; hvsync_generator:hvsync|CounterX[9] ; hvsync_generator:hvsync|CounterY[8] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.467      ;
-; -0.414 ; hvsync_generator:hvsync|CounterX[9] ; hvsync_generator:hvsync|CounterY[9] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.467      ;
-; -0.414 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|CounterY[0] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.467      ;
-; -0.414 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|CounterY[2] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.467      ;
-; -0.414 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|CounterY[4] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.467      ;
-; -0.414 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|CounterY[5] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.467      ;
-; -0.414 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|CounterY[6] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.467      ;
-; -0.414 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|CounterY[7] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.467      ;
-; -0.414 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|CounterY[8] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.467      ;
-; -0.414 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|CounterY[9] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.467      ;
-; -0.410 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterY[3] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 1.462      ;
-; -0.410 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterY[1] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 1.462      ;
-; -0.401 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|dis0x11     ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 1.453      ;
-; -0.398 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|dis0x10     ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 1.450      ;
-; -0.395 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|dis0x2      ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 1.447      ;
-; -0.395 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|dis0x6      ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 1.447      ;
-; -0.391 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterY[0] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.444      ;
-; -0.391 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterY[2] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.444      ;
-; -0.391 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterY[4] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.444      ;
-; -0.391 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterY[5] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.444      ;
-; -0.391 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterY[6] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.444      ;
-; -0.391 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterY[7] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.444      ;
-; -0.391 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterY[8] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.444      ;
-; -0.391 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterY[9] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.444      ;
-; -0.378 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|dis0x11     ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 1.430      ;
-; -0.375 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|dis0x10     ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 1.427      ;
-; -0.374 ; hvsync_generator:hvsync|CounterY[9] ; hvsync_generator:hvsync|dis6x14     ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.022     ; 1.384      ;
-; -0.374 ; hvsync_generator:hvsync|CounterY[9] ; hvsync_generator:hvsync|dis1x14     ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.022     ; 1.384      ;
-; -0.372 ; hvsync_generator:hvsync|CounterY[9] ; hvsync_generator:hvsync|dis0x14     ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.022     ; 1.382      ;
-; -0.372 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|dis0x2      ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 1.424      ;
-; -0.372 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|dis0x6      ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 1.424      ;
-; -0.371 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterY[3] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 1.423      ;
-; -0.371 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterY[1] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 1.423      ;
-; -0.368 ; hvsync_generator:hvsync|CounterY[9] ; hvsync_generator:hvsync|dis2x14     ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.022     ; 1.378      ;
-; -0.366 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|dis0x9      ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.015      ; 1.413      ;
-; -0.366 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|dis0x8      ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.015      ; 1.413      ;
-; -0.362 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|dis0x13     ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.015      ; 1.409      ;
-; -0.359 ; hvsync_generator:hvsync|CounterX[6] ; hvsync_generator:hvsync|CounterY[3] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 1.411      ;
-; -0.359 ; hvsync_generator:hvsync|CounterX[6] ; hvsync_generator:hvsync|CounterY[1] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.020      ; 1.411      ;
-; -0.352 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterY[0] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.405      ;
-; -0.352 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterY[2] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.405      ;
-; -0.352 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterY[4] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.405      ;
-; -0.352 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterY[5] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.405      ;
-; -0.352 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterY[6] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.405      ;
-; -0.352 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterY[7] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.405      ;
-; -0.352 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterY[8] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.405      ;
-; -0.352 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterY[9] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.405      ;
-; -0.352 ; hvsync_generator:hvsync|CounterY[1] ; hvsync_generator:hvsync|dis6x14     ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.021     ; 1.363      ;
-; -0.352 ; hvsync_generator:hvsync|CounterY[1] ; hvsync_generator:hvsync|dis1x14     ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.021     ; 1.363      ;
-; -0.350 ; hvsync_generator:hvsync|CounterY[1] ; hvsync_generator:hvsync|dis0x14     ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.021     ; 1.361      ;
-; -0.346 ; hvsync_generator:hvsync|CounterY[1] ; hvsync_generator:hvsync|dis2x14     ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.021     ; 1.357      ;
-; -0.343 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|dis0x9      ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.015      ; 1.390      ;
-; -0.343 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|dis0x8      ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.015      ; 1.390      ;
-; -0.342 ; hvsync_generator:hvsync|CounterY[9] ; hvsync_generator:hvsync|dis3x14     ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.021     ; 1.353      ;
-; -0.341 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|dis1x3      ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.019      ; 1.392      ;
-; -0.341 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|dis1x5      ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.019      ; 1.392      ;
-; -0.341 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|dis1x10     ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.019      ; 1.392      ;
-; -0.340 ; hvsync_generator:hvsync|CounterX[6] ; hvsync_generator:hvsync|CounterY[0] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.393      ;
-; -0.340 ; hvsync_generator:hvsync|CounterX[6] ; hvsync_generator:hvsync|CounterY[2] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.393      ;
-; -0.340 ; hvsync_generator:hvsync|CounterX[6] ; hvsync_generator:hvsync|CounterY[4] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.393      ;
-; -0.340 ; hvsync_generator:hvsync|CounterX[6] ; hvsync_generator:hvsync|CounterY[5] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.393      ;
-; -0.340 ; hvsync_generator:hvsync|CounterX[6] ; hvsync_generator:hvsync|CounterY[6] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.393      ;
-; -0.340 ; hvsync_generator:hvsync|CounterX[6] ; hvsync_generator:hvsync|CounterY[7] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.393      ;
-; -0.340 ; hvsync_generator:hvsync|CounterX[6] ; hvsync_generator:hvsync|CounterY[8] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.393      ;
-; -0.340 ; hvsync_generator:hvsync|CounterX[6] ; hvsync_generator:hvsync|CounterY[9] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.021      ; 1.393      ;
-; -0.339 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|dis0x13     ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.015      ; 1.386      ;
-; -0.337 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|dis1x12     ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.019      ; 1.388      ;
-; -0.337 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|dis1x2      ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.019      ; 1.388      ;
-; -0.337 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|dis0x7      ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.019      ; 1.388      ;
-; -0.336 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|dis0x4      ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.019      ; 1.387      ;
+; -0.275 ; hvsync_generator:hvsync|CounterX[3] ; hvsync_generator:hvsync|CounterY[0] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.305      ;
+; -0.275 ; hvsync_generator:hvsync|CounterX[3] ; hvsync_generator:hvsync|CounterY[2] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.305      ;
+; -0.275 ; hvsync_generator:hvsync|CounterX[3] ; hvsync_generator:hvsync|CounterY[3] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.305      ;
+; -0.275 ; hvsync_generator:hvsync|CounterX[3] ; hvsync_generator:hvsync|CounterY[4] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.305      ;
+; -0.275 ; hvsync_generator:hvsync|CounterX[3] ; hvsync_generator:hvsync|CounterY[5] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.305      ;
+; -0.275 ; hvsync_generator:hvsync|CounterX[3] ; hvsync_generator:hvsync|CounterY[6] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.305      ;
+; -0.275 ; hvsync_generator:hvsync|CounterX[3] ; hvsync_generator:hvsync|CounterY[7] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.305      ;
+; -0.275 ; hvsync_generator:hvsync|CounterX[3] ; hvsync_generator:hvsync|CounterY[8] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.305      ;
+; -0.275 ; hvsync_generator:hvsync|CounterX[3] ; hvsync_generator:hvsync|CounterY[9] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.305      ;
+; -0.275 ; hvsync_generator:hvsync|CounterX[3] ; hvsync_generator:hvsync|CounterY[1] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.305      ;
+; -0.261 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterY[0] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.291      ;
+; -0.261 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterY[2] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.291      ;
+; -0.261 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterY[3] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.291      ;
+; -0.261 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterY[4] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.291      ;
+; -0.261 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterY[5] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.291      ;
+; -0.261 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterY[6] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.291      ;
+; -0.261 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterY[7] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.291      ;
+; -0.261 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterY[8] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.291      ;
+; -0.261 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterY[9] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.291      ;
+; -0.261 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterY[1] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.291      ;
+; -0.199 ; hvsync_generator:hvsync|CounterY[0] ; hvsync_generator:hvsync|CounterY[9] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 1.231      ;
+; -0.189 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterY[0] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.219      ;
+; -0.189 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterY[2] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.219      ;
+; -0.189 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterY[3] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.219      ;
+; -0.189 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterY[4] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.219      ;
+; -0.189 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterY[5] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.219      ;
+; -0.189 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterY[6] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.219      ;
+; -0.189 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterY[7] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.219      ;
+; -0.189 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterY[8] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.219      ;
+; -0.189 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterY[9] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.219      ;
+; -0.189 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterY[1] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.219      ;
+; -0.183 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterX[8] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 1.215      ;
+; -0.181 ; hvsync_generator:hvsync|CounterX[9] ; hvsync_generator:hvsync|CounterY[0] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.211      ;
+; -0.181 ; hvsync_generator:hvsync|CounterX[9] ; hvsync_generator:hvsync|CounterY[2] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.211      ;
+; -0.181 ; hvsync_generator:hvsync|CounterX[9] ; hvsync_generator:hvsync|CounterY[3] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.211      ;
+; -0.181 ; hvsync_generator:hvsync|CounterX[9] ; hvsync_generator:hvsync|CounterY[4] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.211      ;
+; -0.181 ; hvsync_generator:hvsync|CounterX[9] ; hvsync_generator:hvsync|CounterY[5] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.211      ;
+; -0.181 ; hvsync_generator:hvsync|CounterX[9] ; hvsync_generator:hvsync|CounterY[6] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.211      ;
+; -0.181 ; hvsync_generator:hvsync|CounterX[9] ; hvsync_generator:hvsync|CounterY[7] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.211      ;
+; -0.181 ; hvsync_generator:hvsync|CounterX[9] ; hvsync_generator:hvsync|CounterY[8] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.211      ;
+; -0.181 ; hvsync_generator:hvsync|CounterX[9] ; hvsync_generator:hvsync|CounterY[9] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.211      ;
+; -0.181 ; hvsync_generator:hvsync|CounterX[9] ; hvsync_generator:hvsync|CounterY[1] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.211      ;
+; -0.169 ; hvsync_generator:hvsync|CounterX[8] ; hvsync_generator:hvsync|CounterY[0] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.199      ;
+; -0.169 ; hvsync_generator:hvsync|CounterX[8] ; hvsync_generator:hvsync|CounterY[2] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.199      ;
+; -0.169 ; hvsync_generator:hvsync|CounterX[8] ; hvsync_generator:hvsync|CounterY[3] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.199      ;
+; -0.169 ; hvsync_generator:hvsync|CounterX[8] ; hvsync_generator:hvsync|CounterY[4] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.199      ;
+; -0.169 ; hvsync_generator:hvsync|CounterX[8] ; hvsync_generator:hvsync|CounterY[5] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.199      ;
+; -0.169 ; hvsync_generator:hvsync|CounterX[8] ; hvsync_generator:hvsync|CounterY[6] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.199      ;
+; -0.169 ; hvsync_generator:hvsync|CounterX[8] ; hvsync_generator:hvsync|CounterY[7] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.199      ;
+; -0.169 ; hvsync_generator:hvsync|CounterX[8] ; hvsync_generator:hvsync|CounterY[8] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.199      ;
+; -0.169 ; hvsync_generator:hvsync|CounterX[8] ; hvsync_generator:hvsync|CounterY[9] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.199      ;
+; -0.169 ; hvsync_generator:hvsync|CounterX[8] ; hvsync_generator:hvsync|CounterY[1] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.199      ;
+; -0.167 ; hvsync_generator:hvsync|CounterY[1] ; hvsync_generator:hvsync|CounterY[9] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 1.199      ;
+; -0.154 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterX[8] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 1.186      ;
+; -0.152 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|CounterY[0] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.182      ;
+; -0.152 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|CounterY[2] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.182      ;
+; -0.152 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|CounterY[3] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.182      ;
+; -0.152 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|CounterY[4] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.182      ;
+; -0.152 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|CounterY[5] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.182      ;
+; -0.152 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|CounterY[6] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.182      ;
+; -0.152 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|CounterY[7] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.182      ;
+; -0.152 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|CounterY[8] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.182      ;
+; -0.152 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|CounterY[9] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.182      ;
+; -0.152 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|CounterY[1] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.182      ;
+; -0.140 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterY[0] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.170      ;
+; -0.140 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterY[2] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.170      ;
+; -0.140 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterY[3] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.170      ;
+; -0.140 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterY[4] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.170      ;
+; -0.140 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterY[5] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.170      ;
+; -0.140 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterY[6] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.170      ;
+; -0.140 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterY[7] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.170      ;
+; -0.140 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterY[8] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.170      ;
+; -0.140 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterY[9] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.170      ;
+; -0.140 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterY[1] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.170      ;
+; -0.138 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterX[9] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 1.170      ;
+; -0.133 ; hvsync_generator:hvsync|CounterY[2] ; hvsync_generator:hvsync|CounterY[9] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 1.165      ;
+; -0.109 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterX[9] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 1.141      ;
+; -0.105 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterX[8] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 1.137      ;
+; -0.100 ; hvsync_generator:hvsync|CounterY[3] ; hvsync_generator:hvsync|CounterY[9] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 1.132      ;
+; -0.099 ; hvsync_generator:hvsync|CounterX[6] ; hvsync_generator:hvsync|CounterY[0] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.129      ;
+; -0.099 ; hvsync_generator:hvsync|CounterX[6] ; hvsync_generator:hvsync|CounterY[2] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.129      ;
+; -0.099 ; hvsync_generator:hvsync|CounterX[6] ; hvsync_generator:hvsync|CounterY[3] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.129      ;
+; -0.099 ; hvsync_generator:hvsync|CounterX[6] ; hvsync_generator:hvsync|CounterY[4] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.129      ;
+; -0.099 ; hvsync_generator:hvsync|CounterX[6] ; hvsync_generator:hvsync|CounterY[5] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.129      ;
+; -0.099 ; hvsync_generator:hvsync|CounterX[6] ; hvsync_generator:hvsync|CounterY[6] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.129      ;
+; -0.099 ; hvsync_generator:hvsync|CounterX[6] ; hvsync_generator:hvsync|CounterY[7] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.129      ;
+; -0.099 ; hvsync_generator:hvsync|CounterX[6] ; hvsync_generator:hvsync|CounterY[8] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.129      ;
+; -0.099 ; hvsync_generator:hvsync|CounterX[6] ; hvsync_generator:hvsync|CounterY[9] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.129      ;
+; -0.099 ; hvsync_generator:hvsync|CounterX[6] ; hvsync_generator:hvsync|CounterY[1] ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.129      ;
+; -0.087 ; hvsync_generator:hvsync|CounterY[7] ; hvsync_generator:hvsync|CounterY[3] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 1.119      ;
+; -0.085 ; hvsync_generator:hvsync|CounterY[7] ; hvsync_generator:hvsync|CounterY[1] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 1.117      ;
+; -0.085 ; hvsync_generator:hvsync|CounterY[7] ; hvsync_generator:hvsync|CounterY[9] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 1.117      ;
+; -0.085 ; hvsync_generator:hvsync|CounterX[3] ; hvsync_generator:hvsync|CounterX[8] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 1.117      ;
+; -0.084 ; hvsync_generator:hvsync|CounterY[7] ; hvsync_generator:hvsync|CounterY[2] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 1.116      ;
+; -0.072 ; hvsync_generator:hvsync|CounterY[4] ; hvsync_generator:hvsync|CounterY[9] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 1.104      ;
+; -0.070 ; hvsync_generator:hvsync|CounterY[6] ; hvsync_generator:hvsync|CounterY[3] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 1.102      ;
+; -0.069 ; hvsync_generator:hvsync|CounterX[3] ; hvsync_generator:hvsync|vga_HS      ; clk~reg0     ; clk~reg0    ; 1.000        ; -0.002     ; 1.099      ;
+; -0.068 ; hvsync_generator:hvsync|CounterY[6] ; hvsync_generator:hvsync|CounterY[1] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 1.100      ;
+; -0.068 ; hvsync_generator:hvsync|CounterY[6] ; hvsync_generator:hvsync|CounterY[9] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 1.100      ;
+; -0.067 ; hvsync_generator:hvsync|CounterY[6] ; hvsync_generator:hvsync|CounterY[2] ; clk~reg0     ; clk~reg0    ; 1.000        ; 0.000      ; 1.099      ;
 +--------+-------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -715,112 +701,112 @@ No paths to report.
 +--------+-----------+----------+--------------+-------------+--------------+------------+------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fast Model Hold: 'clk~reg0'                                                                                                                               ;
-+-------+-------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node                           ; To Node                               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+-------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
-; 0.239 ; hvsync_generator:hvsync|dis0x8      ; hvsync_generator:hvsync|disall8       ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.391      ;
-; 0.240 ; hvsync_generator:hvsync|dis0x9      ; hvsync_generator:hvsync|disall9       ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.392      ;
-; 0.241 ; hvsync_generator:hvsync|dis0x13     ; hvsync_generator:hvsync|disall13      ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.393      ;
-; 0.254 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|vga_HS        ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.406      ;
-; 0.305 ; hvsync_generator:hvsync|dis1x13     ; hvsync_generator:hvsync|disall13      ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.457      ;
-; 0.337 ; hvsync_generator:hvsync|CounterY[1] ; hvsync_generator:hvsync|dis0x6        ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.489      ;
-; 0.357 ; hvsync_generator:hvsync|dis1x8      ; hvsync_generator:hvsync|disall8       ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.509      ;
-; 0.361 ; hvsync_generator:hvsync|CounterY[6] ; hvsync_generator:hvsync|CounterY[6]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.513      ;
-; 0.363 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterX[2]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.515      ;
-; 0.365 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|CounterX[7]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.517      ;
-; 0.368 ; hvsync_generator:hvsync|CounterY[0] ; hvsync_generator:hvsync|CounterY[0]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.520      ;
-; 0.368 ; hvsync_generator:hvsync|dis1x9      ; hvsync_generator:hvsync|disall9       ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.520      ;
-; 0.369 ; hvsync_generator:hvsync|CounterY[8] ; hvsync_generator:hvsync|CounterY[8]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.521      ;
-; 0.372 ; hvsync_generator:hvsync|CounterX[6] ; hvsync_generator:hvsync|CounterX[6]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.524      ;
-; 0.375 ; hvsync_generator:hvsync|CounterY[7] ; hvsync_generator:hvsync|CounterY[7]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.527      ;
-; 0.375 ; hvsync_generator:hvsync|dis7x0      ; hvsync_generator:hvsync|disall0       ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.001     ; 0.526      ;
-; 0.380 ; hvsync_generator:hvsync|CounterY[5] ; hvsync_generator:hvsync|CounterY[5]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.532      ;
-; 0.382 ; hvsync_generator:hvsync|CounterY[4] ; hvsync_generator:hvsync|CounterY[4]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.534      ;
-; 0.384 ; hvsync_generator:hvsync|CounterX[3] ; hvsync_generator:hvsync|CounterX[3]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.536      ;
-; 0.385 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|CounterX[4]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.537      ;
-; 0.387 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterX[1]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.539      ;
-; 0.400 ; hvsync_generator:hvsync|dis1x12     ; hvsync_generator:hvsync|disall12      ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.001     ; 0.551      ;
-; 0.405 ; hvsync_generator:hvsync|CounterX[9] ; hvsync_generator:hvsync|vga_HS        ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.557      ;
-; 0.422 ; hvsync_generator:hvsync|dis0x11     ; hvsync_generator:hvsync|disall11      ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.007     ; 0.567      ;
-; 0.435 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|dis6x14       ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.001     ; 0.586      ;
-; 0.441 ; hvsync_generator:hvsync|disall15    ; hvsync_generator:hvsync|inDisplayArea ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.001     ; 0.592      ;
-; 0.445 ; hvsync_generator:hvsync|dis0x12     ; hvsync_generator:hvsync|disall12      ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.001     ; 0.596      ;
-; 0.451 ; hvsync_generator:hvsync|dis1x7      ; hvsync_generator:hvsync|disall7       ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.005     ; 0.598      ;
-; 0.453 ; hvsync_generator:hvsync|dis1x4      ; hvsync_generator:hvsync|disall4       ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.007     ; 0.598      ;
-; 0.453 ; hvsync_generator:hvsync|dis0x0      ; hvsync_generator:hvsync|disall0       ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.001     ; 0.604      ;
-; 0.455 ; hvsync_generator:hvsync|dis1x3      ; hvsync_generator:hvsync|disall3       ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.007     ; 0.600      ;
-; 0.456 ; hvsync_generator:hvsync|dis0x10     ; hvsync_generator:hvsync|disall10      ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.005     ; 0.603      ;
-; 0.459 ; hvsync_generator:hvsync|dis1x0      ; hvsync_generator:hvsync|disall0       ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.007     ; 0.604      ;
-; 0.484 ; hvsync_generator:hvsync|CounterY[2] ; hvsync_generator:hvsync|dis0x10       ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.001     ; 0.635      ;
-; 0.485 ; hvsync_generator:hvsync|dis1x6      ; hvsync_generator:hvsync|disall6       ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.013      ; 0.650      ;
-; 0.494 ; hvsync_generator:hvsync|dis0x15     ; hvsync_generator:hvsync|disall15      ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.001     ; 0.645      ;
-; 0.498 ; hvsync_generator:hvsync|CounterY[9] ; hvsync_generator:hvsync|CounterY[9]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.650      ;
-; 0.501 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterX[3]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.653      ;
-; 0.502 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterX[1]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.654      ;
-; 0.505 ; hvsync_generator:hvsync|CounterY[3] ; hvsync_generator:hvsync|dis1x4        ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.001     ; 0.656      ;
-; 0.506 ; hvsync_generator:hvsync|dis0x7      ; hvsync_generator:hvsync|disall7       ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.005     ; 0.653      ;
-; 0.507 ; hvsync_generator:hvsync|dis1x11     ; hvsync_generator:hvsync|disall11      ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.007     ; 0.652      ;
-; 0.512 ; hvsync_generator:hvsync|CounterX[6] ; hvsync_generator:hvsync|CounterX[7]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.664      ;
-; 0.514 ; hvsync_generator:hvsync|dis1x5      ; hvsync_generator:hvsync|disall5       ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.006     ; 0.660      ;
-; 0.515 ; hvsync_generator:hvsync|CounterY[7] ; hvsync_generator:hvsync|CounterY[8]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.667      ;
-; 0.520 ; hvsync_generator:hvsync|CounterY[5] ; hvsync_generator:hvsync|CounterY[6]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.672      ;
-; 0.522 ; hvsync_generator:hvsync|CounterY[4] ; hvsync_generator:hvsync|CounterY[5]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.674      ;
-; 0.524 ; hvsync_generator:hvsync|CounterX[3] ; hvsync_generator:hvsync|CounterX[4]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.676      ;
-; 0.525 ; hvsync_generator:hvsync|dis7x14     ; hvsync_generator:hvsync|disall14      ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.677      ;
-; 0.527 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterX[2]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.679      ;
-; 0.531 ; hvsync_generator:hvsync|dis5x14     ; hvsync_generator:hvsync|disall14      ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.683      ;
-; 0.533 ; hvsync_generator:hvsync|CounterY[3] ; hvsync_generator:hvsync|dis1x12       ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.001     ; 0.684      ;
-; 0.536 ; hvsync_generator:hvsync|dis0x1      ; hvsync_generator:hvsync|disall1       ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.007     ; 0.681      ;
-; 0.536 ; hvsync_generator:hvsync|CounterY[2] ; hvsync_generator:hvsync|CounterY[4]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.688      ;
-; 0.536 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterX[4]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.688      ;
-; 0.537 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterX[2]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.689      ;
-; 0.540 ; hvsync_generator:hvsync|dis3x15     ; hvsync_generator:hvsync|disall15      ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.001     ; 0.691      ;
-; 0.547 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|vga_HS        ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.699      ;
-; 0.554 ; hvsync_generator:hvsync|CounterY[4] ; hvsync_generator:hvsync|vga_VS        ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.003     ; 0.703      ;
-; 0.554 ; hvsync_generator:hvsync|CounterY[6] ; hvsync_generator:hvsync|CounterY[7]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.706      ;
-; 0.554 ; hvsync_generator:hvsync|dis0x6      ; hvsync_generator:hvsync|disall6       ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.008     ; 0.698      ;
-; 0.557 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|dis6x14       ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.001     ; 0.708      ;
-; 0.557 ; hvsync_generator:hvsync|CounterY[4] ; hvsync_generator:hvsync|CounterY[6]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.709      ;
-; 0.560 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|dis3x14       ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.712      ;
-; 0.562 ; hvsync_generator:hvsync|CounterX[8] ; hvsync_generator:hvsync|vga_HS        ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.714      ;
-; 0.562 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterX[3]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.714      ;
-; 0.564 ; hvsync_generator:hvsync|CounterX[8] ; hvsync_generator:hvsync|dis3x14       ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.716      ;
-; 0.570 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|dis3x14       ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.722      ;
-; 0.571 ; hvsync_generator:hvsync|dis0x4      ; hvsync_generator:hvsync|disall4       ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.007     ; 0.716      ;
-; 0.571 ; hvsync_generator:hvsync|CounterY[2] ; hvsync_generator:hvsync|CounterY[5]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.723      ;
-; 0.572 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterX[3]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.724      ;
-; 0.574 ; hvsync_generator:hvsync|CounterY[3] ; hvsync_generator:hvsync|dis0x4        ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.001     ; 0.725      ;
-; 0.574 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|dis6x15       ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.014      ; 0.740      ;
-; 0.575 ; hvsync_generator:hvsync|CounterY[9] ; hvsync_generator:hvsync|vga_VS        ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.003     ; 0.724      ;
-; 0.577 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|dis3x15       ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.014      ; 0.743      ;
-; 0.578 ; hvsync_generator:hvsync|disall13    ; hvsync_generator:hvsync|inDisplayArea ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.003     ; 0.727      ;
-; 0.582 ; hvsync_generator:hvsync|CounterY[1] ; hvsync_generator:hvsync|dis1x1        ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.734      ;
-; 0.583 ; hvsync_generator:hvsync|CounterY[3] ; hvsync_generator:hvsync|dis0x12       ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.001     ; 0.734      ;
-; 0.584 ; hvsync_generator:hvsync|dis4x14     ; hvsync_generator:hvsync|disall14      ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.001     ; 0.735      ;
-; 0.586 ; hvsync_generator:hvsync|CounterY[4] ; hvsync_generator:hvsync|CounterY[3]   ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.001     ; 0.737      ;
-; 0.586 ; hvsync_generator:hvsync|dis0x5      ; hvsync_generator:hvsync|disall5       ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.006     ; 0.732      ;
-; 0.588 ; hvsync_generator:hvsync|CounterY[4] ; hvsync_generator:hvsync|CounterY[1]   ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.001     ; 0.739      ;
-; 0.589 ; hvsync_generator:hvsync|CounterY[1] ; hvsync_generator:hvsync|dis0x2        ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.741      ;
-; 0.589 ; hvsync_generator:hvsync|CounterY[6] ; hvsync_generator:hvsync|CounterY[8]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.741      ;
-; 0.591 ; hvsync_generator:hvsync|CounterY[3] ; hvsync_generator:hvsync|CounterY[4]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.001      ; 0.744      ;
-; 0.593 ; hvsync_generator:hvsync|CounterX[5] ; hvsync_generator:hvsync|CounterX[5]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.745      ;
-; 0.596 ; hvsync_generator:hvsync|dis0x3      ; hvsync_generator:hvsync|disall3       ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.007     ; 0.741      ;
-; 0.596 ; hvsync_generator:hvsync|dis1x1      ; hvsync_generator:hvsync|disall1       ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.008     ; 0.740      ;
-; 0.597 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterX[4]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.749      ;
-; 0.606 ; hvsync_generator:hvsync|CounterY[2] ; hvsync_generator:hvsync|CounterY[6]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.758      ;
-; 0.607 ; hvsync_generator:hvsync|disall14    ; hvsync_generator:hvsync|inDisplayArea ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.001     ; 0.758      ;
-; 0.607 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterX[4]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.759      ;
-; 0.608 ; hvsync_generator:hvsync|dis2x15     ; hvsync_generator:hvsync|disall15      ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.001     ; 0.759      ;
-; 0.609 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterX[0]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.761      ;
-; 0.611 ; hvsync_generator:hvsync|CounterY[3] ; hvsync_generator:hvsync|dis1x3        ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.001     ; 0.762      ;
-; 0.611 ; hvsync_generator:hvsync|CounterY[0] ; hvsync_generator:hvsync|CounterY[4]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.763      ;
-; 0.614 ; hvsync_generator:hvsync|CounterY[3] ; hvsync_generator:hvsync|dis0x1        ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.001     ; 0.765      ;
-; 0.614 ; hvsync_generator:hvsync|CounterY[5] ; hvsync_generator:hvsync|CounterY[7]   ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.766      ;
-; 0.615 ; hvsync_generator:hvsync|CounterY[3] ; hvsync_generator:hvsync|dis0x3        ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.001     ; 0.766      ;
-; 0.615 ; hvsync_generator:hvsync|disall6     ; hvsync_generator:hvsync|inDisplayArea ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.767      ;
-+-------+-------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clk~reg0'                                                                                                                             ;
++-------+-------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                           ; To Node                             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.360 ; hvsync_generator:hvsync|CounterY[0] ; hvsync_generator:hvsync|CounterY[0] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.512      ;
+; 0.360 ; hvsync_generator:hvsync|CounterY[8] ; hvsync_generator:hvsync|CounterY[8] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.512      ;
+; 0.361 ; hvsync_generator:hvsync|CounterY[6] ; hvsync_generator:hvsync|CounterY[6] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.513      ;
+; 0.363 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterX[2] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.515      ;
+; 0.367 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|CounterX[7] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.519      ;
+; 0.368 ; hvsync_generator:hvsync|CounterY[7] ; hvsync_generator:hvsync|CounterY[7] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.520      ;
+; 0.371 ; hvsync_generator:hvsync|CounterY[4] ; hvsync_generator:hvsync|CounterY[4] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.523      ;
+; 0.372 ; hvsync_generator:hvsync|CounterY[5] ; hvsync_generator:hvsync|CounterY[5] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.524      ;
+; 0.375 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterX[1] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.527      ;
+; 0.376 ; hvsync_generator:hvsync|CounterX[3] ; hvsync_generator:hvsync|CounterX[3] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.528      ;
+; 0.376 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|CounterX[4] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.528      ;
+; 0.377 ; hvsync_generator:hvsync|CounterX[6] ; hvsync_generator:hvsync|CounterX[6] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.529      ;
+; 0.461 ; hvsync_generator:hvsync|CounterY[2] ; hvsync_generator:hvsync|vga_VS      ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.613      ;
+; 0.470 ; hvsync_generator:hvsync|CounterX[8] ; hvsync_generator:hvsync|vga_HS      ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.002     ; 0.620      ;
+; 0.486 ; hvsync_generator:hvsync|CounterY[9] ; hvsync_generator:hvsync|CounterY[9] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.638      ;
+; 0.501 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterX[3] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.653      ;
+; 0.504 ; hvsync_generator:hvsync|CounterY[3] ; hvsync_generator:hvsync|CounterY[4] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.656      ;
+; 0.508 ; hvsync_generator:hvsync|CounterY[7] ; hvsync_generator:hvsync|CounterY[8] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.660      ;
+; 0.509 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterX[1] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.661      ;
+; 0.511 ; hvsync_generator:hvsync|CounterY[4] ; hvsync_generator:hvsync|CounterY[5] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.663      ;
+; 0.512 ; hvsync_generator:hvsync|CounterY[5] ; hvsync_generator:hvsync|CounterY[6] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.664      ;
+; 0.515 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterX[2] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.667      ;
+; 0.516 ; hvsync_generator:hvsync|CounterX[3] ; hvsync_generator:hvsync|CounterX[4] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.668      ;
+; 0.517 ; hvsync_generator:hvsync|CounterX[6] ; hvsync_generator:hvsync|CounterX[7] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.669      ;
+; 0.518 ; hvsync_generator:hvsync|CounterY[8] ; hvsync_generator:hvsync|vga_VS      ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.670      ;
+; 0.535 ; hvsync_generator:hvsync|CounterY[9] ; hvsync_generator:hvsync|vga_VS      ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.687      ;
+; 0.536 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterX[4] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.688      ;
+; 0.537 ; hvsync_generator:hvsync|CounterY[2] ; hvsync_generator:hvsync|CounterY[4] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.689      ;
+; 0.539 ; hvsync_generator:hvsync|CounterY[3] ; hvsync_generator:hvsync|CounterY[5] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.691      ;
+; 0.542 ; hvsync_generator:hvsync|CounterX[9] ; hvsync_generator:hvsync|vga_HS      ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.002     ; 0.692      ;
+; 0.544 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterX[2] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.696      ;
+; 0.544 ; hvsync_generator:hvsync|CounterY[5] ; hvsync_generator:hvsync|vga_VS      ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.696      ;
+; 0.546 ; hvsync_generator:hvsync|CounterY[4] ; hvsync_generator:hvsync|CounterY[6] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.698      ;
+; 0.548 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterX[9] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.700      ;
+; 0.548 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterX[0] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.700      ;
+; 0.548 ; hvsync_generator:hvsync|CounterX[9] ; hvsync_generator:hvsync|CounterX[9] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.700      ;
+; 0.550 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterX[3] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.702      ;
+; 0.552 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|vga_HS      ; clk~reg0     ; clk~reg0    ; 0.000        ; -0.002     ; 0.702      ;
+; 0.553 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterX[8] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.705      ;
+; 0.553 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterX[5] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.705      ;
+; 0.553 ; hvsync_generator:hvsync|CounterX[5] ; hvsync_generator:hvsync|CounterX[6] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.705      ;
+; 0.554 ; hvsync_generator:hvsync|CounterY[6] ; hvsync_generator:hvsync|CounterY[7] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.706      ;
+; 0.554 ; hvsync_generator:hvsync|CounterY[1] ; hvsync_generator:hvsync|vga_VS      ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.706      ;
+; 0.558 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|CounterX[9] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.710      ;
+; 0.571 ; hvsync_generator:hvsync|CounterY[1] ; hvsync_generator:hvsync|CounterY[4] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.723      ;
+; 0.572 ; hvsync_generator:hvsync|CounterY[2] ; hvsync_generator:hvsync|CounterY[5] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.724      ;
+; 0.574 ; hvsync_generator:hvsync|CounterY[3] ; hvsync_generator:hvsync|CounterY[6] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.726      ;
+; 0.579 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterX[3] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.585 ; hvsync_generator:hvsync|CounterX[1] ; hvsync_generator:hvsync|CounterX[4] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.737      ;
+; 0.588 ; hvsync_generator:hvsync|CounterX[5] ; hvsync_generator:hvsync|CounterX[7] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.740      ;
+; 0.589 ; hvsync_generator:hvsync|CounterY[6] ; hvsync_generator:hvsync|CounterY[8] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.741      ;
+; 0.597 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterX[9] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.749      ;
+; 0.597 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterX[0] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.749      ;
+; 0.601 ; hvsync_generator:hvsync|CounterY[4] ; hvsync_generator:hvsync|vga_VS      ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.753      ;
+; 0.602 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterX[8] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.754      ;
+; 0.602 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterX[5] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.754      ;
+; 0.603 ; hvsync_generator:hvsync|CounterY[0] ; hvsync_generator:hvsync|CounterY[4] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.755      ;
+; 0.604 ; hvsync_generator:hvsync|CounterY[6] ; hvsync_generator:hvsync|vga_VS      ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.756      ;
+; 0.604 ; hvsync_generator:hvsync|CounterX[5] ; hvsync_generator:hvsync|CounterX[5] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.756      ;
+; 0.606 ; hvsync_generator:hvsync|CounterY[5] ; hvsync_generator:hvsync|CounterY[7] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.758      ;
+; 0.606 ; hvsync_generator:hvsync|CounterY[1] ; hvsync_generator:hvsync|CounterY[5] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.758      ;
+; 0.607 ; hvsync_generator:hvsync|CounterY[2] ; hvsync_generator:hvsync|CounterY[6] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.759      ;
+; 0.608 ; hvsync_generator:hvsync|CounterY[1] ; hvsync_generator:hvsync|CounterY[1] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.760      ;
+; 0.609 ; hvsync_generator:hvsync|CounterY[3] ; hvsync_generator:hvsync|CounterY[3] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.761      ;
+; 0.610 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|CounterX[6] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.762      ;
+; 0.611 ; hvsync_generator:hvsync|CounterX[6] ; hvsync_generator:hvsync|CounterX[9] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.763      ;
+; 0.614 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterX[4] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.766      ;
+; 0.617 ; hvsync_generator:hvsync|CounterY[7] ; hvsync_generator:hvsync|vga_VS      ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.769      ;
+; 0.617 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterX[0] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.769      ;
+; 0.622 ; hvsync_generator:hvsync|CounterX[8] ; hvsync_generator:hvsync|CounterX[8] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.774      ;
+; 0.638 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|CounterX[0] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.790      ;
+; 0.638 ; hvsync_generator:hvsync|CounterY[0] ; hvsync_generator:hvsync|CounterY[5] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.790      ;
+; 0.640 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|CounterX[8] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.792      ;
+; 0.640 ; hvsync_generator:hvsync|CounterX[7] ; hvsync_generator:hvsync|CounterX[5] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.792      ;
+; 0.640 ; hvsync_generator:hvsync|CounterY[4] ; hvsync_generator:hvsync|CounterY[7] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.792      ;
+; 0.641 ; hvsync_generator:hvsync|CounterY[5] ; hvsync_generator:hvsync|CounterY[8] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.793      ;
+; 0.641 ; hvsync_generator:hvsync|CounterY[1] ; hvsync_generator:hvsync|CounterY[6] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.793      ;
+; 0.645 ; hvsync_generator:hvsync|CounterX[4] ; hvsync_generator:hvsync|CounterX[7] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.797      ;
+; 0.645 ; hvsync_generator:hvsync|CounterX[3] ; hvsync_generator:hvsync|CounterX[6] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.797      ;
+; 0.655 ; hvsync_generator:hvsync|CounterX[5] ; hvsync_generator:hvsync|CounterX[8] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.807      ;
+; 0.659 ; hvsync_generator:hvsync|CounterX[5] ; hvsync_generator:hvsync|CounterX[0] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.811      ;
+; 0.665 ; hvsync_generator:hvsync|CounterX[2] ; hvsync_generator:hvsync|CounterX[6] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.817      ;
+; 0.668 ; hvsync_generator:hvsync|CounterY[2] ; hvsync_generator:hvsync|CounterY[2] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.820      ;
+; 0.668 ; hvsync_generator:hvsync|CounterY[3] ; hvsync_generator:hvsync|CounterY[7] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.820      ;
+; 0.669 ; hvsync_generator:hvsync|CounterY[3] ; hvsync_generator:hvsync|vga_VS      ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.821      ;
+; 0.669 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterX[9] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.821      ;
+; 0.672 ; hvsync_generator:hvsync|CounterY[0] ; hvsync_generator:hvsync|vga_VS      ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.824      ;
+; 0.673 ; hvsync_generator:hvsync|CounterY[0] ; hvsync_generator:hvsync|CounterY[6] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.825      ;
+; 0.674 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterX[8] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.826      ;
+; 0.674 ; hvsync_generator:hvsync|CounterX[0] ; hvsync_generator:hvsync|CounterX[5] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.826      ;
+; 0.675 ; hvsync_generator:hvsync|CounterY[4] ; hvsync_generator:hvsync|CounterY[8] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.827      ;
+; 0.680 ; hvsync_generator:hvsync|CounterX[8] ; hvsync_generator:hvsync|CounterX[9] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.832      ;
+; 0.680 ; hvsync_generator:hvsync|CounterX[3] ; hvsync_generator:hvsync|CounterX[7] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.832      ;
+; 0.683 ; hvsync_generator:hvsync|CounterX[3] ; hvsync_generator:hvsync|CounterX[9] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.835      ;
+; 0.683 ; hvsync_generator:hvsync|CounterX[3] ; hvsync_generator:hvsync|CounterX[0] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.835      ;
+; 0.688 ; hvsync_generator:hvsync|CounterX[3] ; hvsync_generator:hvsync|CounterX[8] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.840      ;
+; 0.688 ; hvsync_generator:hvsync|CounterX[3] ; hvsync_generator:hvsync|CounterX[5] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.840      ;
+; 0.691 ; hvsync_generator:hvsync|CounterX[6] ; hvsync_generator:hvsync|CounterX[0] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.843      ;
+; 0.693 ; hvsync_generator:hvsync|CounterX[6] ; hvsync_generator:hvsync|CounterX[8] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.845      ;
+; 0.693 ; hvsync_generator:hvsync|CounterX[6] ; hvsync_generator:hvsync|CounterX[5] ; clk~reg0     ; clk~reg0    ; 0.000        ; 0.000      ; 0.845      ;
++-------+-------------------------------------+-------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
 +--------------------------------------------------------------------------------------------------+
@@ -883,66 +869,60 @@ No paths to report.
 ; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|CounterY[8] ;
 ; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|CounterY[9] ;
 ; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|CounterY[9] ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x0      ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x0      ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x1      ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x1      ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x10     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x10     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x11     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x11     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x12     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x12     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x13     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x13     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x14     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x14     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x15     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x15     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x2      ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x2      ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x3      ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x3      ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x4      ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x4      ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x5      ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x5      ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x6      ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x6      ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x7      ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x7      ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x8      ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x8      ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x9      ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis0x9      ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x0      ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x0      ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x1      ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x1      ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x10     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x10     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x11     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x11     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x12     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x12     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x13     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x13     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x14     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x14     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x15     ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x15     ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x2      ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x2      ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x3      ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x3      ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x4      ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x4      ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x5      ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x5      ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x6      ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x6      ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x7      ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|dis1x7      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|vga_HS      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|vga_HS      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|vga_VS      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync_generator:hvsync|vga_VS      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; clk~reg0clkctrl|inclk[0]            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; clk~reg0clkctrl|inclk[0]            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; clk~reg0clkctrl|outclk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; clk~reg0clkctrl|outclk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; clk~reg0|regout                     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; clk~reg0|regout                     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync|CounterX[0]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync|CounterX[0]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync|CounterX[1]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync|CounterX[1]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync|CounterX[2]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync|CounterX[2]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync|CounterX[3]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync|CounterX[3]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync|CounterX[4]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync|CounterX[4]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync|CounterX[5]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync|CounterX[5]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync|CounterX[6]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync|CounterX[6]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync|CounterX[7]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync|CounterX[7]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync|CounterX[8]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync|CounterX[8]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync|CounterX[9]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync|CounterX[9]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync|CounterY[0]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync|CounterY[0]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync|CounterY[1]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync|CounterY[1]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync|CounterY[2]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync|CounterY[2]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync|CounterY[3]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync|CounterY[3]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync|CounterY[4]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync|CounterY[4]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync|CounterY[5]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync|CounterY[5]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync|CounterY[6]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync|CounterY[6]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync|CounterY[7]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync|CounterY[7]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync|CounterY[8]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync|CounterY[8]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync|CounterY[9]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync|CounterY[9]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync|vga_HS|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync|vga_HS|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk~reg0 ; Rise       ; hvsync|vga_VS|clk                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk~reg0 ; Rise       ; hvsync|vga_VS|clk                   ;
 +--------+--------------+----------------+------------------+----------+------------+-------------------------------------+
 
 
@@ -952,12 +932,8 @@ No paths to report.
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
 ; clk       ; clk~reg0   ; 1.766 ;       ; Rise       ; clk~reg0        ;
-; hsync_out ; clk~reg0   ; 3.537 ; 3.537 ; Rise       ; clk~reg0        ;
-; pixel[*]  ; clk~reg0   ; 3.152 ; 3.152 ; Rise       ; clk~reg0        ;
-;  pixel[0] ; clk~reg0   ; 3.152 ; 3.152 ; Rise       ; clk~reg0        ;
-;  pixel[1] ; clk~reg0   ; 3.149 ; 3.149 ; Rise       ; clk~reg0        ;
-;  pixel[2] ; clk~reg0   ; 3.149 ; 3.149 ; Rise       ; clk~reg0        ;
-; vsync_out ; clk~reg0   ; 3.557 ; 3.557 ; Rise       ; clk~reg0        ;
+; hsync_out ; clk~reg0   ; 3.198 ; 3.198 ; Rise       ; clk~reg0        ;
+; vsync_out ; clk~reg0   ; 3.197 ; 3.197 ; Rise       ; clk~reg0        ;
 ; clk       ; clk~reg0   ;       ; 1.766 ; Fall       ; clk~reg0        ;
 +-----------+------------+-------+-------+------------+-----------------+
 
@@ -968,28 +944,24 @@ No paths to report.
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
 ; clk       ; clk~reg0   ; 1.766 ;       ; Rise       ; clk~reg0        ;
-; hsync_out ; clk~reg0   ; 3.537 ; 3.537 ; Rise       ; clk~reg0        ;
-; pixel[*]  ; clk~reg0   ; 3.149 ; 3.149 ; Rise       ; clk~reg0        ;
-;  pixel[0] ; clk~reg0   ; 3.152 ; 3.152 ; Rise       ; clk~reg0        ;
-;  pixel[1] ; clk~reg0   ; 3.149 ; 3.149 ; Rise       ; clk~reg0        ;
-;  pixel[2] ; clk~reg0   ; 3.149 ; 3.149 ; Rise       ; clk~reg0        ;
-; vsync_out ; clk~reg0   ; 3.557 ; 3.557 ; Rise       ; clk~reg0        ;
+; hsync_out ; clk~reg0   ; 3.198 ; 3.198 ; Rise       ; clk~reg0        ;
+; vsync_out ; clk~reg0   ; 3.197 ; 3.197 ; Rise       ; clk~reg0        ;
 ; clk       ; clk~reg0   ;       ; 1.766 ; Fall       ; clk~reg0        ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
-+---------------------------------------------------------------------------------+
-; Multicorner Timing Analysis Summary                                             ;
-+------------------+----------+--------+----------+---------+---------------------+
-; Clock            ; Setup    ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
-+------------------+----------+--------+----------+---------+---------------------+
-; Worst-case Slack ; -3.236   ; -2.093 ; N/A      ; N/A     ; -1.941              ;
-;  clk_50          ; 1.343    ; -2.093 ; N/A      ; N/A     ; -1.941              ;
-;  clk~reg0        ; -3.236   ; 0.239  ; N/A      ; N/A     ; -0.742              ;
-; Design-wide TNS  ; -215.201 ; -2.093 ; 0.0      ; 0.0     ; -134.017            ;
-;  clk_50          ; 0.000    ; -2.093 ; N/A      ; N/A     ; -3.425              ;
-;  clk~reg0        ; -215.201 ; 0.000  ; N/A      ; N/A     ; -130.592            ;
-+------------------+----------+--------+----------+---------+---------------------+
++--------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                            ;
++------------------+---------+--------+----------+---------+---------------------+
+; Clock            ; Setup   ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+---------+--------+----------+---------+---------------------+
+; Worst-case Slack ; -2.523  ; -2.093 ; N/A      ; N/A     ; -1.941              ;
+;  clk_50          ; 1.343   ; -2.093 ; N/A      ; N/A     ; -1.941              ;
+;  clk~reg0        ; -2.523  ; 0.360  ; N/A      ; N/A     ; -0.742              ;
+; Design-wide TNS  ; -44.927 ; -2.093 ; 0.0      ; 0.0     ; -36.073             ;
+;  clk_50          ; 0.000   ; -2.093 ; N/A      ; N/A     ; -3.425              ;
+;  clk~reg0        ; -44.927 ; 0.000  ; N/A      ; N/A     ; -32.648             ;
++------------------+---------+--------+----------+---------+---------------------+
 
 
 +-----------------------------------------------------------------------+
@@ -998,12 +970,8 @@ No paths to report.
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
 ; clk       ; clk~reg0   ; 4.065 ;       ; Rise       ; clk~reg0        ;
-; hsync_out ; clk~reg0   ; 7.972 ; 7.972 ; Rise       ; clk~reg0        ;
-; pixel[*]  ; clk~reg0   ; 6.781 ; 6.781 ; Rise       ; clk~reg0        ;
-;  pixel[0] ; clk~reg0   ; 6.781 ; 6.781 ; Rise       ; clk~reg0        ;
-;  pixel[1] ; clk~reg0   ; 6.776 ; 6.776 ; Rise       ; clk~reg0        ;
-;  pixel[2] ; clk~reg0   ; 6.776 ; 6.776 ; Rise       ; clk~reg0        ;
-; vsync_out ; clk~reg0   ; 8.006 ; 8.006 ; Rise       ; clk~reg0        ;
+; hsync_out ; clk~reg0   ; 6.861 ; 6.861 ; Rise       ; clk~reg0        ;
+; vsync_out ; clk~reg0   ; 6.861 ; 6.861 ; Rise       ; clk~reg0        ;
 ; clk       ; clk~reg0   ;       ; 4.065 ; Fall       ; clk~reg0        ;
 +-----------+------------+-------+-------+------------+-----------------+
 
@@ -1014,12 +982,8 @@ No paths to report.
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
 ; clk       ; clk~reg0   ; 1.766 ;       ; Rise       ; clk~reg0        ;
-; hsync_out ; clk~reg0   ; 3.537 ; 3.537 ; Rise       ; clk~reg0        ;
-; pixel[*]  ; clk~reg0   ; 3.149 ; 3.149 ; Rise       ; clk~reg0        ;
-;  pixel[0] ; clk~reg0   ; 3.152 ; 3.152 ; Rise       ; clk~reg0        ;
-;  pixel[1] ; clk~reg0   ; 3.149 ; 3.149 ; Rise       ; clk~reg0        ;
-;  pixel[2] ; clk~reg0   ; 3.149 ; 3.149 ; Rise       ; clk~reg0        ;
-; vsync_out ; clk~reg0   ; 3.557 ; 3.557 ; Rise       ; clk~reg0        ;
+; hsync_out ; clk~reg0   ; 3.198 ; 3.198 ; Rise       ; clk~reg0        ;
+; vsync_out ; clk~reg0   ; 3.197 ; 3.197 ; Rise       ; clk~reg0        ;
 ; clk       ; clk~reg0   ;       ; 1.766 ; Fall       ; clk~reg0        ;
 +-----------+------------+-------+-------+------------+-----------------+
 
@@ -1030,7 +994,7 @@ No paths to report.
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
 ; clk~reg0   ; clk_50   ; 1        ; 1        ; 0        ; 0        ;
-; clk~reg0   ; clk~reg0 ; 1283     ; 0        ; 0        ; 0        ;
+; clk~reg0   ; clk~reg0 ; 310      ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1041,7 +1005,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
 ; clk~reg0   ; clk_50   ; 1        ; 1        ; 0        ; 0        ;
-; clk~reg0   ; clk~reg0 ; 1283     ; 0        ; 0        ; 0        ;
+; clk~reg0   ; clk~reg0 ; 310      ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1067,8 +1031,8 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 0     ; 0    ;
 ; Unconstrained Input Port Paths  ; 0     ; 0    ;
-; Unconstrained Output Ports      ; 6     ; 6    ;
-; Unconstrained Output Port Paths ; 6     ; 6    ;
+; Unconstrained Output Ports      ; 3     ; 3    ;
+; Unconstrained Output Port Paths ; 3     ; 3    ;
 +---------------------------------+-------+------+
 
 
@@ -1078,7 +1042,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed Sep 08 14:44:04 2021
+    Info: Processing started: Wed Sep 08 20:24:49 2021
 Info: Command: quartus_sta testVGA -c testVGA
 Info: qsta_default_script.tcl version: #1
 Warning (20028): Parallel compilation is not licensed and has been disabled
@@ -1092,49 +1056,49 @@ Info (332105): Deriving Clocks
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow Model
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -3.236
+Info (332146): Worst-case setup slack is -2.523
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -3.236      -215.201 clk~reg0 
+    Info (332119):    -2.523       -44.927 clk~reg0 
     Info (332119):     2.327         0.000 clk_50 
 Info (332146): Worst-case hold slack is -2.093
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
     Info (332119):    -2.093        -2.093 clk_50 
-    Info (332119):     0.741         0.000 clk~reg0 
+    Info (332119):     1.176         0.000 clk~reg0 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -1.941
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
     Info (332119):    -1.941        -3.425 clk_50 
-    Info (332119):    -0.742      -130.592 clk~reg0 
+    Info (332119):    -0.742       -32.648 clk~reg0 
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info: Analyzing Fast Model
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -0.477
+Info (332146): Worst-case setup slack is -0.275
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -0.477       -19.939 clk~reg0 
+    Info (332119):    -0.275        -3.153 clk~reg0 
     Info (332119):     1.343         0.000 clk_50 
 Info (332146): Worst-case hold slack is -0.963
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
     Info (332119):    -0.963        -0.963 clk_50 
-    Info (332119):     0.239         0.000 clk~reg0 
+    Info (332119):     0.360         0.000 clk~reg0 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -1.380
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
     Info (332119):    -1.380        -2.380 clk_50 
-    Info (332119):    -0.500       -88.000 clk~reg0 
+    Info (332119):    -0.500       -22.000 clk~reg0 
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 4545 megabytes
-    Info: Processing ended: Wed Sep 08 14:44:05 2021
+    Info: Peak virtual memory: 4529 megabytes
+    Info: Processing ended: Wed Sep 08 20:24:50 2021
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
