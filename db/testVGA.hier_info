@@ -17,7 +17,7 @@ vsync_out <= hvsync_generator:hvsync.vga_v_sync
 
 
 |testVGA|hvsync_generator:hvsync
-clk => clk.IN3
+clk => clk.IN2
 sw_p1 => ~NO_FANOUT~
 sw_p2 => ~NO_FANOUT~
 sw_p3 => ~NO_FANOUT~
@@ -110,7 +110,6 @@ PB_up <= PB_up.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |testVGA|hvsync_generator:hvsync|Lookup_Alphabet:LUT_A
-clk => ~NO_FANOUT~
 a[0] => Equal0.IN1
 a[0] => Equal1.IN7
 a[0] => Equal2.IN2
@@ -527,5 +526,13 @@ r15[4] <= <GND>
 r15[5] <= <GND>
 r15[6] <= <GND>
 r15[7] <= <GND>
+check[0] <= check[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+check[1] <= check[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+check[2] <= check[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+check[3] <= check[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
+check[4] <= check[4]$latch.DB_MAX_OUTPUT_PORT_TYPE
+check[5] <= check[5]$latch.DB_MAX_OUTPUT_PORT_TYPE
+check[6] <= check[6]$latch.DB_MAX_OUTPUT_PORT_TYPE
+check[7] <= check[7]$latch.DB_MAX_OUTPUT_PORT_TYPE
 
 
