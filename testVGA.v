@@ -36,6 +36,10 @@ module testVGA(
 		reg memG [8:0];
 		reg memB [8:0];
 		
+		wire redalpha;
+		wire greenalpha;
+		wire bluealpha;
+		
 		wire c_red = ~sw_p1;
 		wire c_blue = ~sw_p2;
 		wire c_green = ~sw_p3;
@@ -54,19 +58,19 @@ module testVGA(
 		.sw_cc(sw_cc),
       .vga_h_sync(hsync_out),
       .vga_v_sync(vsync_out),
-      .CounterX(CounX),
-      .CounterY(CounY),
+      .green(greenalpha),
+      .blue(bluealpha),
       .inDisplayArea(inDisplayArea),
 		.inDisplaySelect(inDisplaySelect),
-		.countPos(posDisplay),
+		.red(redalpha),
     );
-		
+	/* 	
 	// blink	
 		reg [24:0] cnt;    
 		reg [24:0] Blank = 4000000;
 		reg [24:0] reset = 8000000;
 		reg R = 0, G = 0, B = 0;
-	/* 
+	
 		always @ (posedge clk) 
 			begin  
 				if (cnt == reset)  
@@ -143,9 +147,9 @@ module testVGA(
 	 */
 	  always @(posedge clk)
 		begin
-			pixel[0] <= inDisplayArea ;
-			pixel[1] <= inDisplayArea ;
-			pixel[2] <= inDisplayArea ;	
+			pixel[0] <= inDisplayArea & redalpha ;
+			pixel[1] <= inDisplayArea & greenalpha;
+			pixel[2] <= inDisplayArea & bluealpha ;	
 		end
 		
 

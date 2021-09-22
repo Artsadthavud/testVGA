@@ -1,2 +1,1 @@
-Info (10281): Verilog HDL Declaration information at hvsync_generator.v(75): object "x" differs only in case from object "X" in the same scope
 Warning (10268): Verilog HDL information at Lookup_Alphabet.v(21): always construct contains both blocking and non-blocking assignments
