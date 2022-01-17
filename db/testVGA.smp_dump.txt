@@ -1,0 +1,7 @@
+
+State Machine - |testVGA|hvsync_generator:hvsync|Lookup_Alphabet:LUT_A|a
+Name a.00000011 a.00000010 a.00000001 a.00000000 
+a.00000000 0 0 0 0 
+a.00000001 0 0 1 1 
+a.00000010 0 1 0 1 
+a.00000011 1 0 0 1 

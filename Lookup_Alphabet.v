@@ -1,4 +1,5 @@
-module Lookup_Alphabet(a,r0,r1,r2,r3,r4,r5,r6,r7,r8,r9,r10,r11,r12,r13,r14,r15,check);
+module Lookup_Alphabet(clk, a,r0,r1,r2,r3,r4,r5,r6,r7,r8,r9,r10,r11,r12,r13,r14,r15,check);
+	 input clk;
 	 input [7:0] a;
 	 output reg [7:0]check;
     output reg [7:0] r0;
@@ -18,7 +19,7 @@ module Lookup_Alphabet(a,r0,r1,r2,r3,r4,r5,r6,r7,r8,r9,r10,r11,r12,r13,r14,r15,c
 	 output reg [7:0] r14;
 	 output reg [7:0] r15;
 
-    always @(a) begin
+    always @(clk) begin
 	 	////////////////////////////////////////////////A
        if (a == 8'b01000001) begin
             r0 = 8'b00000000; //A
@@ -767,6 +768,26 @@ module Lookup_Alphabet(a,r0,r1,r2,r3,r4,r5,r6,r7,r8,r9,r10,r11,r12,r13,r14,r15,c
 /////////////////////////////////////////////////9
 		else if (a == 8'b00111001)
 			begin
+            r0 <= 8'b00000000; 
+            r1 <= 8'b00000000; 
+            r2 <= 8'b00111110; 
+            r3 <= 8'b00100010; 
+            r4 <= 8'b00100010; 
+            r5 <= 8'b00100010; 
+				r6 <= 8'b00111110; 
+            r7 <= 8'b00000010; 
+            r8 <= 8'b00000010; 
+            r9 <= 8'b00000010; 
+            r10 <= 8'b00000010; 
+            r11 <= 8'b00000010; 
+				r12 <= 8'b00111110; 
+            r13 <= 8'b00000000; 
+				r14 <= 8'b00000000; 
+            r15 <= 8'b00000000; 
+				check = check + 1 ;
+			end
+		else 
+		begin
             r0 <= 8'b00000000; 
             r1 <= 8'b00000000; 
             r2 <= 8'b00111110; 
