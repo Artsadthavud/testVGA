@@ -1,5 +1,5 @@
 EDA Netlist Writer report for testVGA
-Tue Jan 11 17:25:01 2022
+Mon Jan 17 23:51:32 2022
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Tue Jan 11 17:25:01 2022 ;
+; EDA Netlist Writer Status ; Successful - Mon Jan 17 23:51:32 2022 ;
 ; Revision Name             ; testVGA                               ;
 ; Top-level Entity Name     ; testVGA                               ;
 ; Family                    ; Cyclone II                            ;
@@ -84,12 +84,12 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Tue Jan 11 17:25:00 2022
+    Info: Processing started: Mon Jan 17 23:51:31 2022
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off testVGA -c testVGA
 Info (204026): Generated files "testVGA.vo", "testVGA_fast.vo", "testVGA_v.sdo" and "testVGA_v_fast.sdo" in directory "C:/altera/13.0sp1/testVGA/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4518 megabytes
-    Info: Processing ended: Tue Jan 11 17:25:01 2022
+    Info: Peak virtual memory: 4523 megabytes
+    Info: Processing ended: Mon Jan 17 23:51:32 2022
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

@@ -1,6 +1,6 @@
-module Lookup_Alphabet(clk, a,r0,r1,r2,r3,r4,r5,r6,r7,r8,r9,r10,r11,r12,r13,r14,r15,check);
-	 input clk;
+module Lookup_Alphabet( clk,a,r0,r1,r2,r3,r4,r5,r6,r7,r8,r9,r10,r11,r12,r13,r14,r15,check);
 	 input [7:0] a;
+	 input clk;
 	 output reg [7:0]check;
     output reg [7:0] r0;
 	 output reg [7:0] r1;

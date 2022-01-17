@@ -3,19 +3,27 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow Model Setup 'clk~reg0'
-Slack : -4.261
-TNS   : -118.280
+Slack : -2.901
+TNS   : -82.432
+
+Type  : Slow Model Setup 'hvsync_generator:hvsync|Debouncer:Deboun|PB_state'
+Slack : -2.722
+TNS   : -31.642
 
 Type  : Slow Model Setup 'clk_50'
 Slack : 2.327
 TNS   : 0.000
 
+Type  : Slow Model Hold 'clk~reg0'
+Slack : -2.111
+TNS   : -14.399
+
 Type  : Slow Model Hold 'clk_50'
 Slack : -2.093
 TNS   : -2.093
 
-Type  : Slow Model Hold 'clk~reg0'
-Slack : 0.970
+Type  : Slow Model Hold 'hvsync_generator:hvsync|Debouncer:Deboun|PB_state'
+Slack : 0.499
 TNS   : 0.000
 
 Type  : Slow Model Minimum Pulse Width 'clk_50'
@@ -24,22 +32,34 @@ TNS   : -3.425
 
 Type  : Slow Model Minimum Pulse Width 'clk~reg0'
 Slack : -0.742
-TNS   : -130.592
+TNS   : -69.748
+
+Type  : Slow Model Minimum Pulse Width 'hvsync_generator:hvsync|Debouncer:Deboun|PB_state'
+Slack : -0.742
+TNS   : -17.808
 
 Type  : Fast Model Setup 'clk~reg0'
-Slack : -0.642
-TNS   : -14.854
+Slack : -0.370
+TNS   : -4.539
+
+Type  : Fast Model Setup 'hvsync_generator:hvsync|Debouncer:Deboun|PB_state'
+Slack : -0.202
+TNS   : -1.950
 
 Type  : Fast Model Setup 'clk_50'
 Slack : 1.343
 TNS   : 0.000
 
+Type  : Fast Model Hold 'clk~reg0'
+Slack : -1.066
+TNS   : -11.002
+
 Type  : Fast Model Hold 'clk_50'
 Slack : -0.963
 TNS   : -0.963
 
-Type  : Fast Model Hold 'clk~reg0'
-Slack : 0.318
+Type  : Fast Model Hold 'hvsync_generator:hvsync|Debouncer:Deboun|PB_state'
+Slack : 0.215
 TNS   : 0.000
 
 Type  : Fast Model Minimum Pulse Width 'clk_50'
@@ -48,6 +68,10 @@ TNS   : -2.380
 
 Type  : Fast Model Minimum Pulse Width 'clk~reg0'
 Slack : -0.500
-TNS   : -88.000
+TNS   : -47.000
+
+Type  : Fast Model Minimum Pulse Width 'hvsync_generator:hvsync|Debouncer:Deboun|PB_state'
+Slack : -0.500
+TNS   : -12.000
 
 ------------------------------------------------------------

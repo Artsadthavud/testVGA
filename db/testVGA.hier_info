@@ -6,11 +6,6 @@ sw_b => ~NO_FANOUT~
 sw_p1 => _.IN1
 sw_p2 => _.IN1
 sw_p3 => _.IN1
-sw_p4 => _.IN1
-sw_p5 => _.IN1
-sw_p6 => _.IN1
-sw_p7 => _.IN1
-sw_p8 => _.IN1
 sw_cc => sw_cc.IN1
 sw_cp => sw_cp.IN1
 clk <= clk.DB_MAX_OUTPUT_PORT_TYPE
@@ -22,21 +17,16 @@ vsync_out <= hvsync_generator:hvsync.vga_v_sync
 
 
 |testVGA|hvsync_generator:hvsync
-clk => clk.IN1
-sw_p1 => apl[0].IN1
-sw_p2 => apl[1].IN1
-sw_p3 => apl[2].IN1
-sw_p4 => apl[3].IN1
-sw_p5 => apl[4].IN1
-sw_p6 => apl[5].IN1
-sw_p7 => apl[6].IN1
-sw_p8 => apl[7].IN1
+clk => clk.IN2
+sw_p1 => ~NO_FANOUT~
+sw_p2 => ~NO_FANOUT~
+sw_p3 => ~NO_FANOUT~
 sw_cp[0] => sw_cp[0].IN1
 sw_cp[1] => sw_cp[1].IN1
 sw_cp[2] => sw_cp[2].IN1
-sw_cc[0] => ~NO_FANOUT~
-sw_cc[1] => ~NO_FANOUT~
-sw_cc[2] => ~NO_FANOUT~
+sw_cc[0] => sw_cc[0].IN1
+sw_cc[1] => sw_cc[1].IN1
+sw_cc[2] => sw_cc[2].IN1
 vga_h_sync <= vga_HS.DB_MAX_OUTPUT_PORT_TYPE
 vga_v_sync <= vga_VS.DB_MAX_OUTPUT_PORT_TYPE
 inDisplayArea <= inDisplayArea~reg0.DB_MAX_OUTPUT_PORT_TYPE
@@ -68,6 +58,32 @@ CounterY[9] <= CounterY[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |testVGA|hvsync_generator:hvsync|Debouncer:Deboun
+clk => PB_state~reg0.CLK
+clk => PB_cnt[0].CLK
+clk => PB_cnt[1].CLK
+clk => PB_cnt[2].CLK
+clk => PB_cnt[3].CLK
+clk => PB_cnt[4].CLK
+clk => PB_cnt[5].CLK
+clk => PB_cnt[6].CLK
+clk => PB_cnt[7].CLK
+clk => PB_cnt[8].CLK
+clk => PB_cnt[9].CLK
+clk => PB_cnt[10].CLK
+clk => PB_cnt[11].CLK
+clk => PB_cnt[12].CLK
+clk => PB_cnt[13].CLK
+clk => PB_cnt[14].CLK
+clk => PB_cnt[15].CLK
+clk => PB_sync_1.CLK
+clk => PB_sync_0.CLK
+PB => PB_sync_0.DATAIN
+PB_state <= PB_state~reg0.DB_MAX_OUTPUT_PORT_TYPE
+PB_down <= PB_down.DB_MAX_OUTPUT_PORT_TYPE
+PB_up <= PB_up.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|testVGA|hvsync_generator:hvsync|Debouncer:Deboun1
 clk => PB_state~reg0.CLK
 clk => PB_cnt[0].CLK
 clk => PB_cnt[1].CLK
