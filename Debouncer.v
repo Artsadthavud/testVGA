@@ -27,3 +27,5 @@ assign PB_down = ~PB_idle & PB_cnt_max & ~PB_state;
 assign PB_up   = ~PB_idle & PB_cnt_max &  PB_state;
 
 endmodule
+
+	

@@ -1,14 +1,18 @@
 |testVGA
-clk_50 => clk~reg0.CLK
+clk_50 => clk.CLK
 sw_r => ~NO_FANOUT~
 sw_g => ~NO_FANOUT~
 sw_b => ~NO_FANOUT~
 sw_p1 => _.IN1
 sw_p2 => _.IN1
 sw_p3 => _.IN1
+sw_p4 => _.IN1
+sw_p5 => _.IN1
+sw_p6 => _.IN1
+sw_p7 => _.IN1
+sw_p8 => _.IN1
 sw_cc => sw_cc.IN1
 sw_cp => sw_cp.IN1
-clk <= clk.DB_MAX_OUTPUT_PORT_TYPE
 pixel[0] <= pixel[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 pixel[1] <= pixel[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 pixel[2] <= pixel[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
@@ -21,6 +25,11 @@ clk => clk.IN2
 sw_p1 => ~NO_FANOUT~
 sw_p2 => ~NO_FANOUT~
 sw_p3 => ~NO_FANOUT~
+sw_p4 => ~NO_FANOUT~
+sw_p5 => ~NO_FANOUT~
+sw_p6 => ~NO_FANOUT~
+sw_p7 => ~NO_FANOUT~
+sw_p8 => ~NO_FANOUT~
 sw_cp[0] => sw_cp[0].IN1
 sw_cp[1] => sw_cp[1].IN1
 sw_cp[2] => sw_cp[2].IN1
@@ -110,7 +119,7 @@ PB_up <= PB_up.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |testVGA|hvsync_generator:hvsync|Lookup_Alphabet:LUT_A
-clk => ~NO_FANOUT~
+sw => ~NO_FANOUT~
 a[0] => Equal0.IN1
 a[0] => Equal1.IN7
 a[0] => Equal2.IN2

@@ -6,9 +6,14 @@ module testVGA(
 	 input sw_p1,
 	 input sw_p2,
 	 input sw_p3,
+	 input sw_p4,
+	 input sw_p5,
+	 input sw_p6,
+	 input sw_p7,
+	 input sw_p8,
 	 input sw_cc,
 	 input sw_cp,
-	 output reg clk,
+	 
     output reg [2:0] pixel,
     output hsync_out,
     output vsync_out
@@ -23,6 +28,7 @@ module testVGA(
 	 reg inDisplay5;
 	 reg inDisplay6;
 	 reg inDisplay7;
+	 reg clk;
     wire [9:0] CounX;
 	 wire [9:0] CounY;
   //set colour
@@ -31,10 +37,6 @@ module testVGA(
 		wire blue = ~sw_b;
 		wire [3:0] posDisplay;
 		reg [3:0]countPosition = 0;
-		
-		reg memR [8:0];
-		reg memG [8:0];
-		reg memB [8:0];
 		
 		wire c_red = ~sw_p1;
 		wire c_blue = ~sw_p2;
@@ -50,6 +52,11 @@ module testVGA(
 		.sw_p1(~sw_p1),
 		.sw_p2(~sw_p2),
 		.sw_p3(~sw_p3),
+		.sw_p4(~sw_p4),
+		.sw_p5(~sw_p5),
+		.sw_p6(~sw_p6),
+		.sw_p7(~sw_p7),
+		.sw_p8(~sw_p8),
 		.sw_cp(sw_cp),
 		.sw_cc(sw_cc),
       .vga_h_sync(hsync_out),
