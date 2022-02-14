@@ -118,24 +118,24 @@ GND*                         : 51        :        :                   :         
 GND*                         : 52        :        :                   :         : 4         :                
 GND*                         : 53        :        :                   :         : 4         :                
 VCCIO4                       : 54        : power  :                   : 3.3V    : 4         :                
-sw_p8                        : 55        : input  : 3.3-V LVTTL       :         : 4         : Y              
+GND*                         : 55        :        :                   :         : 4         :                
 GND                          : 56        : gnd    :                   :         :           :                
-sw_p7                        : 57        : input  : 3.3-V LVTTL       :         : 4         : Y              
-sw_p6                        : 58        : input  : 3.3-V LVTTL       :         : 4         : Y              
-sw_p5                        : 59        : input  : 3.3-V LVTTL       :         : 4         : Y              
-sw_p4                        : 60        : input  : 3.3-V LVTTL       :         : 4         : Y              
+GND*                         : 57        :        :                   :         : 4         :                
+GND*                         : 58        :        :                   :         : 4         :                
+GND*                         : 59        :        :                   :         : 4         :                
+GND*                         : 60        :        :                   :         : 4         :                
 GND                          : 61        : gnd    :                   :         :           :                
 VCCINT                       : 62        : power  :                   : 1.2V    :           :                
-sw_cp                        : 63        : input  : 3.3-V LVTTL       :         : 4         : Y              
-sw_cc                        : 64        : input  : 3.3-V LVTTL       :         : 4         : Y              
-sw_p3                        : 65        : input  : 3.3-V LVTTL       :         : 4         : Y              
+GND*                         : 63        :        :                   :         : 4         :                
+GND*                         : 64        :        :                   :         : 4         :                
+GND*                         : 65        :        :                   :         : 4         :                
 VCCIO4                       : 66        : power  :                   : 3.3V    : 4         :                
-sw_p2                        : 67        : input  : 3.3-V LVTTL       :         : 4         : Y              
+GND*                         : 67        :        :                   :         : 4         :                
 GND                          : 68        : gnd    :                   :         :           :                
-sw_p1                        : 69        : input  : 3.3-V LVTTL       :         : 4         : Y              
-sw_r                         : 70        : input  : 3.3-V LVTTL       :         : 4         : Y              
-sw_g                         : 71        : input  : 3.3-V LVTTL       :         : 4         : Y              
-sw_b                         : 72        : input  : 3.3-V LVTTL       :         : 4         : Y              
+GND*                         : 69        :        :                   :         : 4         :                
+GND*                         : 70        :        :                   :         : 4         :                
+sw_cc                        : 71        : input  : 3.3-V LVTTL       :         : 4         : Y              
+GND*                         : 72        :        :                   :         : 4         :                
 GND*                         : 73        :        :                   :         : 3         :                
 GND*                         : 74        :        :                   :         : 3         :                
 GND*                         : 75        :        :                   :         : 3         :                
